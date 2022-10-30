@@ -11,10 +11,11 @@ $db = "xpirrwid";
 try {
     
     //connection to database
-    $con = new PDO("pgsql:host=$host, dbname=$db, user=$user, password=$pass")
+    $con = new PDO("pgsql:host=".$host.", dbname=".$db.", user=".$user.", password=".$pass)
     or die ("Could not connect to server\n");
+    $con -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-
+    echo "LETS GO";
 
     $pseudo =$_POST["pseudo"];
     $adr =$_POST["adr"];
