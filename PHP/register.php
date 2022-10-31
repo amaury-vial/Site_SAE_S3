@@ -10,45 +10,43 @@ $db = "xpirrwid";
 
 try {
     
-    //connection to database
-    $con = new PDO("pgsql:host=$host, dbname=$db, user=$user, password=$pass")
+    //connection a la base de donnée
+    $con = new PDO("pgsql:host=$host; port=5432; dbname=$db; user=$user; password=$pass")
     or die ("Could not connect to server\n");
 
-
-
+    //recup des variable du formulaire
     $pseudo =$_POST["pseudo"];
     $adr =$_POST["adr"];
     $password =$_POST["password"];
 
-    $sqlCheckUser = "SELECT mail, pseudo FROM user";
-    $resultCheckUser = $con->query($sqlCheckUser);
+    $sqlCheckUser = "SELECT EMAIL, NICKNAME FROM USERS"; //requete pour recup tout les users
+    $check = true;
 
-    $userExist = false;
-
-    if ($resultCheckUser->num_rows > 0) {
-    // output data of each row
-        while($user = $resultCheckUser->fetch_assoc()) {
-            if ($pseudo == $user['pseudo'] || $adr == $user['mail'] ){
-                $userExist = true;
-            }
+    foreach  ($con->query($sqlCheckUser) as $row) {    //on check si le user existe deja
+        if ($pseudo == $row['nickname'] || $adr == $row['email'] ){
+            $check = false;
         }
     }
 
-    if ($userExist){
-        $sqlNewUser = "INSERT INTO user (mail, pseudo, mot_de_passe)
-        VALUES ('$adr', '$pseudo', '$password')";
+    //si il n'exite pas on le cree
+    if($check == true){
+        $sqlNewUser = "INSERT INTO USERS (EMAIL, NICKNAME, PASSWORD)
+            VALUES ('$adr', '$pseudo', '$password')";  // requete pour insert le new user
 
-        if ($con->query($sqlNewUser) === TRUE) {
-            echo "Compte crée";
+        if ($con->query($sqlNewUser) == TRUE) {
+            echo "Compte crée ";
             echo "lien pour telecharger le jeu";
         } else {
             echo "Error: " . $sqlNewUser . "<br>" . $con->error;
         }
-    }else{
+    
+
+    }else{//aussi non on lui affiche ce msg
         echo "mail ou pseudo deja utilisé";
     }
-    
-    $cnn -> close();
+        
+   
+    $con = null;
 }
 
 catch(PDOException $e){
