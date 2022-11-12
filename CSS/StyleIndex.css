@@ -40,13 +40,13 @@ section{
 form{
     display: flex;
     flex-direction: column;
+    background-color: #CDFEAA;
 }
 
 .formulaire{
     width: 20%;
     background-color: #CDFEAA;
     padding: 5% 5% 5% 5%;
-
 }
 
 

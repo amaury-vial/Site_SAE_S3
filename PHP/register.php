@@ -14,24 +14,31 @@ try {
     $con = new PDO("pgsql:host=$host; port=5432; dbname=$db; user=$user; password=$pass")
     or die ("Could not connect to server\n");
 
+
     //recup des variable du formulaire
     $pseudo =$_POST["pseudo"];
     $adr =$_POST["adr"];
     $password =$_POST["password"];
 
-    $sqlCheckUser = "SELECT EMAIL, NICKNAME FROM USERS"; //requete pour recup tout les users
+    $sqlCheckUser = "SELECT EMAIL, NICKNAME ID_USER FROM USERS"; //requete pour recup tout les users
     $check = true;
+    $id = 1;
 
     foreach  ($con->query($sqlCheckUser) as $row) {    //on check si le user existe deja
         if ($pseudo == $row['nickname'] || $adr == $row['email'] ){
             $check = false;
         }
+        if($id<$row['id_user']){
+            $id = $row['id_user'];
+        }
     }
+
+
 
     //si il n'exite pas on le cree
     if($check == true){
-        $sqlNewUser = "INSERT INTO USERS (EMAIL, NICKNAME, PASSWORD)
-            VALUES ('$adr', '$pseudo', '$password')";  // requete pour insert le new user
+        $sqlNewUser = "INSERT INTO USERS (ID_USER, EMAIL, NICKNAME, PASSWORD)
+            VALUES ($id,'$adr', '$pseudo', '$password')";  // requete pour insert le new user
 
         if ($con->query($sqlNewUser) == TRUE) {
             echo "Compte crée ";

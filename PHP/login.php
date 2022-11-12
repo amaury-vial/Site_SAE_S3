@@ -1,44 +1,67 @@
-<!doctype html>
-<html lang="fr">
 <?php
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$db = "sae_s3";
+date_default_timezone_set('Europe/Paris');
+
+$host = "lucky.db.elephantsql.com";
+$user = "xpirrwid";
+$pass = "LkhxflJA_GDQQI_nqpkJBIbFBc955fiL";
+$db = "xpirrwid";
 
 
 try {
     
-    //connection to database
-    $conn = new mysqli($servername, $username, $password,$db); 
-    if ($conn -> connect_error){
-        die("Connection failed : " . mysqli_connect_error());
-    }
+    //connection a la base de donnée
+    $con = new PDO("pgsql:host=$host; port=5432; dbname=$db; user=$user; password=$pass")
+    or die ("Could not connect to server\n");
 
+    //recup des variable du formulaire
     $pseudo =$_POST["pseudo"];
     $adr =$_POST["adr"];
     $password =$_POST["password"];
 
-    $sqlCheckUser = "SELECT mail, pseudo,  mot_de_passe FROM user";
-    $resultCheckUser = $conn->query($sqlCheckUser);
+    $sqlCheckUser = "SELECT EMAIL, NICKNAME, ID_USER, PASSWORD FROM USERS"; //requete pour recup tout les users
+    $check = false;
 
+    $IdUser = 0;
 
-    if ($resultCheckUser->num_rows > 0) {
-    // output data of each row
-        while($user = $resultCheckUser->fetch_assoc()) {
-            if ($pseudo == $user['pseudo'] && $adr == $user['mail'] && $password == $user['mot_de_passe']){
-                echo "connecter a la page admin";
-                ?><a href="../HTML/pageAdmin.html"> se co </a><?php
-            }
+    foreach  ($con->query($sqlCheckUser) as $row) {    //on check si le user existe deja
+        if ($pseudo == $row['nickname'] && $adr == $row['email'] && $password == $row['password']){
+            $check = true;
+            $IdUser = $row['id_user'];
         }
     }
+
+    //si il n'exite pas on le cree
+    if($check == true){
+
+        $checkAdmin = false;
+        $sqlIsAdmin = "SELECT ID_USER FROM ADMIN";
+
+        foreach  ($con->query($sqlIsAdmin) as $row) {    //on check si le user existe deja
+            if ($IdUser ==  $row['id_user']){
+                $checkAdmin = true;
+            }
+        }
+
+        if (true == $checkAdmin){
+            header("location:../HTML/pageAdmin.html");
+            exit;
+        }
+        else{
+            header("location:../index.html");
+            exit;
+        }
+
+    }else{
+        echo "mail, pseudo ou mdp faux";
+    }
+        
    
-    $conn -> close();
+    $con = null;
 }
 
 catch(PDOException $e){
     echo $e->getMessage();
     }
+  
 ?>
-</html>

@@ -2,7 +2,7 @@ body{
     background-color: grey;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 header{
@@ -26,21 +26,8 @@ header{
     color: white;
 }
 
-.Link.Title {
-    outline: none;
-    text-decoration: none;
-    padding: 2px 1px 0;
-}
-
-
-.Link:hover {
-    border-bottom: 2px solid;
-    background: green;
-}
-
-.Link:active {
-    background: #265301;
-    color: #CDFEAA;
+.Title:hover{
+    color: green;
 }
 
 footer{
@@ -58,7 +45,6 @@ footer{
 form{
     display: flex;
     flex-direction: column;
-
 }
 
 .LeaderBord {
