@@ -44,7 +44,7 @@ try {
         }
 
         if (true == $checkAdmin){
-            header("location:../HTML/pageAdmin.html");
+            header("location:pageAdmin.php");
             exit;
         }
         else{

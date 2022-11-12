@@ -1,6 +1,13 @@
+<?php 
 
+date_default_timezone_set('Europe/Paris');
 
-<!--   NE SERT PLUS A RIEN VOIR DANS PHP  -->
+$host = "lucky.db.elephantsql.com";
+$user = "xpirrwid";
+$pass = "LkhxflJA_GDQQI_nqpkJBIbFBc955fiL";
+$db = "xpirrwid";
+
+?>
 
 <!doctype html>
 <html lang="fr">
@@ -14,24 +21,23 @@
 
 <body>
 
-
     <!-- HEADER !-->
 
     <header>
-        <a href="../HTML/PageHome.html">
+        <a href="../index.html">
             <img class="Logo" src="../IMAGE/FindTheReach.png">
         </a>
 
         <h1 class="Link">
             <a class="Title" href="../index.html">
-                Find The Breach
+                <p>Find The Breach</p>    
             </a>
         </h1>
     </header>
 
     <section class="corp">
-        <form method="post" action="../PHP/question.php">
-            <h1>Modifier une question :</h1>
+        <form method="post" action="question.php">
+            <h1><p>Modifier une question :</p></h1>
             <div>
             <label><p>No Question :</p></label><input type="number", name="numque" max="10" min="0" size="1em" required="required"/>
             </div>
@@ -44,13 +50,35 @@
             <div><input type="submit" value="Valider"></div>
         </form>
         <section class="LeaderBord">
-            <h1>LeaderBoard</h1>
+            <h1><p>LeaderBoard</p></h1>
             <div class="Player">
-                <h2>Joueur 1   15:13</h2>
-                <h2>Joueur 2   21:50</h2>
-                <h2>Joueur 3   23:25</h2>
-                <h2>Joueur 4   25:32</h2>
-                <h2>Joueur 5   30:23</h2>
+                <?php 
+                echo("<br />");
+                echo("<br />");
+                echo("<br />");
+                    try { 
+                        //connection a la base de donnée
+                        $con = new PDO("pgsql:host=$host; port=5432; dbname=$db; user=$user; password=$pass")
+                        or die ("Could not connect to server\n");
+
+                        $sqlClasssement = "Select nickname, score FROM USERS order by score limit 5";
+                        foreach  ($con->query($sqlClasssement) as $row) {    
+                            echo($row['nickname']);
+                            echo("  :  ");
+                            echo($row['score']);
+                            echo("<br />");
+                            echo("<br />");
+                            echo("<br />");
+                            
+                        }
+
+                        $con = null;
+                    }
+
+                    catch(PDOException $e){
+                        echo $e->getMessage();
+                        }
+                    ?>
             </div>
         </section>
     </section>

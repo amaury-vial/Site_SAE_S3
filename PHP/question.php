@@ -2,6 +2,7 @@
 
 date_default_timezone_set('Europe/Paris');
 
+
 $host = "lucky.db.elephantsql.com";
 $user = "xpirrwid";
 $pass = "LkhxflJA_GDQQI_nqpkJBIbFBc955fiL";
@@ -15,29 +16,24 @@ try {
     or die ("Could not connect to server\n");
 
     //recup des variable du formulaire
-    $idQues =$_POST["Numéro Question"];
+    $idQues =$_POST["numque"];
     $question =$_POST["question"];
     $reponse =$_POST["réponse"];
     $indice =$_POST["Indice"];
     $consigne =$_POST["Consigne"];
 
-
-    $sqlModificationQuestion = "UPDATE Question set TXT='$consigne', TITLE='$question', SUGGESTION='$indice', SOLUTION='$reponse' WHERE $idQues==Q_ID";
+    $sqlModificationQuestion = "UPDATE Question SET TXT='$consigne', TITLE='$question', SUGGESTION='$indice', SOLUTION='$reponse' WHERE Q_ID = $idQues";
 
     if ($con->query($sqlModificationQuestion) == TRUE) {
-        echo "Question mise a jour";
-        sleep(10);
-        header("location:../HTML/pageAdmin.html");
+        header("location:pageAdmin.php");
         exit;
     } else {
         echo "Error: " . $sqlModificationQuestion . "<br>" . $con->error;
-    }
-        
+    }   
     $con = null;
 }
 
 catch(PDOException $e){
     echo $e->getMessage();
     }
-  
 ?>

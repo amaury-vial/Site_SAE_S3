@@ -16,43 +16,37 @@ try {
 
 
     //recup des variable du formulaire
-    $pseudo =$_POST["pseudo"];
-    $adr =$_POST["adr"];
-    $password =$_POST["password"];
+    $pseudo = $_POST["pseudo"];
+    $adr = $_POST["adr"];
+    $password = $_POST["password"];
 
-    $sqlCheckUser = "SELECT EMAIL, NICKNAME ID_USER FROM USERS"; //requete pour recup tout les users
+    $sqlCheckUser = "SELECT EMAIL, NICKNAME, ID_USER FROM USERS"; //requete pour recup tout les users
     $check = true;
-    $id = 1;
-
+    $id = 0;
+    
     foreach  ($con->query($sqlCheckUser) as $row) {    //on check si le user existe deja
-        if ($pseudo == $row['nickname'] || $adr == $row['email'] ){
+        if ($pseudo == $row['nickname'] || $adr == $row['email'] ){    
             $check = false;
         }
-        if($id<$row['id_user']){
+        if($id < $row['id_user']){
             $id = $row['id_user'];
         }
     }
-
-
-
+    ++$id;
     //si il n'exite pas on le cree
     if($check == true){
         $sqlNewUser = "INSERT INTO USERS (ID_USER, EMAIL, NICKNAME, PASSWORD)
-            VALUES ($id,'$adr', '$pseudo', '$password')";  // requete pour insert le new user
-
+            VALUES ($id,'$adr', '$pseudo' ,'$password')";  // requete pour insert le new user
         if ($con->query($sqlNewUser) == TRUE) {
-            echo "Compte crée ";
-            echo "lien pour telecharger le jeu";
+            header("location: ../index.html");
+            exit;
         } else {
             echo "Error: " . $sqlNewUser . "<br>" . $con->error;
         }
     
-
     }else{//aussi non on lui affiche ce msg
         echo "mail ou pseudo deja utilisé";
     }
-        
-   
     $con = null;
 }
 
