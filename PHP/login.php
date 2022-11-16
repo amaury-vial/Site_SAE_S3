@@ -48,12 +48,13 @@ try {
             exit;
         }
         else{
-            header("location:../index.html");
+            header("location:../HTML/pageDl.html");
             exit;
         }
 
     }else{
-        echo "mail, pseudo ou mdp faux";
+        header("location:../index.html");
+        exit;
     }
         
    
