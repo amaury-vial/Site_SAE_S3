@@ -38,14 +38,15 @@ try {
         $sqlNewUser = "INSERT INTO USERS (ID_USER, EMAIL, NICKNAME, PASSWORD)
             VALUES ($id,'$adr', '$pseudo' ,'$password')";  // requete pour insert le new user
         if ($con->query($sqlNewUser) == TRUE) {
-            header("location: ../index.html");
+            header("location: ../HTML/pageDl.html");
             exit;
         } else {
             echo "Error: " . $sqlNewUser . "<br>" . $con->error;
         }
     
     }else{//aussi non on lui affiche ce msg
-        echo "mail ou pseudo deja utilisé";
+        header("location: ../index.html");
+        exit;
     }
     $con = null;
 }
