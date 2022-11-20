@@ -39,7 +39,7 @@ $db = "xpirrwid";
         <form method="post" action="question.php">
             <h1><p>Modifier une question :</p></h1>
             <div>
-            <label><p>No Question :</p></label><input type="number", name="numque" max="10" min="0" size="1em" required="required"/>
+            <label><p>No Question :</p></label><input type="number", name="numque" max="10" min="1" size="1em" required="required"/>
             </div>
             <label><p>Question :</p></label><input type="text" name="question" required="required"/>
             <p>Consigne</p>
@@ -61,17 +61,18 @@ $db = "xpirrwid";
                         $con = new PDO("pgsql:host=$host; port=5432; dbname=$db; user=$user; password=$pass")
                         or die ("Could not connect to server\n");
 
-                        $sqlClasssement = "Select nickname, score FROM USERS order by score limit 5";
-                        foreach  ($con->query($sqlClasssement) as $row) {    
-                            echo($row['nickname']);
-                            echo("  :  ");
-                            echo($row['score']);
-                            echo("<br />");
-                            echo("<br />");
-                            echo("<br />");
-                            
+                        $sqlClassement = "Select nickname, score FROM USERS order by score DESC limit 5";
+                        $sth = $con->prepare($sqlClassement);
+                        $sth->execute();
+                        $classement = array();
+                        while($row = $sth->fetch()){
+                            echo($row["nickname"]);
+                            echo(" : ");
+                            echo($row["score"]);
+                            echo("<br/>");
+                            echo("<br/>");
+                            echo("<br/>");
                         }
-
                         $con = null;
                     }
 

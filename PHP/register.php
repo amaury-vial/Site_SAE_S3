@@ -23,8 +23,11 @@ try {
     $sqlCheckUser = "SELECT EMAIL, NICKNAME, ID_USER FROM USERS"; //requete pour recup tout les users
     $check = true;
     $id = 0;
-    
-    foreach  ($con->query($sqlCheckUser) as $row) {    //on check si le user existe deja
+
+    $sth = $con->prepare($sqlCheckUser);
+    $sth -> execute();
+
+   while($row = $sth -> fetch()) {    //on check si le user existe deja
         if ($pseudo == $row['nickname'] || $adr == $row['email'] ){    
             $check = false;
         }
@@ -37,13 +40,12 @@ try {
     if($check == true){
         $sqlNewUser = "INSERT INTO USERS (ID_USER, EMAIL, NICKNAME, PASSWORD)
             VALUES ($id,'$adr', '$pseudo' ,'$password')";  // requete pour insert le new user
-        if ($con->query($sqlNewUser) == TRUE) {
-            header("location: ../HTML/pageDl.html");
-            exit;
-        } else {
-            echo "Error: " . $sqlNewUser . "<br>" . $con->error;
-        }
-    
+        $sth = $con->prepare($sqlNewUser);
+        $sth -> execute();
+        
+        header("location: ../HTML/pageDl.html");
+        exit;
+        
     }else{//aussi non on lui affiche ce msg
         header("location: ../index.html");
         exit;

@@ -19,30 +19,39 @@ try {
     $adr =$_POST["adr"];
     $password =$_POST["password"];
 
-    $sqlCheckUser = "SELECT EMAIL, NICKNAME, ID_USER, PASSWORD FROM USERS"; //requete pour recup tout les users
+    //requete sql pour vérifier si le info de l'utilisteur existe
+    $sqlCheckUser = "SELECT EMAIL, NICKNAME, ID_USER, PASSWORD FROM USERS";
     $check = false;
-
     $IdUser = 0;
 
-    foreach  ($con->query($sqlCheckUser) as $row) {    //on check si le user existe deja
+    // On utilise les fonction prepra et execute de la class PDO pour eviter les injection sql 
+    $sth = $con->prepare($sqlCheckUser);
+    $sth -> execute();
+
+    //On verifie qu'il est bien dans la base de donnée
+    while  ($row = $sth->fetch()) {  
         if ($pseudo == $row['nickname'] && $adr == $row['email'] && $password == $row['password']){
             $check = true;
             $IdUser = $row['id_user'];
         }
     }
 
-    //si il n'exite pas on le cree
+    // si il exite ...
     if($check == true){
 
+        //on check si c'est un admin
         $checkAdmin = false;
         $sqlIsAdmin = "SELECT ID_USER FROM ADMIN";
+        $sth = $con->prepare($sqlIsAdmin);
+        $sth -> execute();
 
-        foreach  ($con->query($sqlIsAdmin) as $row) {    //on check si le user existe deja
+        while  ($row = $sth->fetch()) {    
             if ($IdUser ==  $row['id_user']){
                 $checkAdmin = true;
             }
         }
 
+        // en fooncyion si c'est un admin ou pas on le redirige vers une page
         if (true == $checkAdmin){
             header("location:pageAdmin.php");
             exit;

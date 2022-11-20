@@ -23,13 +23,12 @@ try {
     $consigne =$_POST["Consigne"];
 
     $sqlModificationQuestion = "UPDATE Question SET TXT='$consigne', TITLE='$question', SUGGESTION='$indice', SOLUTION='$reponse' WHERE Q_ID = $idQues";
+    $sth = $con->prepare($sqlModificationQuestion);
+    $sth -> execute();
 
-    if ($con->query($sqlModificationQuestion) == TRUE) {
-        header("location:pageAdmin.php");
-        exit;
-    } else {
-        echo "Error: " . $sqlModificationQuestion . "<br>" . $con->error;
-    }   
+    header("location:pageAdmin.php");
+    exit;
+     
     $con = null;
 }
 
