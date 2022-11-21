@@ -61,7 +61,7 @@ $db = "xpirrwid";
                         $con = new PDO("pgsql:host=$host; port=5432; dbname=$db; user=$user; password=$pass")
                         or die ("Could not connect to server\n");
 
-                        $sqlClassement = "Select nickname, score FROM USERS order by score DESC limit 5";
+                        $sqlClassement = "Select nickname, score FROM USERS where score is not null order by score DESC limit 5";
                         $sth = $con->prepare($sqlClassement);
                         $sth->execute();
                         $classement = array();
