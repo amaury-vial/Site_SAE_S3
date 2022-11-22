@@ -5,6 +5,7 @@ date_default_timezone_set('Europe/Paris');
 $host = "lucky.db.elephantsql.com";
 $user = "xpirrwid";
 $pass = "LkhxflJA_GDQQI_nqpkJBIbFBc955fiL";
+$pass_login = "$2y$10$3OtqRbdAhpLy9Et4q0z2Q.gBcmNDiqHYEP/ToBYYAMvsOFseJvsna"; // Hash du mot de pass de connexion
 $db = "xpirrwid";
 
 
@@ -19,39 +20,31 @@ try {
     $adr =$_POST["adr"];
     $password =$_POST["password"];
 
-    //requete sql pour vérifier si le info de l'utilisteur existe
-    $sqlCheckUser = "SELECT EMAIL, NICKNAME, ID_USER, PASSWORD FROM USERS";
+    $sqlCheckUser = "SELECT EMAIL, NICKNAME, ID_USER, PASSWORD FROM USERS"; //requete pour recup tout les users
     $check = false;
+    // $password == $row['password']
+
     $IdUser = 0;
 
-    // On utilise les fonction prepra et execute de la class PDO pour eviter les injection sql 
-    $sth = $con->prepare($sqlCheckUser);
-    $sth -> execute();
-
-    //On verifie qu'il est bien dans la base de donnée
-    while  ($row = $sth->fetch()) {  
-        if ($pseudo == $row['nickname'] && $adr == $row['email'] && $password == $row['password']){
+    foreach  ($con->query($sqlCheckUser) as $row) {    //on check si le user existe deja
+        if ($pseudo == $row['nickname'] && $adr == $row['email'] && password_verify($row['password'],$pass_login)){ // on vérifie que le mdp est correct avec le mdp et le hash
             $check = true;
             $IdUser = $row['id_user'];
         }
     }
 
-    // si il exite ...
+    //si il n'exite pas on le cree
     if($check == true){
 
-        //on check si c'est un admin
         $checkAdmin = false;
         $sqlIsAdmin = "SELECT ID_USER FROM ADMIN";
-        $sth = $con->prepare($sqlIsAdmin);
-        $sth -> execute();
 
-        while  ($row = $sth->fetch()) {    
+        foreach  ($con->query($sqlIsAdmin) as $row) {    //on check si le user existe deja
             if ($IdUser ==  $row['id_user']){
                 $checkAdmin = true;
             }
         }
 
-        // en fooncyion si c'est un admin ou pas on le redirige vers une page
         if (true == $checkAdmin){
             header("location:pageAdmin.php");
             exit;
