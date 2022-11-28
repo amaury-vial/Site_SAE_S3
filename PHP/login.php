@@ -17,17 +17,20 @@ try {
 
     //recup des variable du formulaire
     $pseudo =$_POST["pseudo"];
-    $adr =$_POST["adr"];
-    $password =$_POST["password"];
+    $password =$_POST["password"]; //$password = hash("sha256", $password.$pseudo);
+    
+    
 
     $sqlCheckUser = "SELECT EMAIL, NICKNAME, ID_USER, PASSWORD FROM USERS"; //requete pour recup tout les users
     $check = false;
-    // $password == $row['password']
+    $sth = $con->prepare($sqlCheckUser);
+    $sth -> execute();
 
     $IdUser = 0;
 
-    foreach  ($con->query($sqlCheckUser) as $row) {    //on check si le user existe deja
-        if ($pseudo == $row['nickname'] && $adr == $row['email'] && password_verify($row['password'],$pass_login)){ // on vérifie que le mdp est correct avec le mdp et le hash
+    while($row = $sth -> fetch()) {    //on check si le user existe deja
+        if ($pseudo == $row['nickname']  && $password == $row['password']){
+        //if ($pseudo == $row['nickname'] && $password == $row['password']){ // on vérifie que le mdp est correct avec le mdp et le hash
             $check = true;
             $IdUser = $row['id_user'];
         }
@@ -38,8 +41,10 @@ try {
 
         $checkAdmin = false;
         $sqlIsAdmin = "SELECT ID_USER FROM ADMIN";
+        $sth = $con->prepare($sqlIsAdmin);
+        $sth -> execute();
 
-        foreach  ($con->query($sqlIsAdmin) as $row) {    //on check si le user existe deja
+        while($row = $sth -> fetch()) {    //on check si le user existe deja
             if ($IdUser ==  $row['id_user']){
                 $checkAdmin = true;
             }
@@ -51,7 +56,7 @@ try {
         }
         else{
             header("location:../HTML/pageDl.html");
-            exit;
+            exit; 
         }
 
     }else{
@@ -59,7 +64,6 @@ try {
         exit;
     }
         
-   
     $con = null;
 }
 

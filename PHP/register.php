@@ -18,7 +18,10 @@ try {
     //recup des variable du formulaire
     $pseudo = $_POST["pseudo"];
     $adr = $_POST["adr"];
-    $password = $_POST["password"];
+    $password = $_POST["password"]; //$password = hash("sha256", $password.$pseudo);
+    
+   
+
 
     $sqlCheckUser = "SELECT EMAIL, NICKNAME, ID_USER FROM USERS"; //requete pour recup tout les users
     $check = true;
@@ -46,9 +49,12 @@ try {
         header("location: ../HTML/pageDl.html");
         exit;
         
+        
     }else{//aussi non on lui affiche ce msg
+        
         header("location: ../index.html");
         exit;
+        
     }
     $con = null;
 }
