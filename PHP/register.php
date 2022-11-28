@@ -7,7 +7,6 @@ $user = "xpirrwid";
 $pass = "LkhxflJA_GDQQI_nqpkJBIbFBc955fiL";
 $db = "xpirrwid";
 
-
 try {
     
     //connection a la base de donnée
@@ -20,8 +19,6 @@ try {
     $adr = $_POST["adr"];
     $password = $_POST["password"]; //$password = hash("sha256", $password.$pseudo);
     
-   
-
 
     $sqlCheckUser = "SELECT EMAIL, NICKNAME, ID_USER FROM USERS"; //requete pour recup tout les users
     $check = true;
@@ -39,6 +36,7 @@ try {
         }
     }
     ++$id;
+    
     //si il n'exite pas on le cree
     if($check == true){
         $sqlNewUser = "INSERT INTO USERS (ID_USER, EMAIL, NICKNAME, PASSWORD)
