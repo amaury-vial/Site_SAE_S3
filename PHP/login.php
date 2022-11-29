@@ -17,7 +17,7 @@ try {
 
     //recup des variable du formulaire
     $pseudo =$_POST["pseudo"];
-    $password = hash("sha256", $password.$pseudo);
+    $password = hash("sha256", $_POST["password"].$pseudo);
     
     
 
