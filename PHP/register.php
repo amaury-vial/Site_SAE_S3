@@ -18,7 +18,7 @@ try {
     $pseudo = $_POST["pseudo"];
     $adr = $_POST["adr"];
     //$password = $_POST["password"]; 
-    $password = hash("sha256", $password.$pseudo);
+    $password = hash("sha256", $_POST["password"].$pseudo);
     
 
     $sqlCheckUser = "SELECT EMAIL, NICKNAME, ID_USER FROM USERS"; //requete pour recup tout les users
