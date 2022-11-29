@@ -17,7 +17,7 @@ try {
 
     //recup des variable du formulaire
     $pseudo =$_POST["pseudo"];
-    $password =$_POST["password"]; //$password = hash("sha256", $password.$pseudo);
+    $password = hash("sha256", $password.$pseudo);
     
     
 
@@ -29,8 +29,7 @@ try {
     $IdUser = 0;
 
     while($row = $sth -> fetch()) {    //on check si le user existe deja
-        if ($pseudo == $row['nickname']  && $password == $row['password']){
-        //if ($pseudo == $row['nickname'] && $password == $row['password']){ // on vérifie que le mdp est correct avec le mdp et le hash
+        if ($pseudo == $row['nickname'] && $password == $row['password']){ // on vérifie que le mdp est correct avec le mdp et le hash
             $check = true;
             $IdUser = $row['id_user'];
         }
