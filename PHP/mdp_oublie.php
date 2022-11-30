@@ -32,8 +32,38 @@ $mail->setFrom("findthebreach.noreply@gmail.com");
 //Enable HTML
 $mail->isHTML(true);
 
+$token = rand(1000, 9999);
+
+date_default_timezone_set('Europe/Paris');
+
+
+$host = "lucky.db.elephantsql.com";
+$user = "xpirrwid";
+$pass = "LkhxflJA_GDQQI_nqpkJBIbFBc955fiL";
+$db = "xpirrwid";
+
+
+try {
+    
+    //connection a la base de donnée
+    $con = new PDO("pgsql:host=$host; port=5432; dbname=$db; user=$user; password=$pass")
+    or die ("Could not connect to server\n");
+
+    //recup des variable du formulaire
+
+    $mail2 = $_POST["mail"];
+    $sqlModificationQuestion = "insert into recup_mdp values ($token, $mail2)";
+    $sth = $con->prepare($sqlModificationQuestion);
+    $sth -> execute();
+
+    $con = null;
+}
+catch(PDOException $e){
+    echo $e->getMessage();
+}
+
 //Email body
-$mail->Body = "VOICI UN MAIL !!";
+$mail->Body = "token".strval($token);
 //Add recipient
 $mail_dest = $_POST["mail"];
 $mail->addAddress($mail_dest);
@@ -45,4 +75,6 @@ if ( $mail->send() ) {
 }
 //Closing smtp connection
 $mail->smtpClose();
+header("location: ../HTML/pageRecupMdp.html");
+exit;
 ?>
