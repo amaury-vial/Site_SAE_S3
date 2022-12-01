@@ -55,7 +55,7 @@ echo "Problème d'envoie";
 }
 //Closing smtp connection
 $mail->smtpClose();
-header("location: ../HTML/pageRecupMdp.html");
+header("location: ../HTML/pageTokenMdp.html");
 exit;
 
 
