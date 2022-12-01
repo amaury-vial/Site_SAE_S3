@@ -1,5 +1,6 @@
 <?php 
-require ("bdcon.php");
+require ("bdcon.php");// on require la page pour ce connecter a la bd 
+
 ?>
 
 <!doctype html>
@@ -49,10 +50,12 @@ require ("bdcon.php");
             echo("<br />");
             echo("<br />");
             echo("<br />");
-                    $sqlClassement = "Select nickname, score FROM USERS where score is not null order by score DESC limit 5";
+                    
+                    $sqlClassement = "Select nickname, score FROM USERS where score is not null order by score DESC limit 5";// requete pour recuperer le classement 
                     $sth = $con->prepare($sqlClassement);
                     $sth->execute();
-                    $classement = array();
+
+                    //on affichage le classement
                     while($row = $sth->fetch()){
                         echo($row["nickname"]);
                         echo(" : ");
@@ -61,7 +64,7 @@ require ("bdcon.php");
                         echo("<br/>");
                         echo("<br/>");
                     }
-                ?>
+            ?>
         </div>
     </section>
 </section>
@@ -69,6 +72,4 @@ require ("bdcon.php");
     ben le footer
 </footer>
 </body>
-
-
 </html>

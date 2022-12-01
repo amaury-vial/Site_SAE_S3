@@ -1,44 +1,43 @@
 <?php
 
-require ("bdcon.php");
+require ("bdcon.php");// on require la page pour ce connecter a la bd
 
 //recup des variable du formulaire
 $pseudo = $_POST["pseudo"];
 $adr = $_POST["adr"];
 $password = hash("sha256", $_POST["password"].$pseudo);
 
-$sqlCheckUser = "SELECT EMAIL, NICKNAME, ID_USER FROM USERS"; //requete pour recup tout les users
-$check = true;
-$id = 0;
-
+//requete pour recuperer les user et leurs infos
+$sqlCheckUser = "SELECT EMAIL, NICKNAME, ID_USER FROM USERS";
 $sth = $con->prepare($sqlCheckUser);
 $sth -> execute();
 
+$check = true; //pour vérifier qu'il n'exister pas deja
+$id = 0;
+
 while($row = $sth -> fetch()) {    //on check si le user existe deja
     if ($pseudo == $row['nickname'] || $adr == $row['email'] ){    
-        $check = false;
+        $check = false;//si il y a le pseudo ou l'email existe deja on check a false
     }
-    if($id < $row['id_user']){
+
+    if($id < $row['id_user']){// on recuper l'id max
         $id = $row['id_user'];
     }
 }
+
 ++$id;
 
-//si il n'exite pas on le cree
-if($check == true){
+if($check){
+
     $sqlNewUser = "INSERT INTO USERS (ID_USER, EMAIL, NICKNAME, PASSWORD)
-        VALUES ($id,'$adr', '$pseudo' ,'$password')";  // requete pour insert le new user
+        VALUES ($id,'$adr', '$pseudo' ,'$password')";//on ajoute l'user dans la BD
     $sth = $con->prepare($sqlNewUser);
     $sth -> execute();
     
-    header("location: ../HTML/pageDl.html");
+    header("location: ../HTML/pageDl.html");//redirection vers la page pour telecharger le jeux
     exit;
     
-    
-}else{//aussi non on lui affiche ce msg
-    
+}else{//si il n'exite pas on le redirige vers l'index
     header("location: ../index.html");
     exit;
-    
 }
-
