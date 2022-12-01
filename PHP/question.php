@@ -2,7 +2,6 @@
 
 require ("bdcon.php");
 
-
 //recup des variable du formulaire
 $idQues =$_POST["numque"];
 $question =$_POST["question"];
@@ -17,3 +16,4 @@ $sth -> execute();
 header("location:pageAdmin.php");
 exit;
     
+?>

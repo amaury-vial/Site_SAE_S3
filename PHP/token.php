@@ -13,7 +13,7 @@ if($row['mail'] == $mail && $row['token'] == $token){
     header("location: ../HTML/recupMotDePasse.html");
     exit;
 }else{
-    echo("token invalide")
+    echo("token invalide");
 }
 
 ?>

@@ -5,10 +5,19 @@ require '../phpmailer/includes/Exception.php';
 require '../phpmailer/includes/SMTP.php';
 require '../phpmailer/includes/PHPMailer.php';
 require ("bdcon.php");
+
 //Define name spaces
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
+
+$token = rand(1000, 9999);
+$mail_dest = $_POST["mail"];
+
+//recup des variable du formulaire
+$sql = "insert into recup_mdp values ($token, '$mail_dest')";
+$sth = $con->prepare($sql);
+$sth -> execute();
 
 //Create instance of PHPMailer
 $mail = new PHPMailer();
@@ -33,20 +42,10 @@ $mail->setFrom("findthebreach.noreply@gmail.com");
 //Enable HTML
 $mail->isHTML(true);
 
-$token = rand(1000, 9999);
-
-//recup des variable du formulaire
-
-$mail2 = $_POST["mail"];
-$sqlModificationQuestion = "insert into recup_mdp values ($token, $mail2)";
-$sth = $con->prepare($sqlModificationQuestion);
-$sth -> execute();
-
-
 //Email body
-$mail->Body = "token".strval($token);
+$mail->Body = "Token : ".strval($token);
 //Add recipient
-$mail_dest = $_POST["mail"];
+
 $mail->addAddress($mail_dest);
 //Finally send email
 if ( $mail->send() ) {
@@ -58,4 +57,6 @@ echo "Problème d'envoie";
 $mail->smtpClose();
 header("location: ../HTML/pageRecupMdp.html");
 exit;
+
+
 ?>
