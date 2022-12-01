@@ -1,17 +1,20 @@
 <?php
 
-//Include required PHPMailer files
+// On inclus les fichiers du répertoire PHPMAILER pour les utiliser affin d'envoyer des mails 
 require '../phpmailer/includes/Exception.php';
 require '../phpmailer/includes/SMTP.php';
 require '../phpmailer/includes/PHPMailer.php';
 require ("bdcon.php");
 
-//Define name spaces
+// On définit nom des espaces 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
+
+// On génère un nombre aléatoire a 4 chiffres 
 $token = rand(1000, 9999);
+// Le mail est envoyé a $_POST["mail"] qui récupère le mail inscrit dans le champ qui se trouve dans la page du mot de passe oublié
 $mail_dest = $_POST["mail"];
 
 //recup des variable du formulaire
@@ -19,44 +22,58 @@ $sql = "insert into recup_mdp values ($token, '$mail_dest')";
 $sth = $con->prepare($sql);
 $sth -> execute();
 
-//Create instance of PHPMailer
+// On crée uns instance de PHPMailer 
 $mail = new PHPMailer();
-//Set mailer to use smtp
+
+// On utilise le serveur mail SMTP
 $mail->isSMTP();
-//Define smtp host
+
+// On définit l'hôte smtp (dans notre cas GMAIL)
 $mail->Host = "smtp.gmail.com";
-//Enable smtp authentication
+
+// On active l'authentification SMTP
 $mail->SMTPAuth = true;
-//Set smtp encryption type (ssl/tls)
+
+// On utilise l'encryptage de type tls (Transport Layer Security)
 $mail->SMTPSecure = "tls";
-//Port to connect smtp
+
+// On se connecte sur le port 587 qui est un port sécurité
 $mail->Port = "587";
-//Set gmail username
+
+// On donne l'utilisateur à savoir le login du compte GMAIL
 $mail->Username = "findthebreach.noreply@gmail.com";
-//Set gmail password
+
+// On donne le mot de passe qui à été généré dans la partie sécurité du compte GMAIL
 $mail->Password = "bpghsngrhhjqnznl";
-//Email subject
-$mail->Subject = "Test email using PHPMailer";
-//Set sender email
+
+// Le sujet de l'email
+$mail->Subject = "Récupération de mot de passe FindTheBreach";
+
+// La personne qui envoie l'email 
 $mail->setFrom("findthebreach.noreply@gmail.com");
-//Enable HTML
+
+// On active le format HTML (On peu utiliser la synthaxe HTML a savoir les balises dans le corps du mail et celui-ci sera reconnu)
 $mail->isHTML(true);
 
-//Email body
-$mail->Body = "Token : ".strval($token);
-//Add recipient
+// Le corps du mail a savoir le token qui est généré aléatoirement 
+$mail->Body = "Votre Token de récupération :\n ".strval($token);
 
+
+// On ajoute l'adresse mail du destinataire
 $mail->addAddress($mail_dest);
-//Finally send email
+
+// Enfin on envoie le mail
 if ( $mail->send() ) {
-echo "Envoyé !";
+    // Si aucun problème n'est rencontré on va a la page du Token
+    header("location: ../HTML/pageTokenMdp.html");
+    exit;
 }else{
-echo "Problème d'envoie";
+    // Sinon on va à la page du mot de passe oublié
+    header("location: ../HTML/motDePasseOublie.html");
 }
-//Closing smtp connection
+
+// On ferme la connexion SMTP au compte GMAIL
 $mail->smtpClose();
-header("location: ../HTML/pageTokenMdp.html");
-exit;
 
 
 ?>
