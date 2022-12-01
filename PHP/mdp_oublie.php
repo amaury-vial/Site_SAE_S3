@@ -4,6 +4,7 @@
 require '../phpmailer/includes/Exception.php';
 require '../phpmailer/includes/SMTP.php';
 require '../phpmailer/includes/PHPMailer.php';
+require ("bdcon.php");
 //Define name spaces
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
@@ -34,33 +35,13 @@ $mail->isHTML(true);
 
 $token = rand(1000, 9999);
 
-date_default_timezone_set('Europe/Paris');
+//recup des variable du formulaire
 
+$mail2 = $_POST["mail"];
+$sqlModificationQuestion = "insert into recup_mdp values ($token, $mail2)";
+$sth = $con->prepare($sqlModificationQuestion);
+$sth -> execute();
 
-$host = "lucky.db.elephantsql.com";
-$user = "xpirrwid";
-$pass = "LkhxflJA_GDQQI_nqpkJBIbFBc955fiL";
-$db = "xpirrwid";
-
-
-try {
-    
-    //connection a la base de donnée
-    $con = new PDO("pgsql:host=$host; port=5432; dbname=$db; user=$user; password=$pass")
-    or die ("Could not connect to server\n");
-
-    //recup des variable du formulaire
-
-    $mail2 = $_POST["mail"];
-    $sqlModificationQuestion = "insert into recup_mdp values ($token, $mail2)";
-    $sth = $con->prepare($sqlModificationQuestion);
-    $sth -> execute();
-
-    $con = null;
-}
-catch(PDOException $e){
-    echo $e->getMessage();
-}
 
 //Email body
 $mail->Body = "token".strval($token);
@@ -69,9 +50,9 @@ $mail_dest = $_POST["mail"];
 $mail->addAddress($mail_dest);
 //Finally send email
 if ( $mail->send() ) {
-    echo "Envoyé !";
+echo "Envoyé !";
 }else{
-    echo "Problème d'envoie";
+echo "Problème d'envoie";
 }
 //Closing smtp connection
 $mail->smtpClose();
