@@ -1,19 +1,15 @@
-<!doctype html>
-<html lang="fr">
+<html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>
-        Find the breach
-    </title>
-    <link rel="stylesheet" href="CSS/StyleIndex.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="CSS/StyleIndex.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js"> </script>
+  <script src="JS/index.js" defer></script>
+  <title>FindTheBreach</title>
 </head>
 
 <body>
-
-    <!-- HEADER !-->
 
     <header>
         <a href="index.html">
@@ -26,89 +22,52 @@
         </a>
     </header>
 
-
-    <section>
-
-        <!-- LOGIN !-->
-
-        <div class="formulaire">
-            <h1>
-                Log In
-            </h1>
-
-            <form method="post" action="PHP/login.php">
-                <label>
-                     Pseudo
-                </label>
-                <input type="text" name="pseudo" required="required">
-
-                <label>
-                    Mot de passe
-                </label>
-                
-                <input type="password" name="password" required="required">
-                <br>
-                <input type="submit" value="Valider" class="Boutton_Valider">
-
-                <a href="HTML/pageRegister.html">
-                    <p>
-                        Register
-                    </p>
-                </a>
-
-                <a href="HTML/motDePasseOublie.html">
-                    <p>
-                        mot de passe oublie
-                    </p>
-                </a>
-            </form>
-        </div>
-
-    </section>
-
-
-    <div class="description">
-        <section>
-            <h2>
-                Internet n’est pas le seul réseau. Il existe un autre réseau plus performant. Je ne t’apprendrais rien en te disant qu’Internet a été crée par l’armée Américaine dans un but militaire. Internet n’était que le prototype. Un autre réseau a été créé pour les militaires. Complètement indépendant d’Internet. Tirant des leçons du premier réseau, le petit frère d’Internet est devenue un grand frère<br>
-                <br>
-            </h2>
-                
-           
-            <img src="IMAGE/logo.png" alt="IMG 1">
-               
-            
-        </section>
-        <br>
-        <section>
-
-            <img src="IMAGE/logo.png" alt="IMG 2">
-
-            <h2>
-                Internet n’est pas le seul réseau. Il existe un autre réseau plus performant. Je ne t’apprendrais rien en te disant qu’Internet a été crée par l’armée Américaine dans un but militaire. Internet n’était que le prototype. Un autre réseau a été créé pour les militaires. Complètement indépendant d’Internet. Tirant des leçons du premier réseau, le petit frère d’Internet est devenue un grand frère<br>
-            </h2>
-                
-            
-        </section>
-        <br>
-        <section>
-
-            <h2>
-                Internet n’est pas le seul réseau. Il existe un autre réseau plus performant. Je ne t’apprendrais rien en te disant qu’Internet a été crée par l’armée Américaine dans un but militaire. Internet n’était que le prototype. Un autre réseau a été créé pour les militaires. Complètement indépendant d’Internet. Tirant des leçons du premier réseau, le petit frère d’Internet est devenue un grand frère<br>
-                <br>
-            </h2>
-
-            
-            <img src="IMAGE/logo.png" alt="IMG 3">
-
-        </section>
+    <!-- LOGO -->
+  <div class="container">
+    <div class="Logo">
+      <i class="fas fa-user"></i>
     </div>
 
+    <!-- CONNEXION -->
+    <div class="tab-body" data-id="connexion">
+      <form method="post" action="PHP/login.php">
+        <div class="row">
+          <i class="far fa-user"></i>
+          <input type="text" class="input" placeholder="Pseudo" name="pseudo">
+        </div>
+        <div class="row">
+          <i class="fas fa-lock"></i>
+          <input type="password" class="input" placeholder= "Mot de Passe" name="password">
+        </div>
+        <a href="HTML/motDePasseOublie.html" class="link">Mot de passe oublié ?</a>
+        <input type="submit" value="connexion" class="btn">
+      </form>
+    </div>
 
-    <footer>
-        <p>@Team SAE S3 - Tout Droit Réserver - Toutes donnée risque d'être vendu</p>
-    </footer>
+    <!-- INSCRIPTION -->
+    <div class="tab-body" data-id="inscription">
+        <form method="post" action="PHP/register.php">
+        <div class="row">
+          <i class="far fa-user"></i>
+          <input type="text" class="input" placeholder="Pseudo" name="pseudo" maxlength="10">
+        </div>
+        <div class="row">
+          <i class="far fa-envelope"></i>
+          <input type="email" class="input" placeholder= "Email" name="adr">
+        </div>
+        <div class="row">
+          <i class="fas fa-lock"></i>
+          <input type="password" class="input" placeholder= "Mot de Passe" name="password" minlength="12">
+        </div>
+        <input type="submit" value="Inscription" class="btn">
+      </form>
+    </div>
 
+    <div class="tab-footer">
+      <a class="tab-link active" data-ref="connexion" href="javascript:void(0)">Connexion</a>
+      <a class="tab-link" data-ref="inscription" href="javascript:void(0)">Inscription</a>
+    </div>
+  </div>
 </body>
 
 </html>
