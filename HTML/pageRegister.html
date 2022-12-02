@@ -7,28 +7,27 @@
     <link rel="stylesheet" href="../CSS/StyleRegister.css">
     <title>Register</title>
 </head>
-<header>
-    <a href="index.html">
-        <img class="Logo" src="../IMAGE/FindTheReach.png">
-    </a>
-
-    <a class="Title" href="../index.html">
-        <p>Find The Breach</p>
-    </a>
-
-</header>
 <body>
+    <header>
+        <a href="index.html">
+            <img class="Logo" src="../IMAGE/FindTheReach.png" alt="logo">
+        </a>
+
+        <a class="Title" href="../index.html">
+            <p>Find The Breach</p>
+        </a>
+    </header>
     <section>
         <div class="formulaire">
-            <h1><p>Register</p></h1>
+            <h1>Register</h1>
             <form method="post" action="../PHP/register.php">
-                <label><p>Adresse Mail :</p></label>
-                <input type="email", name="adr", required="required"/>
-                <label><p>Pseudo</p></label>
-                <input type="text" name="pseudo", required="required", maxlength="12"/>
-                <label><p>Mot de passe</p></label>
-                <input type="password" name="password", minlength="8"/>
-                <br/>
+                <label>Adresse Mail :</label>
+                <input type="email" name="adr" required="required">
+                <label>Pseudo</label>
+                <input type="text" name="pseudo" required="required" maxlength="12">
+                <label>Mot de passe</label>
+                <input type="password" name="password" minlength="8">
+                <br>
                 <input type="submit" value="Valider" class="Boutton_Valider">
             </form>
         </div>

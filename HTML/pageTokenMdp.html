@@ -10,7 +10,7 @@
 <body>
     <header>
         <a href="../index.html">
-            <img class="Logo" src="../IMAGE/FindTheReach.png">
+            <img class="Logo" src="../IMAGE/FindTheReach.png" alt="logo Find the Breach">
         </a>
     
         <a class="Title" href="../index.html">
@@ -21,20 +21,20 @@
     <section>
         <div class="formulaire">
             <h1>
-                <p>Mot de Passe Oublié</p>
+                Mot de Passe Oublié
             </h1>
             <form method="post" action="../PHP/token.php">
-                <label><p>token</p></label>
-                <input type="int" name="token", required="required"/>
+                <label>token</label>
+                <input type="number" name="token" required="required">
                 <br>
-                <label><p>eMail</p></label>
-                <input type="email" name="mail", required="required"/>
+                <label>eMail</label>
+                <input type="email" name="mail" required="required">
                 <br>
-                <label><p>mot de passe</p></label>
-                <input type="password" name="mdp", required="required"/>
+                <label>mot de passe</label>
+                <input type="password" name="mdp" required="required">
                 <br>
-                <label><p>corfirmer mot de passe</p></label>
-                <input type="password" name="mdpConfirmer", required="required"/>
+                <label>corfirmer mot de passe</label>
+                <input type="password" name="mdpConfirmer" required="required">
                 <br>
                 <input type="submit" value="Valider" class="Boutton_Valider">
             </form>
