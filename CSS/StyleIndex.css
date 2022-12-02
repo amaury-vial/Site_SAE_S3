@@ -4,7 +4,6 @@
   box-sizing: border-box;
 }
 
-
 header{
     padding: 10px;
     display: flex;
@@ -12,9 +11,9 @@ header{
     justify-content: space-around;
 }
 
-.Logo{
-    width: 20%;
-    height: 20%;
+.logo{
+  position: static;
+  width: 10em;
 }
 
 .Title{
@@ -29,10 +28,6 @@ header{
     color:darkblue;
 }
 
-
-
-
-
 body {
   margin: 0;
   display: flex;
@@ -40,7 +35,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #7aacef;
+  background-color: #7f95e4;
 }
 
 .container {
@@ -56,7 +51,7 @@ body {
   font-family: "Quicksand", sans-serif;
 }
 
-.logo {
+.icone {
   position: absolute;
   top: 2%;
   left: 50%;
@@ -65,7 +60,7 @@ body {
   height: 55px;
   border-radius: 50%;
   font-size: 1.8em;
-  background-color: #6ba1f9;
+  background-color: #7f95e4;
   color: #f0f6fb;
   display: flex;
   justify-content: center;
@@ -85,6 +80,7 @@ body {
   box-shadow: 0px 5px 10px #7c8395;
   border-radius: 30px;
   font-size: 1rem;
+
 }
 .tab-body.active {
   display: block;
@@ -93,7 +89,7 @@ body {
 .row {
   display: flex;
   justify-content: space-between;
-  border-bottom: 1px solid #82ade6de;
+  border-bottom: 1px solid #7f95e4;
   padding: 1.8% 0;
   margin: 20px 0;
 }
@@ -102,11 +98,11 @@ body {
   width: 90%;
   border: none;
   outline: none;
-  color: #82ade6de;
+  color: #7f95e4;
   font-weight: 550;
 }
 .input::placeholder {
-  color: #82ade6ad;
+  color: #7f95e4;
 }
 
 .link {
@@ -129,7 +125,7 @@ body {
   width: 120px;
   height: 45px;
   border-radius: 50px;
-  background-color: #6ba1f9;
+  background-color: #7f95e4;
   border: none;
   outline: none;
   color: #fff;
@@ -147,7 +143,7 @@ body {
 
 .tab-link {
   text-decoration: none;
-  color: #6ba1f9ee;
+  color: #7f95e4;
   margin: 0 3%;
 }
 
