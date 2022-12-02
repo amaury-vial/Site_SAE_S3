@@ -4,7 +4,7 @@
 require '../phpmailer/includes/Exception.php';
 require '../phpmailer/includes/SMTP.php';
 require '../phpmailer/includes/PHPMailer.php';
-require ("bdcon.php");
+require 'bdcon.php';
 
 // On définit nom des espaces 
 use PHPMailer\PHPMailer\PHPMailer;
@@ -22,8 +22,12 @@ $sql = "insert into recup_mdp values ($token, '$mail_dest')";
 $sth = $con->prepare($sql);
 $sth -> execute();
 
+
 // On crée uns instance de PHPMailer 
 $mail = new PHPMailer();
+
+// Encodage UTF-8 pour les accents...
+$mail->CharSet = 'UTF-8';
 
 // On utilise le serveur mail SMTP
 $mail->isSMTP();
@@ -47,7 +51,7 @@ $mail->Username = "findthebreach.noreply@gmail.com";
 $mail->Password = "bpghsngrhhjqnznl";
 
 // Le sujet de l'email
-$mail->Subject = "Récupération de mot de passe FindTheBreach";
+$mail->Subject = "Récupération de mot de passe FindTheBreach ";
 
 // La personne qui envoie l'email 
 $mail->setFrom("findthebreach.noreply@gmail.com");
@@ -74,6 +78,5 @@ if ( $mail->send() ) {
 
 // On ferme la connexion SMTP au compte GMAIL
 $mail->smtpClose();
-
 
 ?>

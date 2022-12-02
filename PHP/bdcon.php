@@ -1,7 +1,6 @@
 <?php
 date_default_timezone_set('Europe/Paris');
 
-
 //id pour la connexion a la base de donnée
 $host = "lucky.db.elephantsql.com"; //nom host
 $user = "xpirrwid"; //nom user
