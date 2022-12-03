@@ -1,4 +1,20 @@
 .corp{
     display: flex;
     flex-direction: row;
+    justify-content: space-around;
+}
+
+.LeaderBord{
+    margin-left: 10%;
+    position: relative;
+    height: auto;
+    background-color: #f0f6fb;
+    padding: 15px 25px;
+    border-radius: 10px;
+    font-size: 18px;
+    font-family: "Quicksand", sans-serif;
+}
+
+.joueur{
+    
 }
