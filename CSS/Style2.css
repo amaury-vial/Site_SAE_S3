@@ -1,0 +1,4 @@
+.corp{
+    display: flex;
+    flex-direction: row;
+}
