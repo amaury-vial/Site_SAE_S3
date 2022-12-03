@@ -89,8 +89,3 @@ function afficherClassement(){
 </body>
 
 </html>
-
-<i class="fa-sharp fa-solid fa-text"></i>
-<i class="fa-regular fa-lightbulb"></i>
-<i class="fa-regular fa-hashtag"></i>
-<i class="fa-solid fa-question"></i>
