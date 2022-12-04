@@ -44,6 +44,11 @@ function afficherClassement(){
                 Find The Breach
             </p>
         </a>
+        <a class="connexionHeader" href="#">
+          <p>
+              Connexion
+          </p>
+        </a>
     </header>
 
     <!-- LOGO -->
@@ -53,20 +58,21 @@ function afficherClassement(){
     <div class="tab-body" data-id="Question">
         <h1>Modifier une question</h1>
         <form method="post" action="question.php">
-            <label>No Question : </label><input type="number" name="numque" max="10" min="1" size="1em" required="required"/>
-            <br>
-            <br>
-            <label>Question : </label><input type="text" name="question" required="required"/>
-            <p>Consigne : </p>
-            <textarea name="Consigne" rows="5" cols="80"  required="required" aria-required="true" style="height: 30%; width: 100%;" ></textarea>
-            <br>
-            <br>
-            <label>Réponse : </label><input type="text" name="réponse" required="required"/>
-            <br>
-            <br>
-            <label>Indice : </label><input type="text" name="Indice" required="required"/>
-            <br>
-            <br>
+            <div class="row">
+                <input type="number" class="input" placeholder="Num Question" name="numque" max="10" min="1" size="1em" required="required"/>
+            </div>
+            <div class="row">
+                <input type="text" class="input" placeholder="Question" name="question" required="required"/>
+            </div>
+            <div class="row">
+                <textarea name="Consigne" rows="5" cols="80"  class="input" placeholder="Consigne" required="required" aria-required="true" style="height: 30%; width: 100%;" ></textarea>
+            </div>
+            <div class="row">
+                <input type="text"  class="input" placeholder="Réponse" name="réponse" required="required"/>
+            </div>
+            <div class="row">
+                <input type="text" class="input" placeholder="Indice" name="Indice" required="required"/>
+            </div>
             <input type="submit" value="Valider" class="btn">
         </form>
     </div>

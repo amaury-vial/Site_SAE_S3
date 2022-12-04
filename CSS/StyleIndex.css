@@ -1,19 +1,32 @@
 @import url("https://fonts.googleapis.com/css?family=Quicksand&display=swap");
 
-* {
-  box-sizing: border-box;
+
+body {
+  display: flex;
+  flex-direction: column;
+  /*justify-content: center;*/
+  /*align-items: center;*/
+  /*height: 100vh;*/
+  background-color: #7f95e4;
 }
 
+
 header{
-    padding: 10px;
+    background-color: rgb(0, 0, 0);
+    margin-bottom: 5%;/**/
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;/**/
+    align-items: center;/**/
+    justify-content: space-between;/**/
+    height: 10em;/**/
+
 }
 
 .logo{
+  margin-left: 30%;/**/
   position: static;
-  width: 10em;
+  width: 7em;/**/
 }
 
 .Title{
@@ -28,17 +41,25 @@ header{
     color:darkblue;
 }
 
-body {
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: #7f95e4;
+.connexionHeader{/**/
+    margin-right: 3%;
+    text-decoration: none;
+    font-weight: bolder ;
+    font-size: 180%;
+    font-family: sans-serif;
+    color: white;
 }
 
+.connexionHeader:hover{/**/
+  color:darkblue;
+}
+
+
 .container {
+  display: flex;/**/
+  align-self: center;/**/
+  justify-content: center;/**/
+  align-items: center;/**/
   position: relative;
   width: 30%;
   height: auto;
@@ -65,11 +86,13 @@ body {
   align-items: center;
 }
 
+
+
 .tab-body {
   position: relative;
   display: none;
   height: auto;
-  width: auto;
+  width: 75%;/**/
   padding: 15% 5%;
   margin-top: 20%;
   background-color: #fff;
@@ -159,6 +182,5 @@ body {
     width: 100%;
     padding: 15% 5%;
     margin-top: 25%;
-    /*max-height: 420px;*/
   }
 }
