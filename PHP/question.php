@@ -15,7 +15,7 @@ $sqlModificationQuestion = "UPDATE Question SET TXT='$consigne', TITLE='$questio
 $sth = $con->prepare($sqlModificationQuestion);
 $sth -> execute();
 
-header("location:pageAdmin.php");//redirection vers la page admin
+header("location: pageAdmin.php");//redirection vers la page admin
 exit;
     
 ?>

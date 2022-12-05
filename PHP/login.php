@@ -40,15 +40,15 @@ if($check){
     }
 
     if ($checkAdmin){
-        header("location:pageAdmin.php");// redirection vers la page admin
+        header("location: pageAdmin.php");// redirection vers la page admin
         exit;
     }else{
-        header("location:../HTML/pageDl.html");// redirectin vers la page pour telecharger le jeux
+        header("location:../index.html");// redirectin vers la page pour telecharger le jeux
         exit; 
     }
 
 }else{
-    header("location:../index.html");// si l'utilisateur n'exsite pas on le redirige vers l'index
+    header("location:../HTML/pageConnection.html");
     exit;
 }
 ?>

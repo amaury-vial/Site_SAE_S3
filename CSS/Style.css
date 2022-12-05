@@ -1,0 +1,188 @@
+@import url("https://fonts.googleapis.com/css?family=Quicksand&display=swap");
+
+/*ajout de nils sur le css a check si c'est bon de part tout*/
+
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  /*justify-content: center;*/
+  /*align-items: center;*/
+  /*height: 100vh;*/
+  background-color: #7f95e4;
+  
+}
+
+header{
+    background-color: rgb(0, 0, 0);
+    margin-bottom: 5%;/**/
+    display: flex;
+    align-items: center;
+    justify-content: center;/**/
+    align-items: center;/**/
+    justify-content: space-between;/**/
+    height: 10em;/**/
+
+}
+
+.logo{
+  margin-left: 30%;/**/
+  position: static;
+  width: 7em;/**/
+}
+
+.Title{
+    text-decoration: none;
+    font-weight: bolder ;
+    font-size: 180%;
+    font-family: sans-serif;
+    color: white;
+}
+
+.Title:hover{
+    color:darkblue;
+}
+
+.connexionHeader{/**/
+    margin-right: 3%;
+    text-decoration: none;
+    font-weight: bolder ;
+    font-size: 180%;
+    font-family: sans-serif;
+    color: white;
+}
+
+.connexionHeader:hover{/**/
+  color:darkblue;
+}
+
+
+.container {
+  display: flex;/**/
+  align-self: center;/**/
+  justify-content: center;/**/
+  align-items: center;/**/
+  position: relative;
+  width: 30%;
+  height: auto;
+  background-color: #f0f6fb;
+  padding: 15px 25px;
+  border-radius: 10px;
+  font-size: 18px;
+  font-family: "Quicksand", sans-serif;
+}
+
+.icone {
+  position: absolute;
+  top: 2%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  font-size: 1.8em;
+  background-color: #7f95e4;
+  color: #f0f6fb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+.tab-body {
+  position: relative;
+  display: none;
+  height: auto;
+  width: 75%;/**/
+  padding: 15% 5%;
+  margin-top: 20%;
+  background-color: #fff;
+  color: #82ade6de;
+  box-shadow: 0px 5px 10px #7c8395;
+  border-radius: 30px;
+  font-size: 1rem;
+}
+
+.tab-body.active {
+  display: block;
+  margin-bottom: 20%;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #7f95e4;
+  padding: 1.8% 0;
+  margin: 20px 0;
+}
+
+.row .input {
+  width: 90%;
+  border: none;
+  outline: none;
+  color: #7f95e4;
+  font-weight: 550;
+}
+.input::placeholder {
+  color: #7f95e4;
+}
+
+.link {
+  display: inline-block;
+  font-size: 0.8em;
+  width: 100%;
+  text-decoration: none;
+  color: #2b384f;
+  text-align: right;
+}
+.link:hover {
+  text-decoration: underline;
+}
+
+.btn {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, 50%);
+  width: 120px;
+  height: 45px;
+  border-radius: 50px;
+  background-color: #7f95e4;
+  border: none;
+  outline: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+.tab-footer {
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  height: 30px;
+  display: flex;
+}
+
+.tab-link {
+  text-decoration: none;
+  color: #7f95e4;
+  margin: 0 3%;
+}
+
+.tab-link.active {
+  font-weight: bold;
+}
+
+@media screen and (max-width: 520px) {
+  .container {
+    width: 80%;
+    min-width: 380px;
+    min-height: 490px;
+  }
+  .tab-body {
+    width: 100%;
+    padding: 15% 5%;
+    margin-top: 25%;
+  }
+}

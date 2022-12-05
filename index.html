@@ -1,11 +1,9 @@
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="CSS/StyleIndex.css">
-  <script src="https://kit.fontawesome.com/a076d05399.js"> </script>
-  <script src="JS/index.js" defer></script>
+  <link rel="stylesheet" href="CSS/Style.css">
   <title>FindTheBreach</title>
 </head>
 
@@ -19,66 +17,48 @@
         <a class="Title" href="index.html">
             <p>Find The Breach</p>
         </a>
-        <a class="connexionHeader" href="#">
+        <a class="connexionHeader" href="HTML/pageConnection.html">
           <p>
-              Connexion
+              Connection
           </p>
-      </a>
-
+        </a>
     </header>
 
-    <!-- LOGO -->
-  <div class="container">
-    <div class="icone">
-      <i class="fas fa-user"></i>
+    <a href="#">
+        <img class="logoTelechargement" src="IMAGE/logo.png" alt="IMG FindTheBreach">
+    </a>
+
+    <div class = "scenario">
+        <h1>Notre application vous permet de progresser en réseau de manière ludique !</h1><br><br>
+        <h1>Scénario :</h1>
+          <p>  Vous êtes un étudiant en informatique et vous venez de trouver une signature<br>
+            laissée par un groupe de hacker. Votre mission est de les retrouver afin de<br>
+            les dénoncer à la police.
+            </p><br>
     </div>
 
-    <!-- CONNEXION -->
-    <div class="tab-body" data-id="connexion">
-      <form method="post" action="PHP/login.php">
-        <div class="row">
-          <i class="far fa-user"></i>
-          <input type="text" class="input" placeholder="Pseudo" name="pseudo">
+    <div class = "explivation">
+        <h1>Comment fonctionne <br> l'application ?</h1>
+        <div class = "txt">
+            <img class="iconJava" src="IMAGE/practice_button.png" alt="icon pratice"><br>
+            <p>Dans un première partie vous allez apprendre les<br>
+                éléments nécéssaire à votre recherche. Vous serez<br>
+                guidés à l'aide de questions et de consignes.<br>
+                N'hésitez pas à utiliser votre navigateur internet<br>
+                pour trouver les solutions.
+                </p>
+            
         </div>
-        <div class="row">
-          <i class="fas fa-lock"></i>
-          <input type="password" class="input" placeholder= "Mot de Passe" name="password">
+        <br>
+        <div class = "txt">
+            <p>Dans un première partie vous allez apprendre les<br>
+            éléments nécéssaire à votre recherche. Vous serez<br>
+            guidés à l'aide de questions et de consignes.<br>
+            N'hésitez pas à utiliser votre navigateur internet<br>
+            pour trouver les solutions.</p><br>
+
+            <img class="iconJava" src="IMAGE/play_button.png" alt="icon jouer">
         </div>
-
-        <!-- MOT DE PASSE OUBLIE -->
-
-        <a href="HTML/motDePasseOublie.html" class="link">Mot de passe oublié ?</a>
-
-        <!-- BOUTTON CONNEXION-->
-
-        <input type="submit" value="Connexion" class="btn">
-      </form>
     </div>
-
-    <!-- INSCRIPTION -->
-    <div class="tab-body" data-id="inscription">
-        <form method="post" action="PHP/register.php">
-        <div class="row">
-          <i class="far fa-user"></i>
-          <input type="text" class="input" placeholder="Pseudo" name="pseudo" maxlength="10">
-        </div>
-        <div class="row">
-          <i class="far fa-envelope"></i>
-          <input type="email" class="input" placeholder= "Email" name="adr">
-        </div>
-        <div class="row">
-          <i class="fas fa-lock"></i>
-          <input type="password" class="input" placeholder= "Mot de Passe" name="password" minlength="12">
-        </div>
-        <input type="submit" value="Inscription" class="btn">
-      </form>
-    </div>
-
-    <div class="tab-footer">
-      <a class="tab-link active" data-ref="connexion" href="javascript:void(0)">Connexion</a>
-      <a class="tab-link" data-ref="inscription" href="javascript:void(0)">Inscription</a>
-    </div>
-  </div>
 </body>
-
 </html>

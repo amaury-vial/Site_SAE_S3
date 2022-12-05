@@ -34,10 +34,9 @@ if($check){
     $sth = $con->prepare($sqlNewUser);
     $sth -> execute();
     
-    header("location: ../HTML/pageDl.html");//redirection vers la page pour telecharger le jeux
+    header("location: ../index.html");//redirection vers la page pour telecharger le jeux
     exit;
     
-}else{//si il n'exite pas on le redirige vers l'index
-    header("location: ../index.html");
-    exit;
 }
+header("location: ../HTML/pageConnection.html");
+exit;
