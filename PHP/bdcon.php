@@ -1,4 +1,6 @@
 <?php
+
+
 date_default_timezone_set('Europe/Paris');
 
 //id pour la connexion a la base de donnée
@@ -11,8 +13,9 @@ try {
     //connection a la base de donnée avec la classe PDO
     $con = new PDO("pgsql:host=$host; port=5432; dbname=$db; user=$user; password=$pass")
     or die ("Could not connect to server\n");
+}
 
-}catch(PDOException $e){
+catch(PDOException $e){
     echo $e->getMessage();
 }
 ?>

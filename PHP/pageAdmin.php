@@ -1,5 +1,13 @@
 <?php 
 
+session_start();
+
+
+if( $_SESSION['admin'] == false){
+    header("location:../index.html");
+    exit;
+}
+
 function afficherClassement(){
     require ("bdcon.php");// on require la page pour ce connecter a la bd
     $classement = "<br /><br />";

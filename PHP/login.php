@@ -1,6 +1,8 @@
 <?php
 require ("bdcon.php");// on require la page pour ce connecter a la bd 
 
+session_start();
+
 //recupération des variables du formulaire
 $pseudo =$_POST["pseudo"];
 $password = hash("sha256", $_POST["password"].$pseudo); //hashage du mot de passe avec du sel ( le pseudo )
@@ -36,9 +38,11 @@ if($check){
     while($row = $sth -> fetch()) {
         if ($IdUser ==  $row['id_user']){
             $checkAdmin = true;
+            break;
         }
     }
 
+    $_SESSION['admin'] = $checkAdmin;
     if ($checkAdmin){
         header("location: pageAdmin.php");// redirection vers la page admin
         exit;
