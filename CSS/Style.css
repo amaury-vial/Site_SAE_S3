@@ -1,6 +1,3 @@
-@import url("https://fonts.googleapis.com/css?family=Quicksand&display=swap");
-
-/*ajout de nils sur le css a check si c'est bon de part tout*/
 
 body {
   margin: 0;
@@ -174,15 +171,48 @@ header{
   font-weight: bold;
 }
 
-@media screen and (max-width: 520px) {
+@media screen and (max-width: 650px) {
+  
+  header{
+      background-color: rgb(0, 0, 0);
+      margin-bottom: 5%;/**/
+      display: flex;
+      align-items: center;
+      justify-content: center;/**/
+      align-items: center;/**/
+      justify-content: space-between;/**/
+      height: 10em;/**/
+
+  }
+
+  .logo{
+    margin-left: 5%;/**/
+    position: static;
+    width: 5em;/**/
+  }
+
+  .Title{
+      font-size: 120%;
+  }
+
+
+  .connexionHeader{/**/
+      margin-right: 2%;
+      font-size: 120%;
+  }
+
+
   .container {
     width: 80%;
-    min-width: 380px;
-    min-height: 490px;
   }
+
+
   .tab-body {
-    width: 100%;
-    padding: 15% 5%;
-    margin-top: 25%;
+    width: 90%;/**/
   }
-}
+
+  .tab-body.active {
+    margin-bottom: 30%;
+  }
+
+} 
