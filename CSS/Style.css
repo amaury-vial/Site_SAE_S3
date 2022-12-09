@@ -15,8 +15,6 @@ header{
     margin-bottom: 5%;/**/
     display: flex;
     align-items: center;
-    justify-content: center;/**/
-    align-items: center;/**/
     justify-content: space-between;/**/
     height: 10em;/**/
 
@@ -170,6 +168,20 @@ header{
 
 .tab-link.active {
   font-weight: bold;
+}
+
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.credits{
+    margin-right: 5%;
+}
+
+.footer_contact{
+    margin-left: 5%;
 }
 
 @media screen and (max-width: 650px) {

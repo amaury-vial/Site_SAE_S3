@@ -73,7 +73,7 @@ function afficherClassement(){
                 <input type="text" class="input" placeholder="Question" name="question" required="required"/>
             </div>
             <div class="row">
-                <textarea name="Consigne" rows="5" cols="80"  class="input" placeholder="Consigne" required="required" aria-required="true" style="height: 30%; width: 100%;" ></textarea>
+                <textarea name="Consigne" rows="5" cols="80"  class="input" placeholder="Consigne" required="required" aria-required="true" style="min-height: 30%;height: 30%; width: 100%;" ></textarea>
             </div>
             <div class="row">
                 <input type="text"  class="input" placeholder="Réponse" name="réponse" required="required"/>
