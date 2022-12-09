@@ -1,0 +1,39 @@
+#error_description{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-color: black;
+    border-style: solid;
+    border-radius: 50px;
+    margin-left: 15%;
+    margin-right: 15%;
+    background: white;
+}
+
+#text_error{
+    padding-left: 2%;
+    margin: 3%;
+    align-items: center;
+    font-size: 140%;
+    font-family: "Quicksand", sans-serif;
+    text-align: justify;
+}
+
+#error_img {
+    display: flex;
+    width: 60%;
+    justify-self: center;
+    align-items: center;
+}
+
+@media screen and (max-width: 650px) {
+    #error_description{
+        padding-top: 10%;
+        flex-direction: column;
+    }
+
+    #text_error{
+        font-size: 100%;
+    }
+}

@@ -42,13 +42,6 @@ h1{
   align-content: center;
 }
 
-.explication{
-  background-color: aqua;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
 
 .txt {
   text-align: end;

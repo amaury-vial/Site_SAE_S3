@@ -45,7 +45,7 @@ function afficherClassement(){
     <!-- HEADER -->
     <header>
         <a href="../index.html">
-            <img class="logo" src="../IMAGE/FindTheReach.png" alt="IMG FindTheBreach">
+            <img class="logo" src="../IMAGE/FindTheBreach.png" alt="IMG FindTheBreach">
         </a>
         <a class="Title" href="../index.html">
             <p>
