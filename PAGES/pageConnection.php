@@ -24,7 +24,7 @@ session_start();
             <p>Find The Breach</p>
         </a>
         <?php
-        if( $_SESSION['user'] == true){
+        if(!(sizeof($_SESSION)===0) && ($_SESSION['user'])){
             ?>
             <a class="connexionHeader" href="#">
                 <p>

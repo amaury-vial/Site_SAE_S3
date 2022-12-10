@@ -1,5 +1,4 @@
 <?php
-
 session_start();
 ?>
 
@@ -23,7 +22,7 @@ session_start();
             <p>Find The Breach</p>
         </a>
         <?php
-        if( $_SESSION['user'] == true){
+        if( !(sizeof($_SESSION)===0) && ($_SESSION['user'])){
             ?>
             <a class="connexionHeader" href="PAGES/pageConnection.php">
                 <p>
@@ -45,7 +44,7 @@ session_start();
     </header>
 
     <?php
-    if( $_SESSION['user'] == true){
+    if( !(sizeof($_SESSION)===0) && ($_SESSION['user'])){
         ?>
         <a href="https://google.com">
             <img class="logoTelechargement" src="IMAGE/logo.png" alt="IMG FindTheBreach">
