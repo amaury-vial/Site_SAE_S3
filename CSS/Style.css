@@ -172,16 +172,15 @@ header{
 
 footer{
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
-}
-
-.credits{
-    margin-right: 5%;
+    background-color: #2b384f;
+    font-size: 140%;
+    text-decoration: none;
 }
 
 .footer_contact{
-    margin-left: 5%;
+    text-decoration: none;
 }
 
 @media screen and (max-width: 650px) {
@@ -208,7 +207,6 @@ footer{
       font-size: 120%;
   }
 
-
   .connexionHeader{/**/
       margin-right: 2%;
       font-size: 120%;
@@ -218,7 +216,6 @@ footer{
   .container {
     width: 80%;
   }
-
 
   .tab-body {
     width: 90%;/**/

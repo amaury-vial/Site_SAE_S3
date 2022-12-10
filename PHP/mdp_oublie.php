@@ -56,7 +56,7 @@ $mail->Subject = "Récupération de mot de passe FindTheBreach ";
 // La personne qui envoie l'email 
 $mail->setFrom("findthebreach.noreply@gmail.com");
 
-// On active le format HTML (On peu utiliser la synthaxe HTML a savoir les balises dans le corps du mail et celui-ci sera reconnu)
+// On active le format PAGES (On peu utiliser la synthaxe PAGES a savoir les balises dans le corps du mail et celui-ci sera reconnu)
 $mail->isHTML(true);
 
 // Le corps du mail a savoir le token qui est généré aléatoirement 
@@ -69,11 +69,11 @@ $mail->addAddress($mail_dest);
 // Enfin on envoie le mail
 if ( $mail->send() ) {
     // Si aucun problème n'est rencontré on va a la page du Token
-    header("location: ../HTML/pageTokenMdp.html");
+    header("location: ../PAGES/pageTokenMdp.php");
     exit;
 }else{
     // Sinon on va à la page du mot de passe oublié
-    header("location: ../HTML/motDePasseOublie.html");
+    header("location: ../PAGES/motDePasseOublie.php");
 }
 
 // On ferme la connexion SMTP au compte GMAIL

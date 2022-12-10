@@ -23,9 +23,10 @@ while($row = $sth -> fetch()) {
     if ($pseudo == $row['nickname'] && $password == $row['password']){// on verifie que le pseudo correspond au mot de passe
         $check = true;// si l'user existe on met $check a true
         $IdUser = $row['id_user'];//on sauvegarde l'id de l'user qui se connecte
+        break;
     }
 }
-
+$_SESSION['user'] = $check;
 //on regarde si l'utilisateur est est un admin
 if($check){
 
@@ -44,15 +45,15 @@ if($check){
 
     $_SESSION['admin'] = $checkAdmin;
     if ($checkAdmin){
-        header("location: pageAdmin.php");// redirection vers la page admin
+        header("location: ../PAGES/pageAdmin.php");// redirection vers la page admin
         exit;
     }else{
-        header("location:../index.html");// redirectin vers la page pour telecharger le jeux
+        header("location:../index.php");// redirectin vers la page pour telecharger le jeux
         exit; 
     }
 
 }else{
-    header("location:../HTML/pageConnection.html");
+    header("location:../PAGES/pageConnection.php");
     exit;
 }
 ?>

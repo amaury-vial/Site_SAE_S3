@@ -34,7 +34,7 @@ function supprToken($email){//$email = email lier au compte pour modifier le mot
     $sth -> execute();
 
     //redirection vers index
-    header("location: ../index.html");
+    header("location: ../index.php");
     exit;
 }
 
@@ -52,11 +52,11 @@ while($row = $sth -> fetch()){// on boucle sur les token generer associé a l'em
         if($_POST['mdp'] ==  $_POST['mdpConfirmer']){// si les 2 mot de passe sont les meme
             nouveauMdp($_POST['mdp'], $mail);// on appele la fonction pour mettre a jour son mot de passe   
         }else{
-            header("location:../HTML/pageRecupMdp.html");
+            header("location:../PAGES/pageRecupMdp.php");
             exit;
         }       
     }
 }
-header("location:../HTML/pageRecupMdp.html");
+header("location:../PAGES/pageRecupMdp.php");
 exit;
 ?>
