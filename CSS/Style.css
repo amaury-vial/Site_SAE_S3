@@ -174,9 +174,12 @@ footer{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    background-color: #2b384f;
+    background-color: rgba(43, 56, 79, 0.37);
     font-size: 140%;
     text-decoration: none;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
 
 .footer_contact{

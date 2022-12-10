@@ -97,6 +97,12 @@ session_start();
       <a class="tab-link" data-ref="inscription" href="javascript:void(0)">Inscription</a>
     </div>
   </div>
+    <footer>
+        <p class="credits">Find the breach © 2022-2023</p>
+        <div class="footer_contact">
+            <a class="mailto" href="mailto:findthebreach.noreply@gmail.com">Send mail</a>
+        </div>
+    </footer>
 </body>
 
 </html>

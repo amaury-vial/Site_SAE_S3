@@ -32,7 +32,7 @@ function afficherClassement(){
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../CSS/Style.css">
-  <script src="https://kit.fontawesome.com/a076d05399.js"> </script>
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
   <script src="../JS/index.js" defer></script>
   <title>FindTheBreach</title>
 </head>
@@ -111,6 +111,12 @@ function afficherClassement(){
       <a class="tab-link" data-ref="Joueur" href="javascript:void(0)">Joueur</a>
     </div>
   </div>
+    <footer>
+        <p class="credits">Find the breach © 2022-2023</p>
+        <div class="footer_contact">
+            <a class="mailto" href="mailto:findthebreach.noreply@gmail.com">Send mail</a>
+        </div>
+    </footer>
 </body>
 
 </html>
