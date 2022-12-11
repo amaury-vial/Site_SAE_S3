@@ -13,9 +13,7 @@ session_start();
 </head>
 <body>
     <?php include("../FOOTER-HEADER/header.php") ?>
-
     <div class="container">
-
         <div class="tab-body" data-id="connexion">
             <form method="post" action="../PHP/token.php">
                 <div class="row">

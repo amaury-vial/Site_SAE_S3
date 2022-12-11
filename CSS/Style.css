@@ -60,7 +60,8 @@ header{
   justify-content: center;/**/
   align-items: center;/**/
   position: relative;
-  width: 30%;
+  min-width: 30%;/**/
+    width: auto;/**/
   height: auto;
   background-color: #f0f6fb;
   padding: 15px 25px;
@@ -91,7 +92,8 @@ header{
   position: relative;
   display: none;
   height: auto;
-  width: 75%;/**/
+  min-width: 75%;/**/
+    width: auto; /**/
   padding: 15% 5%;
   margin-top: 20%;
   background-color: #fff;
@@ -186,6 +188,7 @@ footer{
 .footer_contact{
     text-decoration: none;
 }
+
 
 @media screen and (max-width: 650px) {
   
