@@ -12,34 +12,7 @@ session_start();
   <title>FindTheBreach</title>
 </head>
 <body>
-    <header>
-        <a href="../index.php">
-            <img class="Logo" src="../IMAGE/FindTheBreach.png">
-        </a>
-    
-        <a class="Title" href="../index.php">
-            <p>Find The Breach</p>
-        </a>
-        <?php
-        if(!(sizeof($_SESSION)===0) && ($_SESSION['user'])){
-            ?>
-            <a class="connexionHeader" href="pageConnection.php">
-                <p>
-                    Connecté
-                </p>
-            </a>
-            <?php
-        }else{
-            ?>
-            <a class="connexionHeader" href="pageConnection.php">
-                <p>
-                    Connection
-                </p>
-            </a>
-            <?php
-        }
-        ?>
-    </header>
+    <?php include("../FOOTER-HEADER/header.php") ?>
 
     <div class="container">
 
@@ -62,5 +35,6 @@ session_start();
           <a class="tab-link active" data-ref="connexion" href="javascript:void(0)"></a>
         </div>
       </div>
+    <?php include("../FOOTER-HEADER/footer.php")?>
 </body>
 </html>

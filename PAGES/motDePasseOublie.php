@@ -15,35 +15,7 @@ session_start();
 
 <body>
     <!-- HEADER -->
-    <header>
-        <a href="../index.php">
-            <img class="logo" src="../IMAGE/FindTheBreach.png" alt="IMG FindTheBreach">
-        </a>
-        <a class="Title" href="../index.php">
-            <p>
-                Find The Breach
-            </p>
-        </a>
-        <?php
-        if(!(sizeof($_SESSION)===0) && ($_SESSION['user'])){
-            ?>
-            <a class="connexionHeader" href="pageConnection.php">
-                <p>
-                    Connecté
-                </p>
-            </a>
-            <?php
-        }else{
-            ?>
-            <a class="connexionHeader" href="pageConnection.php">
-                <p>
-                    Connection
-                </p>
-            </a>
-            <?php
-        }
-        ?>
-    </header>
+    <?php include("../FOOTER-HEADER/header.php") ?>
 
   <div class="container">
     
@@ -62,11 +34,6 @@ session_start();
       <a class="tab-link active" data-ref="mdpOublie" href="javascript:void(0)"></a>
     </div>
   </div>
-    <footer>
-        <p class="credits">Find the breach © 2022-2023</p>
-        <div class="footer_contact">
-            <a class="mailto" href="mailto:findthebreach.noreply@gmail.com">Send mail</a>
-        </div>
-    </footer>
+    <?php include("../FOOTER-HEADER/footer.php")?>
 </body>
 </html>

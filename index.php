@@ -93,11 +93,6 @@ session_start();
             <img class="iconJava" src="IMAGE/play_button.png" alt="icon jouer">
         </div>
     </div>
-    <footer>
-        <p class="credits">Find the breach © 2022-2023</p>
-        <div class="footer_contact">
-            <a class="mailto" href="mailto:findthebreach.noreply@gmail.com">Send mail</a>
-        </div>
-    </footer>
+    <?php include("FOOTER-HEADER/footer.php")?>
 </body>
 </html>

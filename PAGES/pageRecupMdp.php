@@ -12,15 +12,7 @@
 <body>
 
     <!-- HEADER -->
-    <header>
-        <a href="../index.php">
-            <img class="logo" src="../IMAGE/FindTheBreach.png" alt="IMG FindTheBreach">
-        </a>
-        <a class="Title" href="../index.php">
-            <p>Find The Breach</p>
-        </a>
-      
-    </header>
+    <?php include("../FOOTER-HEADER/header.php") ?>
 
     <!-- LOGO -->
   <div class="container">
@@ -46,11 +38,6 @@
       <a class="tab-link active" data-ref="connexion" href="javascript:void(0)"></a>
     </div>
   </div>
-    <footer>
-        <p class="credits">Find the breach © 2022-2023</p>
-        <div class="footer_contact">
-            <a class="mailto" href="mailto:findthebreach.noreply@gmail.com">Send mail</a>
-        </div>
-    </footer>
+    <?php include("../FOOTER-HEADER/footer.php")?>
 </body>
 </html>
