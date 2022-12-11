@@ -54,6 +54,7 @@ header{
 
 
 .container {
+    margin-bottom: 150px;
   display: flex;/**/
   align-self: center;/**/
   justify-content: center;/**/

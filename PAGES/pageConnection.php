@@ -45,11 +45,24 @@ session_start();
 
     </header>
 
-    <!-- LOGO -->
-  <div class="container">
-    <div class="icone">
-      <i class="fas fa-user"></i>
-    </div>
+    <div class="container">
+    <?php
+    if(!(sizeof($_SESSION)===0) && ($_SESSION['user'])){
+        ?>
+        <a href="../PHP/deco.php">
+            <div class="icone">
+                <i class="fas fa-user"></i>
+            </div>
+        </a>
+        <?php
+    }else{
+        ?>
+            <div class="icone">
+                <i class="fas fa-user"></i>
+            </div>
+        <?php
+    }
+    ?>
 
     <!-- CONNEXION -->
     <div class="tab-body" data-id="connexion">
