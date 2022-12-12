@@ -41,8 +41,8 @@
 
 
 ?>
-<html lang="en">
-
+<!DOCTYPE html>
+<html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -67,7 +67,7 @@
                     <h1>Modifier une question</h1>
                     <form method="post" action="../PHP/question.php">
                         <div class="row">
-                            <input type="number" class="input" placeholder="Num Question" name="numque" max="10" min="1" size="1em" required="required"/>
+                            <input type="number" class="input" placeholder="Num Question" name="numque" max="15" min="1" size="1em" required="required"/>
                         </div>
                         <div class="row">
                             <input type="text" class="input" placeholder="Question" name="question" required="required"/>
@@ -95,14 +95,14 @@
                 echo(afficherClassement());
                 ?>
             </div>
-            <h1>Recherche Joueur</h1>
+            <h1>Recherche Joueurs</h1>
             <div>
                 <form method="post" action="../PHP/recupScore.php">
                     <div class="row">
-                        <input type="text" class="input" placeholder="Nom" name="nom" size="1em" required="required"/>
+                        <input type="text" class="input" placeholder="Liste des noms (ex: Luca, Fred, Nils)" name="nom" size="1em" required="required"/>
                     </div>
                     <div class="row">
-                        <input type="text" class="input" placeholder="eMail" name="mail" required="required"/>
+                        <input type="text" class="input" placeholder="Votre eMail" name="mail" required="required"/>
                     </div>
                     <input type="submit" value="Valider" class="btn">
                 </form>

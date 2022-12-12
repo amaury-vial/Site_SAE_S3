@@ -1,7 +1,8 @@
 <?php
 session_start();
 ?>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="fr">
 
 <head>
   <meta charset="UTF-8">
@@ -21,7 +22,7 @@ session_start();
                 </div><div class="row">
                 <input type="email" name="mail" class="input" placeholder="eMail" required="required"/>
                 </div><div class="row">
-                <input type="password" name="mdp"class="input" placeholder="Mot de passe"  required="required"/>
+                <input type="password" name="mdp" class="input" placeholder="Mot de passe"  required="required"/>
                 </div><div class="row">
                 <input type="password" name="mdpConfirmer" class="input" placeholder="Confirmer mot de passe" required="required"/>
                 </div>

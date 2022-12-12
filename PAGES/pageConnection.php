@@ -2,12 +2,14 @@
 
 session_start();
 ?>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="fr">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../CSS/Style.css">
+  <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
   <script src="https://kit.fontawesome.com/a076d05399.js"> </script>
   <script src="../JS/index.js" defer></script>
   <title>FindTheBreach</title>
@@ -24,7 +26,7 @@ session_start();
         ?>
         <a href="../PHP/deco.php">
             <div class="icone">
-                <i class="fas fa-user"></i>
+            <i class="fas fa-power-off"></i>
             </div>
         </a>
         <?php
@@ -36,7 +38,6 @@ session_start();
         <?php
     }
     ?>
-
     <!-- CONNEXION -->
     <div class="tab-body" data-id="connexion">
       <form method="post" action="../PHP/login.php">
