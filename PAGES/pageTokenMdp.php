@@ -1,3 +1,5 @@
+<!--HTML W3C fait-->
+
 <?php
 session_start();
 ?>
@@ -18,18 +20,17 @@ session_start();
         <div class="tab-body" data-id="connexion">
             <form method="post" action="../PHP/token.php">
                 <div class="row">
-                <input type="number" name="token" class="input" placeholder="Token" required="required"/>
+                <input type="number" name="token" class="input" placeholder="Token" required="required">
                 </div><div class="row">
-                <input type="email" name="mail" class="input" placeholder="eMail" required="required"/>
+                <input type="email" name="mail" class="input" placeholder="eMail" required="required">
                 </div><div class="row">
-                <input type="password" name="mdp" class="input" placeholder="Mot de passe"  required="required"/>
+                <input type="password" name="mdp" class="input" placeholder="Mot de passe"  required="required">
                 </div><div class="row">
-                <input type="password" name="mdpConfirmer" class="input" placeholder="Confirmer mot de passe" required="required"/>
+                <input type="password" name="mdpConfirmer" class="input" placeholder="Confirmer mot de passe" required="required">
                 </div>
                 <input type="submit" value="Valider" class="btn">
             </form>
         </div>
-    
         <div class="tab-footer">
           <a class="tab-link active" data-ref="connexion" href="javascript:void(0)"></a>
         </div>

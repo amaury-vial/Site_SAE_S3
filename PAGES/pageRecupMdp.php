@@ -1,3 +1,5 @@
+<!--HTML W3C fait-->
+
 <!DOCTYPE html>
 <html lang="fr">
 

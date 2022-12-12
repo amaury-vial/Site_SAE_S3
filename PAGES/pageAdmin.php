@@ -1,3 +1,6 @@
+<!--HTML W3C fait-->
+
+
 <?php 
 
     session_start();
@@ -67,19 +70,19 @@
                     <h1>Modifier une question</h1>
                     <form method="post" action="../PHP/question.php">
                         <div class="row">
-                            <input type="number" class="input" placeholder="Num Question" name="numque" max="15" min="1" size="1em" required="required"/>
+                            <input type="number" class="input" placeholder="Num Question" name="numque" max="15" min="1" required="required">
                         </div>
                         <div class="row">
-                            <input type="text" class="input" placeholder="Question" name="question" required="required"/>
+                            <input type="text" class="input" placeholder="Question" name="question" required="required">
                         </div>
                         <div class="row">
-                            <textarea name="Consigne" rows="5" cols="80"  class="input" placeholder="Consigne" required="required" aria-required="true" style="min-height: 30%;height: 30%; width: 100%;" ></textarea>
+                            <textarea name="Consigne" rows="5" cols="80"  class="input" placeholder="Consigne" aria-required="true" style="min-height: 30%;height: 30%; width: 100%;" ></textarea>
                         </div>
                         <div class="row">
-                            <input type="text"  class="input" placeholder="Réponse" name="réponse" required="required"/>
+                            <input type="text"  class="input" placeholder="Réponse" name="réponse" required="required">
                         </div>
                         <div class="row">
-                            <textarea name="Indice" rows="5" cols="80"  class="input" placeholder="Indice" required="required" aria-required="true" style="min-height: 30%;height: 30%; width: 100%;" ></textarea>
+                            <textarea name="Indice" rows="5" cols="80"  class="input" placeholder="Indice" aria-required="true" style="min-height: 30%;height: 30%; width: 100%;" ></textarea>
                         </div>
                         <input type="submit" value="Valider" class="btn">
                     </form>
@@ -99,10 +102,10 @@
             <div>
                 <form method="post" action="../PHP/recupScore.php">
                     <div class="row">
-                        <input type="text" class="input" placeholder="Liste des noms (ex: Luca, Fred, Nils)" name="nom" size="1em" required="required"/>
+                        <input type="text" class="input" placeholder="Liste des noms (ex: Luca, Fred, Nils)" name="nom" required="required">
                     </div>
                     <div class="row">
-                        <input type="text" class="input" placeholder="Votre eMail" name="mail" required="required"/>
+                        <input type="text" class="input" placeholder="Votre eMail" name="mail" required="required">
                     </div>
                     <input type="submit" value="Valider" class="btn">
                 </form>

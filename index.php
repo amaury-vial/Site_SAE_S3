@@ -86,11 +86,12 @@ session_start();
         </div>
         <br>
         <div class = "txt2">
-            <p>Dans un première partie vous allez apprendre les<br>
-            éléments nécéssaire à votre recherche. Vous serez<br>
-            guidés à l'aide de questions et de consignes.<br>
-            N'hésitez pas à utiliser votre navigateur internet<br>
-            pour trouver les solutions.</p><br>
+            <p>Dans une seconde partie,  vous allez mettre en <br>
+            application ce que vous avez appris et bien plus ! <br>
+            Vous serez guidés à l'aide de questions et de consignes <br>
+            dans la traque des malfaiteurs. Vous pouvez ici aussi,<br>
+             vous aider de votre navigateur pour parvenir à trouver<br>
+              ces fameux hackers !</p><br>
 
             <img class="iconJava" src="IMAGE/play_button.png" alt="icon jouer">
         </div>

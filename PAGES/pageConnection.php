@@ -1,5 +1,7 @@
-<?php
+<!--HTML W3C fait-->
 
+
+<?php
 session_start();
 ?>
 <!DOCTYPE html>
@@ -86,5 +88,4 @@ session_start();
   </div>
     <?php include("../FOOTER-HEADER/footer.php")?>
 </body>
-
 </html>
