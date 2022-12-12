@@ -1,8 +1,7 @@
 <!--HTML W3C fait-->
 
-
 <?php 
-
+// PHP STAN 9
     session_start();
 
     if( $_SESSION['admin'] == false){
@@ -10,7 +9,7 @@
         exit;
     }
 
-    function afficherClassement(){
+    function afficherClassement():String{
         require("../PHP/bdcon.php");// on require la page pour ce connecter a la bd
         $classement = "<br /><br />";
 
@@ -27,7 +26,7 @@
         return $classement;
     }
 
-    function afficherQuestion(){
+    function afficherQuestion():String{
         require("../PHP/bdcon.php");// on require la page pour ce connecter a la bd
         $liste = "<br /><br />";
 

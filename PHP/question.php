@@ -1,5 +1,5 @@
 <?php
-
+// PHP STAN 9
 require ("bdcon.php");// on require la page pour ce connecter a la bd 
 
 //recup des variable du formulaire

@@ -1,5 +1,5 @@
 <?php
-
+// PHP STAN 9
 // On inclus les fichiers du répertoire PHPMAILER pour les utiliser affin d'envoyer des mails 
 require '../phpmailer/includes/Exception.php';
 require '../phpmailer/includes/SMTP.php';

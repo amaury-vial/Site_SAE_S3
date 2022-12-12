@@ -1,8 +1,10 @@
 <?php
+// PHP STAN 9
+
 require ("bdcon.php");// on require la page pour ce connecter a la bd
 
 // fonction pour modifier le mot de passe
-function nouveauMdp($mdp, $email){//$mdp = nouveau mot de passe     $email = email lier au compte pour modifier le mot de passe 
+function nouveauMdp(String $mdp, String $email): void{//$mdp = nouveau mot de passe     $email = email lier au compte pour modifier le mot de passe 
     
     require ("bdcon.php");// on require la page pour ce connecter a la bd
     
@@ -20,11 +22,10 @@ function nouveauMdp($mdp, $email){//$mdp = nouveau mot de passe     $email = ema
     $sql = "update users set password = '$mdp' where email='$email' and nickname='$nickname'";
     $sth = $con->prepare($sql);
     $sth -> execute();
-
-    supprToken($mail);    
+    supprToken($email);    
 }
 
-function supprToken($email){//$email = email lier au compte pour modifier le mot de passe 
+function supprToken(String $email): void{//$email = email lier au compte pour modifier le mot de passe 
     
     require ("bdcon.php");// on require la page pour ce connecter a la bd
 
@@ -32,7 +33,6 @@ function supprToken($email){//$email = email lier au compte pour modifier le mot
     $sql = "DELETE FROM recup_mdp WHERE email='$email'";
     $sth = $con->prepare($sql);
     $sth -> execute();
-
     //redirection vers index
     header("location: ../index.php");
     exit;

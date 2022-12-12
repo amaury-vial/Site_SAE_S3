@@ -1,6 +1,6 @@
 <?php
 
-
+// PHP STAN 9
 date_default_timezone_set('Europe/Paris');
 
 //id pour la connexion a la base de donnée

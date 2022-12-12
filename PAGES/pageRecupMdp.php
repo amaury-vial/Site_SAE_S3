@@ -1,5 +1,5 @@
 <!--HTML W3C fait-->
-
+<!--PHP STAN 9-->
 <!DOCTYPE html>
 <html lang="fr">
 

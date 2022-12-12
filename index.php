@@ -1,6 +1,6 @@
 <!--HTML W3C fait-->
 
-<?php
+<?php // PHP STAN 9
 session_start();
 ?>
 <!DOCTYPE html>
