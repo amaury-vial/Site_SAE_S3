@@ -19,8 +19,9 @@ $listsNom = explode(", ", $listsNom);
 $corpMail = "LISTE DES SCORE :";
 
 foreach ($listsNom as $nom){
-    $sql = "SELECT nickname, score FROM users WHERE nickname='$nom'";
+    $sql = "SELECT nickname, score FROM users WHERE nickname = :nom";
     $sth = $con->prepare($sql);
+    $sth->bindValue(':nom', $nom, PDO::PARAM_STR);
     $sth -> execute();
     $row = $sth -> fetch();
     $corpMail = $corpMail . $row['nickname'] . " : " . strval($row['score']) . " --- ";

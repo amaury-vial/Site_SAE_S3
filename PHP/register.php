@@ -28,13 +28,13 @@
 
     if($check){
         $sqlNewUser = "INSERT INTO USERS (ID_USER, EMAIL, NICKNAME, PASSWORD)
-            VALUES (:id,':adr', ':pseudo' ,':password')";//on ajoute l'user dans la BD
+            VALUES (:id, :adr, :pseudo, :password)";
         $sth = $con->prepare($sqlNewUser);
-        $sth -> bindValue(':adr', $adr, PDO::PARAM_STR);
-        $sth -> bindValue(':pseudo', $pseudo, PDO::PARAM_STR);
-        $sth -> bindValue(':password', $password, PDO::PARAM_STR);
-        $sth -> bindValue(':id', $id, PDO::PARAM_INT);
-        $sth -> execute();
+        $sth->bindValue(':id', $id, PDO::PARAM_INT);
+        $sth->bindValue(':adr', $adr, PDO::PARAM_STR);
+        $sth->bindValue(':pseudo', $pseudo, PDO::PARAM_STR);
+        $sth->bindValue(':password', $password, PDO::PARAM_STR);
+        $sth->execute();
         header("location: ../index.php");//redirection vers la page pour telecharger le jeux
         exit;
     }

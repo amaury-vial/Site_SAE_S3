@@ -9,17 +9,23 @@ function nouveauMdp(String $mdp, String $email): void{//$mdp = nouveau mot de pa
     require ("bdcon.php");// on require la page pour ce connecter a la bd
     
     //recuperation des pseudo pour le sel 
-    $sqlNickname = "select nickname from users where email = '$email'";
+    $sqlNickname = "select nickname from users where email = :email";
     $sth = $con->prepare($sqlNickname);
+    $sth->bindValue(':email', $email, PDO::PARAM_STR);
     $sth -> execute();
     $nickname = $sth -> fetch();
+
+
     $nickname = $nickname['nickname'];
 
     //hash du nouveau mot de passe
     $mdp = hash("sha256", $mdp.$nickname);
 
     //on met a jour le mot de passe
-    $sql = "update users set password = '$mdp' where email='$email' and nickname='$nickname'";
+    $sql = "update users set password = :mdp where email = :email and nickname = :nickname ";
+    $sth->bindValue(':mdp', $mdp, PDO::PARAM_STR);
+    $sth->bindValue(':email', $email, PDO::PARAM_STR);
+    $sth->bindValue(':nickname', $nickname, PDO::PARAM_STR);
     $sth = $con->prepare($sql);
     $sth -> execute();
     supprToken($email);    
@@ -30,8 +36,9 @@ function supprToken(String $email): void{//$email = email lier au compte pour mo
     require ("bdcon.php");// on require la page pour ce connecter a la bd
 
     //on supprimer tout les token gener pour l'adresse mail associée
-    $sql = "DELETE FROM recup_mdp WHERE email='$email'";
+    $sql = "DELETE FROM recup_mdp WHERE email= :email";
     $sth = $con->prepare($sql);
+    $sth->bindValue(':email', $email, PDO::PARAM_STR);
     $sth -> execute();
     //redirection vers index
     header("location: ../index.php");
@@ -43,8 +50,9 @@ $mail = $_POST['mail'];
 $token = $_POST['token'];
 
 //on recuper token 
-$sql = "select token from recup_mdp where email = '$mail'";
+$sql = "select token from recup_mdp where  email= :email";
 $sth = $con->prepare($sql);
+$sth->bindValue(':email', $mail, PDO::PARAM_STR);
 $sth -> execute();
 
 while($row = $sth -> fetch()){// on boucle sur les token generer associé a l'email

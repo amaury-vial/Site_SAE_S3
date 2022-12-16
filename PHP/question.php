@@ -11,8 +11,13 @@ $consigne = str_replace('\'','\'\'',$_POST["Consigne"]);
 
 
 //requete pour modifier les questions 
-$sqlModificationQuestion = "UPDATE Question SET TXT='$consigne', TITLE='$question', SUGGESTION='$indice', SOLUTION='$reponse' WHERE Q_ID = $idQues";
+$sqlModificationQuestion = "UPDATE Question SET TXT= :consigne , TITLE= :question , SUGGESTION= :indice, SOLUTION= :reponse WHERE Q_ID = :idQues";
 $sth = $con->prepare($sqlModificationQuestion);
+$sth->bindValue(':consigne', $consigne, PDO::PARAM_STR);
+$sth->bindValue(':question', $question, PDO::PARAM_STR);
+$sth->bindValue(':indice', $indice, PDO::PARAM_STR);
+$sth->bindValue(':reponse', $reponse, PDO::PARAM_STR);
+$sth->bindValue(':idQues', $idQues, PDO::PARAM_INT);
 $sth -> execute();
 
 header("location: pageAdmin.php");//redirection vers la page admin
