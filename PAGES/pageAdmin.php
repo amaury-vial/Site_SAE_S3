@@ -9,15 +9,22 @@
         exit;
     }
 
+    function maxid(){
+        require("../PHP/bdcon.php");
+        $sqlClassement = "Select MAX(q_id) FROM QUESTION";// requete pour recuperer le classement
+        $sth = $con->prepare($sqlClassement);
+        $sth->execute();
+        $row = $sth->fetch();
+        return "<input type='number' class='input' placeholder='Num Question' name='numque' min='1' max='". $row["max"] ."'required='required'>";
+    }
+
     function afficherClassement():String{
         require("../PHP/bdcon.php");// on require la page pour ce connecter a la bd
         $classement = "<br /><br />";
 
-
         $sqlClassement = "Select nickname, score FROM USERS where score is not null order by score DESC limit 5";// requete pour recuperer le classement
         $sth = $con->prepare($sqlClassement);
         $sth->execute();
-
 
         //on affichage le classement
         while($row = $sth->fetch()){
@@ -56,7 +63,7 @@
 </head>
 <body>
     <!-- HEADER -->
-    <?php include("../FOOTER-HEADER/header.php") ?>
+    <?php include("../FOOTER-HEADER/header.php");maxid();?>
 
     <div class="container">
         <div class="tab-body" data-id="Question">
@@ -69,7 +76,7 @@
                     <h1>Modifier une question</h1>
                     <form method="post" action="../PHP/question.php">
                         <div class="row">
-                            <input type="number" class="input" placeholder="Num Question" name="numque" max="15" min="1" required="required">
+                            <?php echo(maxid()) ?>
                         </div>
                         <div class="row">
                             <input type="text" class="input" placeholder="Question" name="question" required="required">
@@ -83,7 +90,32 @@
                         <div class="row">
                             <textarea name="Indice" rows="5" cols="80"  class="input" placeholder="Indice" aria-required="true" style="min-height: 30%;height: 30%; width: 100%;" ></textarea>
                         </div>
-                        <input type="submit" value="Valider" class="btn">
+                        <input type="submit" value="Valider">
+                    </form>
+                    <br>
+                    <h1>Ajouter une question</h1>
+                    <form method="post" action="../PHP/ajoutquestion.php">
+                        <div class="row">
+                            <input type="text" class="input" placeholder="Question" name="question" required="required">
+                        </div>
+                        <div class="row">
+                            <textarea name="Consigne" rows="5" cols="80"  class="input" placeholder="Consigne" aria-required="true" style="min-height: 30%;height: 30%; width: 100%;" ></textarea>
+                        </div>
+                        <div class="row">
+                            <input type="text"  class="input" placeholder="Réponse" name="réponse" required="required">
+                        </div>
+                        <div class="row">
+                            <textarea name="Indice" rows="5" cols="80"  class="input" placeholder="Indice" aria-required="true" style="min-height: 30%;height: 30%; width: 100%;" ></textarea>
+                        </div>
+                        <input type="submit" value="Valider">
+                    </form>
+                    <br>
+                    <h1>Supprimer une question</h1>
+                    <form method="post" action="../PHP/supprimerquestion.php">
+                        <div class="row">
+                            <?php echo(maxid()) ?>
+                        </div>
+                        <input type="submit" value="Valider">
                     </form>
                 </div>
             </div>
