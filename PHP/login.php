@@ -26,6 +26,7 @@ if ($pseudo == $row['nickname'] && $password == $row['password']){// on verifie 
 }
 
 $_SESSION['user'] = $check;
+
 //on regarde si l'utilisateur est est un admin
 if($check){
 
@@ -35,7 +36,7 @@ if($check){
     $sth->bindValue(':iduser', $IdUser, PDO::PARAM_INT);
 
     $sth -> execute();
-
+    $row = $sth -> fetch();
     //on regarde si il y a l'id de l'user dans la table admin
 
     if ($IdUser ==  $row['id_user']){
