@@ -20,16 +20,28 @@ $row = $sth -> fetch();
 $IdUser = 0;
 
 //on cerifie que l'utilisateur est bien dans la base de donnée
-if ($pseudo == $row['nickname'] && $password == $row['password']){// on verifie que le pseudo correspond au mot de passe
-    $check = true;// si l'user existe on met $check a true
-    $IdUser = intval($row['id_user']);//on sauvegarde l'id de l'user qui se connecte
+
+if ($pseudo == $row['nickname']){
+    if( $password == $row['password']) {// on verifie que le pseudo correspond au mot de passe
+        $check = true;// si l'user existe on met $check a true
+        $IdUser = intval($row['id_user']);//on sauvegarde l'id de l'user qui se connecte
+        $_SESSION['err'] = 0;
+    } else {
+        $_SESSION['err'] = 1;
+       header("location:../PAGES/pageConnection.php");
+    }
+} else {
+    $_SESSION['err'] = 2;
+     header("location:../PAGES/pageConnection.php");
 }
+
 
 $_SESSION['user'] = $check;
 
+
+
 //on regarde si l'utilisateur est est un admin
 if($check){
-
     $checkAdmin = false;
     $sqlIsAdmin = "SELECT ID_USER FROM ADMIN where id_user = :iduser";// on recupere les admins
     $sth = $con->prepare($sqlIsAdmin);

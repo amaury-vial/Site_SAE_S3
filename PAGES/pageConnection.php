@@ -50,7 +50,13 @@ session_start();
         <div class="row">
           <i class="fas fa-lock"></i>
           <input type="password" class="input" placeholder= "Mot de Passe" name="password">
+
         </div>
+          <?php
+          if($_SESSION['err'] == 1){
+              echo "<p style='color: red'> Utilisateur ou mot de passe incorrect</p>";
+          }
+          ?>
 
         <!-- MOT DE PASSE OUBLIE -->
 
@@ -61,6 +67,9 @@ session_start();
         <input type="submit" value="Connexion" class="btn">
       </form>
     </div>
+
+
+
 
     <!-- INSCRIPTION -->
     <div class="tab-body" data-id="inscription">
