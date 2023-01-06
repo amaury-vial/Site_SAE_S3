@@ -47,9 +47,9 @@ session_start();
     <?php
      if(isset($_SESSION['admin'])){
         ?>
-        <a href="PAGES/pageAdmin.php">
-            <p>Cliquez pour allez sur la page admin</p>
-        </a>
+            <a href="PAGES/pageAdmin.php" id = "pageAd">
+                <h2>Cliquez pour allez sur la page admin</h2>
+            </a>
         <?php
      }
     ?>

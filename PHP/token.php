@@ -67,4 +67,3 @@ while($row = $sth -> fetch()){// on boucle sur les token generer associé a l'em
 }
 header("location:../PAGES/pageRecupMdp.php");
 exit;
-?>

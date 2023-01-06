@@ -7,7 +7,6 @@ body {
   /*align-items: center;*/
   /*height: 100vh;*/
   background-color: #7f95e4;
-  
 }
 
 header{
@@ -161,6 +160,7 @@ header{
   transform: translate(-50%, 0);
   height: 30px;
   display: flex;
+  font-size: 150%;
 }
 
 .tab-link {

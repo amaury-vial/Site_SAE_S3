@@ -23,4 +23,3 @@ $sth -> execute();
 header("location: ../PAGES/pageAdmin.php");//redirection vers la page admin
 exit;
     
-?>

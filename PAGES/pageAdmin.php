@@ -16,7 +16,7 @@
         $sth->execute();
         $row = $sth->fetch();
         if ($flag){
-            return "<input type='number' class='input' placeholder='Num Question' name='numque' min='1' max='". $row["max"] ."'required='required'>";
+            return "<input type='number' class='input' placeholder='Num Question' name='numque' min='15' max='". $row["max"] ."'required='required'>";
         }else{
             return "<input type='number' class='input' placeholder='Num Question' name='numque' min='1' max='". $row["max"] ."'required='required'>";
         }

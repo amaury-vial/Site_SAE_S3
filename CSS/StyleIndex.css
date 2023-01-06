@@ -5,6 +5,18 @@ a{
   justify-content: center;
 }
 
+
+#pageAd{
+  text-decoration: none;
+  color :black;
+  font-size: 160%;
+  margin-bottom: 6%;
+}
+
+#pageAd:hover{
+  color:darkred;
+}
+
 .logoTelechargement{
   display: flex;
   width: 12%;

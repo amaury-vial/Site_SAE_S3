@@ -40,4 +40,3 @@
     }
     header("location: ../PAGES/pageConnection.php");
     exit;
-?>

@@ -81,5 +81,3 @@ if ( $mail->send() ) {
 // On ferme la connexion SMTP au compte GMAIL
 $mail->smtpClose();
 
-
-?>
