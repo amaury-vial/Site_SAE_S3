@@ -71,19 +71,20 @@ header{
 
 .icone {
   position: absolute;
-  top: 2%;
+  top: 3%;
   left: 50%;
   transform: translate(-50%, 0);
-  width: 55px;
-  height: 55px;
+  width: 110px;
+  height: 110px;
   border-radius: 50%;
-  font-size: 1.8em;
+
   background-color: #7f95e4;
   color: #f0f6fb;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 
 
 

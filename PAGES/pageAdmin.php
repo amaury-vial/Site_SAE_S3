@@ -72,7 +72,7 @@
 
     <div class="container">
         <div class="icone">
-        <i class="fas fa-users-cog"></i>
+        <i class="fas fa-users-cog  fa-4x"></i>
       </div>
         <div class="tab-body" data-id="Question">
             <div class="adminQ">

@@ -24,17 +24,17 @@ session_start();
 
     <div class="container">
       <div class="icone">
-          <i class="fas fa-user"></i>
+          <i class="fas fa-user fa-4x"></i>
       </div>
     <!-- CONNEXION -->
     <div class="tab-body" data-id="connexion">
       <form method="post" action="../PHP/login.php">
         <div class="row">
-          <i class="far fa-user"></i>
+          <i class="far fa-user fa-2x"></i>
           <input type="text" class="input" placeholder="Pseudo" name="pseudo">
         </div>
         <div class="row">
-          <i class="fas fa-lock"></i>
+          <i class="fas fa-lock fa-2x"></i>
           <input type="password" class="input" placeholder= "Mot de Passe" name="password">
 
         </div>
