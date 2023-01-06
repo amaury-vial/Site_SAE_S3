@@ -4,18 +4,23 @@
 // PHP STAN 9
     session_start();
 
-    if( $_SESSION['admin'] == false){
+    if(!isset($_SESSION['admin'])){
         header("location:../index.php");
         exit;
     }
 
-    function maxid(){
+    function maxid($flag){
         require("../PHP/bdcon.php");
         $sqlClassement = "Select MAX(q_id) FROM QUESTION";// requete pour recuperer le classement
         $sth = $con->prepare($sqlClassement);
         $sth->execute();
         $row = $sth->fetch();
-        return "<input type='number' class='input' placeholder='Num Question' name='numque' min='1' max='". $row["max"] ."'required='required'>";
+        if ($flag){
+            return "<input type='number' class='input' placeholder='Num Question' name='numque' min='1' max='". $row["max"] ."'required='required'>";
+        }else{
+            return "<input type='number' class='input' placeholder='Num Question' name='numque' min='1' max='". $row["max"] ."'required='required'>";
+        }
+        
     }
 
     function afficherClassement():String{
@@ -63,9 +68,12 @@
 </head>
 <body>
     <!-- HEADER -->
-    <?php include("../FOOTER-HEADER/header.php");maxid();?>
+    <?php include("../FOOTER-HEADER/header.php");?>
 
     <div class="container">
+        <div class="icone">
+        <i class="fas fa-users-cog"></i>
+      </div>
         <div class="tab-body" data-id="Question">
             <div class="adminQ">
                 <div>
@@ -76,7 +84,7 @@
                     <h1>Modifier une question</h1>
                     <form method="post" action="../PHP/question.php">
                         <div class="row">
-                            <?php echo(maxid()) ?>
+                            <?php echo(maxid(false)) ?>
                         </div>
                         <div class="row">
                             <input type="text" class="input" placeholder="Question" name="question" required="required">
@@ -113,7 +121,7 @@
                     <h1>Supprimer une question</h1>
                     <form method="post" action="../PHP/supprimerquestion.php">
                         <div class="row">
-                            <?php echo(maxid()) ?>
+                            <?php echo(maxid(true)) ?>
                         </div>
                         <input type="submit" value="Valider">
                     </form>

@@ -8,11 +8,11 @@
         </p>
     </a>
     <?php
-    if(!(sizeof($_SESSION)===0) && ($_SESSION['user'])){
+    if(isset($_SESSION['user'])){
         ?>
-        <a class="connexionHeader" href="pageConnection.php">
+        <a class="connexionHeader" href="../PHP/deco.php">
             <p>
-                Connecté
+                Se deconnecter
             </p>
         </a>
         <?php

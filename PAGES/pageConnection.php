@@ -23,23 +23,9 @@ session_start();
     <?php include("../FOOTER-HEADER/header.php") ?>
 
     <div class="container">
-    <?php
-    if(!(sizeof($_SESSION)===0) && ($_SESSION['user'])){
-        ?>
-        <a href="../PHP/deco.php">
-            <div class="icone">
-            <i class="fas fa-power-off"></i>
-            </div>
-        </a>
-        <?php
-    }else{
-        ?>
-            <div class="icone">
-                <i class="fas fa-user"></i>
-            </div>
-        <?php
-    }
-    ?>
+      <div class="icone">
+          <i class="fas fa-user"></i>
+      </div>
     <!-- CONNEXION -->
     <div class="tab-body" data-id="connexion">
       <form method="post" action="../PHP/login.php">
@@ -53,7 +39,7 @@ session_start();
 
         </div>
           <?php
-          if($_SESSION['err'] == 1){
+          if(isset($_SESSION['err'])){
               echo "<p style='color: red'> Utilisateur ou mot de passe incorrect</p>";
           }
           ?>

@@ -21,22 +21,15 @@ $IdUser = 0;
 
 //on cerifie que l'utilisateur est bien dans la base de donnée
 
-if ($pseudo == $row['nickname']){
-    if( $password == $row['password']) {// on verifie que le pseudo correspond au mot de passe
-        $check = true;// si l'user existe on met $check a true
-        $IdUser = intval($row['id_user']);//on sauvegarde l'id de l'user qui se connecte
-        $_SESSION['err'] = 0;
-    } else {
-        $_SESSION['err'] = 1;
-       header("location:../PAGES/pageConnection.php");
-    }
+if ($pseudo == $row['nickname'] && $password == $row['password']){
+    $check = true;// si l'user existe on met $check a true
+    $IdUser = intval($row['id_user']);//on sauvegarde l'id de l'user qui se connecte
+    if(isset($_SESSION['err'])){unset($_SESSION['err']);}
+    $_SESSION['user'] = true;
 } else {
-    $_SESSION['err'] = 2;
+    $_SESSION['err'] = 1;
      header("location:../PAGES/pageConnection.php");
 }
-
-
-$_SESSION['user'] = $check;
 
 
 
@@ -69,4 +62,3 @@ if($check){
     header("location:../PAGES/pageConnection.php");
     exit;
 }
-?>

@@ -24,11 +24,11 @@ session_start();
             <p>Find The Breach</p>
         </a>
         <?php
-        if( !(sizeof($_SESSION)===0) && ($_SESSION['user'])){
+        if(isset($_SESSION['user'])){
             ?>
-            <a class="connexionHeader" href="PAGES/pageConnection.php">
+            <a class="connexionHeader" href="../PHP/deco.php">
                 <p>
-                    Connecté
+                Se deconnecter
                 </p>
             </a>
             <?php
@@ -44,9 +44,19 @@ session_start();
         ?>
 
     </header>
+    <?php
+     if(isset($_SESSION['admin'])){
+        ?>
+        <a href="PAGES/pageAdmin.php">
+            <p>Cliquez pour allez sur la page admin</p>
+        </a>
+        <?php
+     }
+    ?>
+
 
     <?php
-    if( !(sizeof($_SESSION)===0) && ($_SESSION['user'])){
+    if(isset($_SESSION['user'])){
         ?>
         <a href="https://google.com">
             <img class="logoTelechargement" src="IMAGE/logo.png" alt="IMG FindTheBreach">
