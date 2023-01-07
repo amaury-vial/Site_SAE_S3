@@ -16,7 +16,7 @@
     $row = $sth -> fetch();
     $check = true; //pour vérifier qu'il n'exister pas deja
     
-    if ( $row && ($pseudo == $row['nickname'] || $adr == $row['email'])){
+    if ( isset($row) && ($pseudo == $row['nickname'] || $adr == $row['email'])){
         $check = false;//si il y a le pseudo ou l'email existe deja on check a false
     }
 
@@ -35,6 +35,7 @@
         $sth->bindValue(':pseudo', $pseudo, PDO::PARAM_STR);
         $sth->bindValue(':password', $password, PDO::PARAM_STR);
         $sth->execute();
+        $_SESSION['user'] = true;
         header("location: ../index.php");//redirection vers la page pour telecharger le jeux
         exit;
     }
