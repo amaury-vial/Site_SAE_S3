@@ -63,10 +63,12 @@
   <link rel="stylesheet" href="../CSS/Style.css">
     <link rel="stylesheet" href="../CSS/StyleAdminQuestion.css">
   <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/js/all.min.js"> </script>
   <script src="../JS/index.js" defer></script>
   <title>FindTheBreach</title>
 </head>
 <body>
+
     <!-- HEADER -->
     <?php include("../FOOTER-HEADER/header.php");?>
 
@@ -84,18 +86,22 @@
                     <h1>Modifier une question</h1>
                     <form method="post" action="../PHP/question.php">
                         <div class="row">
+                            <i class="fa-solid fa-3"></i>
                             <?php echo(maxid(false)) ?>
                         </div>
                         <div class="row">
                             <input type="text" class="input" placeholder="Question" name="question" required="required">
                         </div>
                         <div class="row">
-                            <textarea name="Consigne" rows="5" cols="80"  class="input" placeholder="Consigne" aria-required="true" style="min-height: 30%;height: 30%; width: 100%;" ></textarea>
+                            <i class="fa-solid fa-question"></i>
+                            <textarea name="Consigne" rows="5" cols="80"  class="input" placeholder="       Consigne" aria-required="true" style="min-height: 30%;height: 30%; width: 100%;" ></textarea>
                         </div>
                         <div class="row">
+                            <i class="fa-solid fa-check"></i>
                             <input type="text"  class="input" placeholder="Réponse" name="réponse" required="required">
                         </div>
                         <div class="row">
+                            <i class="fa-solid fa-magnifying-glass"></i>
                             <textarea name="Indice" rows="5" cols="80"  class="input" placeholder="Indice" aria-required="true" style="min-height: 30%;height: 30%; width: 100%;" ></textarea>
                         </div>
                         <input type="submit" value="Valider">
@@ -107,12 +113,15 @@
                             <input type="text" class="input" placeholder="Question" name="question" required="required">
                         </div>
                         <div class="row">
+                            <i class="fa-solid fa-question"></i>
                             <textarea name="Consigne" rows="5" cols="80"  class="input" placeholder="Consigne" aria-required="true" style="min-height: 30%;height: 30%; width: 100%;" ></textarea>
                         </div>
                         <div class="row">
+                            <i class="fa-solid fa-check"></i>
                             <input type="text"  class="input" placeholder="Réponse" name="réponse" required="required">
                         </div>
                         <div class="row">
+                            <i class="fa-solid fa-magnifying-glass"></i>
                             <textarea name="Indice" rows="5" cols="80"  class="input" placeholder="Indice" aria-required="true" style="min-height: 30%;height: 30%; width: 100%;" ></textarea>
                         </div>
                         <input type="submit" value="Valider">
@@ -121,6 +130,7 @@
                     <h1>Supprimer une question</h1>
                     <form method="post" action="../PHP/supprimerquestion.php">
                         <div class="row">
+                            <i class="fa-solid fa-3"></i>
                             <?php echo(maxid(true)) ?>
                         </div>
                         <input type="submit" value="Valider">
@@ -141,9 +151,11 @@
             <div>
                 <form method="post" action="../PHP/recupScore.php">
                     <div class="row">
+                        <i class="fa-solid fa-users"></i>
                         <input type="text" class="input" placeholder="Liste des noms (ex: Luca, Fred, Nils)" name="nom" required="required">
                     </div>
                     <div class="row">
+                        <i class="fa-solid fa-at fa-2x"></i>
                         <input type="text" class="input" placeholder="Votre eMail" name="mail" required="required">
                     </div>
                     <input type="submit" value="Valider" class="btn">

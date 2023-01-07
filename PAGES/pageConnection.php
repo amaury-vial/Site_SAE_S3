@@ -11,7 +11,7 @@ session_start();
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../CSS/Style.css">
-  <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/js/all.min.js"> </script>
   <script src="https://kit.fontawesome.com/a076d05399.js"> </script>
   <script src="../JS/index.js" defer></script>
   <title>FindTheBreach</title>
@@ -21,7 +21,6 @@ session_start();
 
     <!-- HEADER -->
     <?php include("../FOOTER-HEADER/header.php") ?>
-
     <div class="container">
       <div class="icone">
           <i class="fas fa-user fa-4x"></i>
