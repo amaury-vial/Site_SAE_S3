@@ -3,5 +3,10 @@
     display: flex;
     flex-direction: row;
 }
-
-
+@media screen and (max-width: 650px) {
+    .adminQ{
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 10%;
+    }
+}

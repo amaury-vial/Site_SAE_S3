@@ -205,6 +205,7 @@ footer{
 
   }
 
+
   .logo{
     margin-left: 5%;/**/
     position: static;
@@ -227,6 +228,7 @@ footer{
 
   .tab-body {
     width: 90%;/**/
+    margin-top: 65%;
   }
 
   .tab-body.active {
