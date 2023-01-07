@@ -4,7 +4,7 @@
 // PHP STAN 9
     session_start();
 
-    if(!isset($_SESSION['admin'])){
+    if((!isset($_SESSION['admin'])) || ($_SESSION['admin'] == false)){
         header("location:../index.php");
         exit;
     }

@@ -45,7 +45,7 @@ session_start();
 
     </header>
     <?php
-     if(isset($_SESSION['admin'])){
+     if(isset($_SESSION['admin']) && $_SESSION['admin'] == true){
         ?>
             <a href="PAGES/pageAdmin.php" id = "pageAd">
                 <h2>Cliquez pour allez sur la page admin</h2>
