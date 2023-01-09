@@ -1,7 +1,7 @@
 <?php
 /**
  * PHPMailer RFC821 SMTP email transport class.
- * PHP Version 5.5.
+ * php Version 5.5.
  *
  * @see       https://github.com/PHPMailer/PHPMailer/ The PHPMailer GitHub project
  *
@@ -413,7 +413,7 @@ class SMTP
         //Allow the best TLS version(s) we can
         $crypto_method = STREAM_CRYPTO_METHOD_TLS_CLIENT;
 
-        //PHP 5.6.7 dropped inclusion of TLS 1.1 and 1.2 in STREAM_CRYPTO_METHOD_TLS_CLIENT
+        //php 5.6.7 dropped inclusion of TLS 1.1 and 1.2 in STREAM_CRYPTO_METHOD_TLS_CLIENT
         //so add them back in manually if we can
         if (defined('STREAM_CRYPTO_METHOD_TLSv1_2_CLIENT')) {
             $crypto_method |= STREAM_CRYPTO_METHOD_TLSv1_2_CLIENT;
@@ -1307,8 +1307,8 @@ class SMTP
     /**
      * Reports an error number and string.
      *
-     * @param int    $errno   The error number returned by PHP
-     * @param string $errmsg  The error message returned by PHP
+     * @param int    $errno   The error number returned by php
+     * @param string $errmsg  The error message returned by php
      * @param string $errfile The file the error occurred in
      * @param int    $errline The line number the error occurred on
      */

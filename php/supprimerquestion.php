@@ -1,5 +1,5 @@
 <?php
-// PHP STAN 9
+// php STAN 9
 require ("bdcon.php");// on require la page pour ce connecter a la bd
 
 $sql = "DELETE FROM QUESTION WHERE Q_ID = :idQues";
@@ -21,6 +21,6 @@ while($row = $sth->fetch()){
     $sth2 -> execute();
     ++$newid;
 }
-header("location: ../PAGES/pageAdmin.php");//redirection vers la page admin
+header("location: ../pages/pageAdmin.php");//redirection vers la page admin
 exit;
 

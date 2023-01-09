@@ -1,5 +1,5 @@
 <?php
-// PHP STAN 9
+// php STAN 9
 
 require ("bdcon.php");// on require la page pour ce connecter a la bd 
 
@@ -28,7 +28,7 @@ if ($pseudo == $row['nickname'] && $password == $row['password']){
     $_SESSION['user'] = true;
 } else {
     $_SESSION['err'] = 1;
-     header("location:../PAGES/pageConnection.php");
+     header("location:../pages/pageConnection.php");
 }
 
 
@@ -51,7 +51,7 @@ if($check){
 
     $_SESSION['admin'] = $checkAdmin;
     if ($checkAdmin){
-        header("location: ../PAGES/pageAdmin.php");// redirection vers la page admin
+        header("location: ../pages/pageAdmin.php");// redirection vers la page admin
         exit;
     }else{
         header("location:../index.php");// redirectin vers la page pour telecharger le jeux
@@ -59,6 +59,6 @@ if($check){
     }
 
 }else{
-    header("location:../PAGES/pageConnection.php");
+    header("location:../pages/pageConnection.php");
     exit;
 }

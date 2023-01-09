@@ -1,7 +1,7 @@
 <?php
 /**
- * PHPMailer - PHP email creation and transport class.
- * PHP Version 5.5.
+ * PHPMailer - php email creation and transport class.
+ * php Version 5.5.
  *
  * @see https://github.com/PHPMailer/PHPMailer/ The PHPMailer GitHub project
  *
@@ -21,7 +21,7 @@
 namespace PHPMailer\PHPMailer;
 
 /**
- * PHPMailer - PHP email creation and transport class.
+ * PHPMailer - php email creation and transport class.
  *
  * @author Marcus Bointon (Synchro/coolbru) <phpmailer@synchromedia.co.uk>
  * @author Jim Jagielski (jimjag) <jimjag@gmail.com>
@@ -310,7 +310,7 @@ class PHPMailer
     /**
      * Whether to enable TLS encryption automatically if a server supports it,
      * even if `SMTPSecure` is not set to 'tls'.
-     * Be aware that in PHP >= 5.6 this requires that the server's certificates are valid.
+     * Be aware that in php >= 5.6 this requires that the server's certificates are valid.
      *
      * @var bool
      */
@@ -567,7 +567,7 @@ class PHPMailer
     /**
      * Which validator to use by default when validating email addresses.
      * May be a callable to inject your own validator, but there are several built-in validators.
-     * The default validator uses PHP's FILTER_VALIDATE_EMAIL filter_var option.
+     * The default validator uses php's FILTER_VALIDATE_EMAIL filter_var option.
      *
      * @see PHPMailer::validateAddress()
      *
@@ -938,7 +938,7 @@ class PHPMailer
     }
 
     /**
-     * Send messages using PHP's mail() function.
+     * Send messages using php's mail() function.
      */
     public function isMail()
     {
@@ -1272,7 +1272,7 @@ class PHPMailer
      * * `auto` Pick best pattern automatically;
      * * `pcre8` Use the squiloople.com pattern, requires PCRE > 8.0;
      * * `pcre` Use old PCRE implementation;
-     * * `php` Use PHP built-in FILTER_VALIDATE_EMAIL;
+     * * `php` Use php built-in FILTER_VALIDATE_EMAIL;
      * * `html5` Use the pattern given by the HTML5 spec for 'email' type form input elements.
      * * `noregex` Don't use a regex: super fast, really dumb.
      * Alternatively you may pass in a callable to inject your own validator, for example:
@@ -1352,7 +1352,7 @@ class PHPMailer
 
     /**
      * Tells whether IDNs (Internationalized Domain Names) are supported or not. This requires the
-     * `intl` and `mbstring` PHP extensions.
+     * `intl` and `mbstring` php extensions.
      *
      * @return bool `true` if required functions for IDN support are present
      */
@@ -1366,7 +1366,7 @@ class PHPMailer
      * Important: Address must be passed in same encoding as currently set in PHPMailer::$CharSet.
      * This function silently returns unmodified address if:
      * - No conversion is necessary (i.e. domain name is not an IDN, or is already in ASCII form)
-     * - Conversion to punycode is impossible (e.g. required PHP functions are not available)
+     * - Conversion to punycode is impossible (e.g. required php functions are not available)
      *   or fails for any reason (e.g. domain contains characters not allowed in an IDN).
      *
      * @see PHPMailer::$CharSet
@@ -1387,7 +1387,7 @@ class PHPMailer
             // Verify CharSet string is a valid one, and domain properly encoded in this CharSet.
             if ($this->has8bitChars($domain) && @mb_check_encoding($domain, $this->CharSet)) {
                 $domain = mb_convert_encoding($domain, 'UTF-8', $this->CharSet);
-                //Ignore IDE complaints about this line - method signature changed in PHP 5.4
+                //Ignore IDE complaints about this line - method signature changed in php 5.4
                 $errorcode = 0;
                 $punycode = idn_to_ascii($domain, $errorcode, INTL_IDNA_VARIANT_UTS46);
                 if (false !== $punycode) {
@@ -1445,7 +1445,7 @@ class PHPMailer
             //Maintain backward compatibility with legacy Linux command line mailers
             static::setLE(PHP_EOL);
         }
-        //Check for buggy PHP versions that add a header with an incorrect line break
+        //Check for buggy php versions that add a header with an incorrect line break
         if ('mail' === $this->Mailer
             && ((PHP_VERSION_ID >= 70000 && PHP_VERSION_ID < 70017)
                 || (PHP_VERSION_ID >= 70100 && PHP_VERSION_ID < 70103))
@@ -1453,9 +1453,9 @@ class PHPMailer
             && stripos(PHP_OS, 'WIN') === 0
         ) {
             trigger_error(
-                'Your version of PHP is affected by a bug that may result in corrupted messages.' .
+                'Your version of php is affected by a bug that may result in corrupted messages.' .
                 ' To fix it, switch to sending using SMTP, disable the mail.add_x_header option in' .
-                ' your php.ini, switch to MacOS or Linux, or upgrade your PHP to version 7.0.17+ or 7.1.3+.',
+                ' your php.ini, switch to MacOS or Linux, or upgrade your php to version 7.0.17+ or 7.1.3+.',
                 E_USER_WARNING
             );
         }
@@ -1731,7 +1731,7 @@ class PHPMailer
     }
 
     /**
-     * Send mail using the PHP mail() function.
+     * Send mail using the php mail() function.
      *
      * @see http://www.php.net/manual/en/book.mail.php
      *
@@ -2779,7 +2779,7 @@ class PHPMailer
                 $signed = tempnam(sys_get_temp_dir(), 'mailsign');
                 file_put_contents($file, $body);
 
-                //Workaround for PHP bug https://bugs.php.net/bug.php?id=69197
+                //Workaround for php bug https://bugs.php.net/bug.php?id=69197
                 if (empty($this->sign_extracerts_file)) {
                     $sign = @openssl_pkcs7_sign(
                         $file,

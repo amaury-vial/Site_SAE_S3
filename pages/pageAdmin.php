@@ -1,7 +1,7 @@
 <!--HTML W3C fait-->
 
 <?php 
-// PHP STAN 9
+// php STAN 9
     session_start();
 
     if((!isset($_SESSION['admin'])) || ($_SESSION['admin'] == false)){
@@ -10,7 +10,7 @@
     }
 
     function maxid($flag){
-        require("../PHP/bdcon.php");
+        require("../php/bdcon.php");
         $sqlClassement = "Select MAX(q_id) FROM QUESTION";// requete pour recuperer le classement
         $sth = $con->prepare($sqlClassement);
         $sth->execute();
@@ -24,7 +24,7 @@
     }
 
     function afficherClassement():String{
-        require("../PHP/bdcon.php");// on require la page pour ce connecter a la bd
+        require("../php/bdcon.php");// on require la page pour ce connecter a la bd
         $classement = "<br /><br />";
 
         $sqlClassement = "Select nickname, score FROM USERS where score is not null order by score DESC limit 5";// requete pour recuperer le classement
@@ -39,7 +39,7 @@
     }
 
     function afficherQuestion():String{
-        require("../PHP/bdcon.php");// on require la page pour ce connecter a la bd
+        require("../php/bdcon.php");// on require la page pour ce connecter a la bd
         $liste = "<br /><br />";
 
         $sql = "Select q_id, title FROM question order by q_id";// requete pour recuperer le classement
@@ -60,17 +60,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../CSS/Style.css">
-    <link rel="stylesheet" href="../CSS/StyleAdminQuestion.css">
+  <link rel="stylesheet" href="../css/Style.css">
+    <link rel="stylesheet" href="../css/StyleAdminQuestion.css">
   <script src="https://kit.fontawesome.com/a076d05399.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/js/all.min.js"> </script>
-  <script src="../JS/index.js" defer></script>
+  <script src="../js/index.js" defer></script>
   <title>FindTheBreach</title>
 </head>
 <body>
 
     <!-- HEADER -->
-    <?php include("../FOOTER-HEADER/header.php");?>
+    <?php include("../footer-header/header.php");?>
 
     <div class="container">
         <div class="icone">
@@ -84,7 +84,7 @@
                 </div>
                 <div>
                     <h1>Modifier une question</h1>
-                    <form method="post" action="../PHP/question.php">
+                    <form method="post" action="../php/question.php">
                         <div class="row">
                             <i class="fa-solid fa-3"></i>
                             <?php echo(maxid(false)) ?>
@@ -108,7 +108,7 @@
                     </form>
                     <br>
                     <h1>Ajouter une question</h1>
-                    <form method="post" action="../PHP/ajoutquestion.php">
+                    <form method="post" action="../php/ajoutquestion.php">
                         <div class="row">
                             <input type="text" class="input" placeholder="Question" name="question" required="required">
                         </div>
@@ -128,7 +128,7 @@
                     </form>
                     <br>
                     <h1>Supprimer une question</h1>
-                    <form method="post" action="../PHP/supprimerquestion.php">
+                    <form method="post" action="../php/supprimerquestion.php">
                         <div class="row">
                             <i class="fa-solid fa-3"></i>
                             <?php echo(maxid(true)) ?>
@@ -150,7 +150,7 @@
             </div>
             <h1>Recherche Joueurs</h1>
             <div>
-                <form method="post" action="../PHP/recupScore.php">
+                <form method="post" action="../php/recupScore.php">
                     <div class="row">
                         <i class="fa-solid fa-users"></i>
                         <input type="text" class="input" placeholder="Liste des noms (ex: Luca, Fred, Nils)" name="nom" required="required">
@@ -170,6 +170,6 @@
         </div>
     </div>
 
-    <?php include("../FOOTER-HEADER/footer.php")?>
+    <?php include("../footer-header/footer.php") ?>
 </body>
 </html>

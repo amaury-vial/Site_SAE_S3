@@ -1,5 +1,5 @@
 <?php
-// PHP STAN 9
+// php STAN 9
 require ("bdcon.php");// on require la page pour ce connecter a la bd 
 
 //recup des variable du formulaire
@@ -20,6 +20,6 @@ $sth->bindValue(':reponse', $reponse, PDO::PARAM_STR);
 $sth->bindValue(':idQues', $idQues, PDO::PARAM_INT);
 $sth -> execute();
 
-header("location: ../PAGES/pageAdmin.php");//redirection vers la page admin
+header("location: ../pages/pageAdmin.php");//redirection vers la page admin
 exit;
     

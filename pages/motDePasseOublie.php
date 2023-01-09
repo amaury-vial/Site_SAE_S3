@@ -1,7 +1,7 @@
 <!--HTML W3C fait-->
 
 <?php
-// PHP STAN 9
+// php STAN 9
 session_start();
 ?>
 <!DOCTYPE html>
@@ -9,22 +9,22 @@ session_start();
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../CSS/Style.css">
+  <link rel="stylesheet" href="../css/Style.css">
   <script src="https://kit.fontawesome.com/a076d05399.js"> </script>
-  <script src="../JS/index.js" defer></script>
+  <script src="../js/index.js" defer></script>
   <title>FindTheBreach</title>
 </head>
 
 <body>
     <!-- HEADER -->
-    <?php include("../FOOTER-HEADER/header.php") ?>
+    <?php include("../footer-header/header.php") ?>
 
   <div class="container">
     
     <!-- mot de passe oublie -->
     <div class="tab-body" data-id="mdpOublie">
       <p>Recuperation de mot de passe</p>
-      <form method="post" action="../PHP/mdp_oublie.php">
+      <form method="post" action="../php/mdp_oublie.php">
         <div class="row">
           <i class="far fa-envelope"></i>
           <input type="email" class="input" placeholder="Email" name="mail" required="required">
@@ -36,6 +36,6 @@ session_start();
       <a class="tab-link active" data-ref="mdpOublie" href="javascript:void(0)"></a>
     </div>
   </div>
-    <?php include("../FOOTER-HEADER/footer.php")?>
+    <?php include("../footer-header/footer.php") ?>
 </body>
 </html>

@@ -1,5 +1,5 @@
 <?php
-// PHP STAN 9
+// php STAN 9
     // Si vous voulez détruire complètement la session, effacez également
     // le cookie de session.
     // Note : cela détruira la session et pas seulement les données de session !

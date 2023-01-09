@@ -1,6 +1,6 @@
 <!--HTML W3C fait-->
 
-<?php // PHP STAN 9
+<?php // php STAN 9
 session_start();
 ?>
 <!DOCTYPE html>
@@ -8,8 +8,8 @@ session_start();
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="CSS/StyleIndex.css">
-  <link rel="stylesheet" href="CSS/Style.css">
+  <link rel="stylesheet" href="css/StyleIndex.css">
+  <link rel="stylesheet" href="css/Style.css">
   <title>FindTheBreach</title>
 </head>
 
@@ -18,7 +18,7 @@ session_start();
     <!-- HEADER -->
     <header>
         <a href="index.php">
-            <img class="logo" src="IMAGE/FindTheBreach.png" alt="IMG FindTheBreach">
+            <img class="logo" src="pictures/FindTheBreach.png" alt="IMG FindTheBreach">
         </a>
         <a class="Title" href="index.php">
             <p>Find The Breach</p>
@@ -34,7 +34,7 @@ session_start();
             <?php
         }else{
             ?>
-            <a class="connexionHeader" href="PAGES/pageConnection.php">
+            <a class="connexionHeader" href="pages/pageConnection.php">
                 <p>
                     Connection
                 </p>
@@ -47,7 +47,7 @@ session_start();
     <?php
      if(isset($_SESSION['admin']) && $_SESSION['admin'] == true){
         ?>
-            <a href="PAGES/pageAdmin.php" id = "pageAd">
+            <a href="pages/pageAdmin.php" id = "pageAd">
                 <h2>Cliquez pour allez sur la page admin</h2>
             </a>
         <?php
@@ -59,13 +59,13 @@ session_start();
     if(isset($_SESSION['user'])){
         ?>
         <a href="https://google.com">
-            <img class="logoTelechargement" src="IMAGE/logo.png" alt="IMG FindTheBreach">
+            <img class="logoTelechargement" src="pictures/logo.png" alt="IMG FindTheBreach">
         </a>
         <?php
     }else{
         ?>
-        <a href="PAGES/pageConnection.php">
-            <img class="logoTelechargement" src="IMAGE/logo.png" alt="IMG FindTheBreach">
+        <a href="pages/pageConnection.php">
+            <img class="logoTelechargement" src="pictures/logo.png" alt="IMG FindTheBreach">
         </a>
         <?php
     }
@@ -85,7 +85,7 @@ session_start();
     <div>
         <h1>Comment fonctionne <br> l'application ?</h1>
         <div class = "txt">
-            <img class="iconJava" src="IMAGE/practice_button.png" alt="icon pratice"><br>
+            <img class="iconJava" src="pictures/practice_button.png" alt="icon pratice"><br>
             <p>Dans un première partie vous allez apprendre les<br>
                 éléments nécéssaire à votre recherche. Vous serez<br>
                 guidés à l'aide de questions et de consignes.<br>
@@ -103,9 +103,9 @@ session_start();
              vous aider de votre navigateur pour parvenir à trouver<br>
               ces fameux hackers !</p><br>
 
-            <img class="iconJava" src="IMAGE/play_button.png" alt="icon jouer">
+            <img class="iconJava" src="pictures/play_button.png" alt="icon jouer">
         </div>
     </div>
-    <?php include("FOOTER-HEADER/footer.php")?>
+    <?php include("footer-header/footer.php") ?>
 </body>
 </html>

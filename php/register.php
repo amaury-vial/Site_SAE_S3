@@ -1,5 +1,5 @@
 <?php
-// PHP STAN 9
+// php STAN 9
 
     require ("bdcon.php");// on require la page pour ce connecter a la bd
 
@@ -39,5 +39,5 @@
         header("location: ../index.php");//redirection vers la page pour telecharger le jeux
         exit;
     }
-    header("location: ../PAGES/pageConnection.php");
+    header("location: ../pages/pageConnection.php");
     exit;

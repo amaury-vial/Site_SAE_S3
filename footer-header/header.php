@@ -1,6 +1,6 @@
 <header>
     <a href="../index.php">
-        <img class="logo" src="../IMAGE/FindTheBreach.png" alt="IMG FindTheBreach">
+        <img class="logo" src="../pictures/FindTheBreach.png" alt="IMG FindTheBreach">
     </a>
     <a class="Title" href="../index.php">
         <p>
@@ -10,7 +10,7 @@
     <?php
     if(isset($_SESSION['user'])){
         ?>
-        <a class="connexionHeader" href="../PHP/deco.php">
+        <a class="connexionHeader" href="../php/deco.php">
             <p>
                 Se deconnecter
             </p>

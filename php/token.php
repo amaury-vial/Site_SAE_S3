@@ -1,5 +1,5 @@
 <?php
-// PHP STAN 9
+// php STAN 9
 
 require ("bdcon.php");// on require la page pour ce connecter a la bd
 
@@ -60,10 +60,10 @@ while($row = $sth -> fetch()){// on boucle sur les token generer associé a l'em
         if($_POST['mdp'] ==  $_POST['mdpConfirmer']){// si les 2 mot de passe sont les meme
             nouveauMdp($_POST['mdp'], $mail);// on appele la fonction pour mettre a jour son mot de passe   
         }else{
-            header("location:../PAGES/pageRecupMdp.php");
+            header("location:../pages/pageRecupMdp.php");
             exit;
         }       
     }
 }
-header("location:../PAGES/pageRecupMdp.php");
+header("location:../pages/pageRecupMdp.php");
 exit;
