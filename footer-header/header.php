@@ -2,10 +2,8 @@
     <a href="../index.php">
         <img class="logo" src="../pictures/FindTheBreach.png" alt="IMG FindTheBreach">
     </a>
-    <a class="Title" href="../index.php">
-        <p>
-            Find The Breach
-        </p>
+    <a class="title" href="../index.php">
+        <h1>Find The Breach</h1>
     </a>
     <?php
     if(isset($_SESSION['user'])){

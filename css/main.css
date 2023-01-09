@@ -31,8 +31,8 @@ header{
     margin-left: 5%;
 }
 
-.Title:hover{
-    color:darkblue;
+.title:hover{
+    color: #8484e0;
 }
 
 .connexionHeader{/**/
@@ -44,7 +44,7 @@ header{
 }
 
 .connexionHeader:hover{/**/
-  color:darkblue;
+  color:#8484e0;
 }
 
 
@@ -182,6 +182,10 @@ footer, footer a{
     height: 10vh;
 }
 
+footer{
+    position: static;
+}
+
 footer a{
     font-size: 110%;
 }
@@ -202,7 +206,6 @@ footer a{
       align-items: center;/**/
       justify-content: space-between;/**/
       height: 10em;/**/
-
   }
 
 

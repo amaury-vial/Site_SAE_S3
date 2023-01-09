@@ -35,9 +35,7 @@ session_start();
         }else{
             ?>
             <a class="connexionHeader" href="pages/connection.php">
-                <p>
-                    Connection
-                </p>
+                <p>Connexion</p>
             </a>
             <?php
         }
