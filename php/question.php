@@ -20,6 +20,6 @@ $sth->bindValue(':reponse', $reponse, PDO::PARAM_STR);
 $sth->bindValue(':idQues', $idQues, PDO::PARAM_INT);
 $sth -> execute();
 
-header("location: ../pages/pageAdmin.php");//redirection vers la page admin
+header("location: ../pages/admin.php");//redirection vers la page admin
 exit;
     

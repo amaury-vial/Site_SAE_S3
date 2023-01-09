@@ -10,7 +10,7 @@ session_start();
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../css/Style.css">
+  <link rel="stylesheet" href="../css/main.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/js/all.min.js"> </script>
   <script src="https://kit.fontawesome.com/a076d05399.js"> </script>
   <script src="../js/index.js" defer></script>
@@ -45,7 +45,7 @@ session_start();
 
         <!-- MOT DE PASSE OUBLIE -->
 
-        <a href="motDePasseOublie.php" class="link">Mot de passe oublié ?</a>
+        <a href="mot-de-passe-oublie.php" class="link">Mot de passe oublié ?</a>
 
         <!-- BOUTTON CONNEXION-->
 

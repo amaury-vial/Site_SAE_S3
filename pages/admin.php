@@ -60,8 +60,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../css/Style.css">
-    <link rel="stylesheet" href="../css/StyleAdminQuestion.css">
+  <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/admin-question.css">
   <script src="https://kit.fontawesome.com/a076d05399.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/js/all.min.js"> </script>
   <script src="../js/index.js" defer></script>
@@ -108,7 +108,7 @@
                     </form>
                     <br>
                     <h1>Ajouter une question</h1>
-                    <form method="post" action="../php/ajoutquestion.php">
+                    <form method="post" action="../php/addQuestion.php">
                         <div class="row">
                             <input type="text" class="input" placeholder="Question" name="question" required="required">
                         </div>
@@ -128,7 +128,7 @@
                     </form>
                     <br>
                     <h1>Supprimer une question</h1>
-                    <form method="post" action="../php/supprimerquestion.php">
+                    <form method="post" action="../php/deleteQuestion.php">
                         <div class="row">
                             <i class="fa-solid fa-3"></i>
                             <?php echo(maxid(true)) ?>
@@ -150,7 +150,7 @@
             </div>
             <h1>Recherche Joueurs</h1>
             <div>
-                <form method="post" action="../php/recupScore.php">
+                <form method="post" action="../php/getScore.php">
                     <div class="row">
                         <i class="fa-solid fa-users"></i>
                         <input type="text" class="input" placeholder="Liste des noms (ex: Luca, Fred, Nils)" name="nom" required="required">

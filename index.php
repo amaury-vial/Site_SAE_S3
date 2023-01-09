@@ -8,8 +8,8 @@ session_start();
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/StyleIndex.css">
-  <link rel="stylesheet" href="css/Style.css">
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/main.css">
   <title>FindTheBreach</title>
 </head>
 
@@ -20,13 +20,13 @@ session_start();
         <a href="index.php">
             <img class="logo" src="pictures/FindTheBreach.png" alt="IMG FindTheBreach">
         </a>
-        <a class="Title" href="index.php">
-            <p>Find The Breach</p>
+        <a class="title" href="index.php">
+            <h1>Find The Breach</h1>
         </a>
         <?php
         if(isset($_SESSION['user'])){
             ?>
-            <a class="connexionHeader" href="../PHP/deco.php">
+            <a class="connexionHeader" href="../php/disconnection.php">
                 <p>
                 Se deconnecter
                 </p>
@@ -34,7 +34,7 @@ session_start();
             <?php
         }else{
             ?>
-            <a class="connexionHeader" href="pages/pageConnection.php">
+            <a class="connexionHeader" href="pages/connection.php">
                 <p>
                     Connection
                 </p>
@@ -47,8 +47,8 @@ session_start();
     <?php
      if(isset($_SESSION['admin']) && $_SESSION['admin'] == true){
         ?>
-            <a href="pages/pageAdmin.php" id = "pageAd">
-                <h2>Cliquez pour allez sur la page admin</h2>
+            <a href="pages/admin.php" id="adminPageBtn">
+                <h2>Accès à la page admin</h2>
             </a>
         <?php
      }
@@ -58,19 +58,19 @@ session_start();
     <?php
     if(isset($_SESSION['user'])){
         ?>
-        <a href="https://google.com">
-            <img class="logoTelechargement" src="pictures/logo.png" alt="IMG FindTheBreach">
+        <a id="downloadApplication-container" href="https://google.com">
+            <img id="downloadApplication" src="pictures/logo.png" alt="IMG FindTheBreach">
         </a>
         <?php
     }else{
         ?>
-        <a href="pages/pageConnection.php">
-            <img class="logoTelechargement" src="pictures/logo.png" alt="IMG FindTheBreach">
+        <a id="downloadApplication-container" href="pages/connection.php">
+            <img id="downloadApplication" src="pictures/logo.png" alt="IMG FindTheBreach">
         </a>
         <?php
     }
     ?>
-    <h1>Cliquez sur l'image pour télécharger le jeu</h1>
+    <h1 id="downloadText" >Cliquez sur l'image pour télécharger le jeu</h1>
 
 
     <div class = "scenario">
@@ -82,28 +82,25 @@ session_start();
             </p><br>
     </div>
 
-    <div>
-        <h1>Comment fonctionne <br> l'application ?</h1>
-        <div class = "txt">
-            <img class="iconJava" src="pictures/practice_button.png" alt="icon pratice"><br>
-            <p>Dans un première partie vous allez apprendre les<br>
-                éléments nécéssaire à votre recherche. Vous serez<br>
-                guidés à l'aide de questions et de consignes.<br>
-                N'hésitez pas à utiliser votre navigateur internet<br>
+    <div id="instructions">
+        <h1>Comment fonctionne l'application ?</h1>
+        <div id = "firstPart">
+            <img class="applicationButton" src="pictures/practice_button.png" alt="icon pratice">
+            <p>Dans un première partie vous allez apprendre les
+                éléments nécéssaire à votre recherche. Vous serez
+                guidés à l'aide de questions et de consignes.
+                N'hésitez pas à utiliser votre navigateur internet
                 pour trouver les solutions.
                 </p>
-            
         </div>
         <br>
-        <div class = "txt2">
-            <p>Dans une seconde partie,  vous allez mettre en <br>
-            application ce que vous avez appris et bien plus ! <br>
-            Vous serez guidés à l'aide de questions et de consignes <br>
-            dans la traque des malfaiteurs. Vous pouvez ici aussi,<br>
-             vous aider de votre navigateur pour parvenir à trouver<br>
-              ces fameux hackers !</p><br>
-
-            <img class="iconJava" src="pictures/play_button.png" alt="icon jouer">
+        <div id = "secondPart">
+            <p>Dans une seconde partie,  vous allez mettre en application ce que vous avez appris et bien plus !
+            Vous serez guidés à l'aide de questions et de consignes
+            dans la traque des malfaiteurs. Vous pouvez ici aussi,
+             vous aider de votre navigateur pour parvenir à trouver
+              ces fameux hackers !</p>
+            <img class="applicationButton" src="pictures/play_button.png" alt="icon jouer">
         </div>
     </div>
     <?php include("footer-header/footer.php") ?>

@@ -39,5 +39,5 @@
         header("location: ../index.php");//redirection vers la page pour telecharger le jeux
         exit;
     }
-    header("location: ../pages/pageConnection.php");
+    header("location: ../pages/connection.php");
     exit;

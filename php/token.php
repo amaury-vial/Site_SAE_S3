@@ -60,10 +60,10 @@ while($row = $sth -> fetch()){// on boucle sur les token generer associé a l'em
         if($_POST['mdp'] ==  $_POST['mdpConfirmer']){// si les 2 mot de passe sont les meme
             nouveauMdp($_POST['mdp'], $mail);// on appele la fonction pour mettre a jour son mot de passe   
         }else{
-            header("location:../pages/pageRecupMdp.php");
+            header("location:../pages/recuperation-mot-de-passe.php");
             exit;
         }       
     }
 }
-header("location:../pages/pageRecupMdp.php");
+header("location:../pages/recuperation-mot-de-passe.php");
 exit;

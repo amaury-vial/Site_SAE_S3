@@ -10,7 +10,7 @@
     <?php
     if(isset($_SESSION['user'])){
         ?>
-        <a class="connexionHeader" href="../php/deco.php">
+        <a class="connexionHeader" href="../php/disconnection.php">
             <p>
                 Se deconnecter
             </p>

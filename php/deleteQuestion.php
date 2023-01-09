@@ -21,6 +21,6 @@ while($row = $sth->fetch()){
     $sth2 -> execute();
     ++$newid;
 }
-header("location: ../pages/pageAdmin.php");//redirection vers la page admin
+header("location: ../pages/admin.php");//redirection vers la page admin
 exit;
 
