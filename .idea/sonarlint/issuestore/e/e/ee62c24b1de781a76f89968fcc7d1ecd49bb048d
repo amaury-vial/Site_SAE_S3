@@ -1,0 +1,5 @@
+
+a	php:S1808"GMove this "catch" to the same line as the previous closing curly brace.(¢­¸–øÿÿÿÿ
+d	php:S1808"JPut one space between the closing parenthesis and the opening curly brace.(¢­¸–øÿÿÿÿ
+a	php:S1808"GPut one space between this "catch" keyword and the opening parenthesis.(¢­¸–øÿÿÿÿ
+]	php:S1779"PReplace all non line feed end of line characters in this file "bdcon.php" by LF.

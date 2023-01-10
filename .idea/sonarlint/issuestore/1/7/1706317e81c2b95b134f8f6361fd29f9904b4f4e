@@ -1,0 +1,8 @@
+
+dphp:S103"KSplit this 138 characters long line (which is greater than 120 authorized).(½½—ìşÿÿÿÿ
+K	php:S1808"6Put exactly one space after comma separated arguments.(°Ë‰½
+K	php:S1808"6Put exactly one space after comma separated arguments.(”˜ıˆ
+K	php:S1808"6Put exactly one space after comma separated arguments.(ú€€¯
+P	php:S1808	"6Put exactly one space after comma separated arguments.(ø©¿Óúÿÿÿÿ
+;	php:S2003"&Replace "require" with "require_once".(Äº³
+a	php:S4833"LReplace "require" with namespace import mechanism through the "use" keyword.(Äº³
