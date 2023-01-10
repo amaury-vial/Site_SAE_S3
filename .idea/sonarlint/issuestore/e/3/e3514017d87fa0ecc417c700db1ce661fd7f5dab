@@ -1,39 +1,0 @@
-
-T	php:S1131"@Remove the useless trailing whitespaces at the end of this line.(––4
-dphp:S103"KSplit this 150 characters long line (which is greater than 120 authorized).(û•õøÿÿÿÿ
-dphp:S103"KSplit this 149 characters long line (which is greater than 120 authorized).(ºåŒƒşÿÿÿÿ
-dphp:S103"KSplit this 152 characters long line (which is greater than 120 authorized).(Û¤—¿úÿÿÿÿ
-dphp:S103a"KSplit this 201 characters long line (which is greater than 120 authorized).(òàò¢ùÿÿÿÿ
-_php:S103i"KSplit this 190 characters long line (which is greater than 120 authorized).(Ø“—ú
-dphp:S103u"KSplit this 194 characters long line (which is greater than 120 authorized).(òàò¢ùÿÿÿÿ
-_php:S103}"KSplit this 190 characters long line (which is greater than 120 authorized).(Ø“—ú
-`php:S103œ"KSplit this 140 characters long line (which is greater than 120 authorized).(‚…„
-W	php:S1808"=Move this open curly brace to the beginning of the next line.(”×¿•ùÿÿÿÿ
-Q	php:S1808"=Move this open curly brace to the beginning of the next line.(«¹
-W	php:S1808)"=Move this open curly brace to the beginning of the next line.(£š«Òûÿÿÿÿ
-d	php:S1808"JPut one space between the closing parenthesis and the opening curly brace.(œµ²üÿÿÿÿ
-d	php:S1808"JPut one space between the closing parenthesis and the opening curly brace.(”×¿•ùÿÿÿÿ
-d	php:S1808"JPut one space between the closing parenthesis and the opening curly brace.(¦õÆıÿÿÿÿ
-_	php:S1808#"JPut one space between the closing parenthesis and the opening curly brace.(ÉÊºø
-_	php:S18082"JPut one space between the closing parenthesis and the opening curly brace.(ÉÊºø
-^	php:S1808"DPut one space between this "if" keyword and the opening parenthesis.(œµ²üÿÿÿÿ
-[	php:S1808"FPut one space between this "else" keyword and the opening curly brace.(å¥‡
-\	php:S1808#"GPut one space between this "while" keyword and the opening parenthesis.(ÉÊºø
-\	php:S18082"GPut one space between this "while" keyword and the opening parenthesis.(ÉÊºø
-b	php:S1192"MDefine a constant instead of duplicating this literal "<br /><br />" 4 times.(ˆœÉÈ
-f	php:S1192"QDefine a constant instead of duplicating this literal "../php/bdcon.php" 3 times.(ÊÁç
-B	php:S2041S"-Remove the parentheses from this "echo" call.(ê¡‡´
-B	php:S2041Z"-Remove the parentheses from this "echo" call.(ƒÁ–É
-C	php:S2041†"-Remove the parentheses from this "echo" call.(‰¢ŸĞ
-H	php:S2041”"-Remove the parentheses from this "echo" call.(õ½¿µÿÿÿÿÿ
-C	php:S1125")Remove the literal "false" boolean value.(œµ²üÿÿÿÿ
-;	php:S2003"&Replace "require" with "require_once".(ÊÁç
-@	php:S2003"&Replace "require" with "require_once".(İÜ´¥ùÿÿÿÿ
-@	php:S2003*"&Replace "require" with "require_once".(İÜ´¥ùÿÿÿÿ
-:	php:S2003I"&Replace "include" with "include_once".(Ûä§k
-A	php:S2003­"&Replace "include" with "include_once".(£õ˜äşÿÿÿÿ
-a	php:S4833"LReplace "require" with namespace import mechanism through the "use" keyword.(ÊÁç
-f	php:S4833"LReplace "require" with namespace import mechanism through the "use" keyword.(İÜ´¥ùÿÿÿÿ
-f	php:S4833*"LReplace "require" with namespace import mechanism through the "use" keyword.(İÜ´¥ùÿÿÿÿ
-`	php:S4833I"LReplace "include" with namespace import mechanism through the "use" keyword.(Ûä§k
-g	php:S4833­"LReplace "include" with namespace import mechanism through the "use" keyword.(£õ˜äşÿÿÿÿ

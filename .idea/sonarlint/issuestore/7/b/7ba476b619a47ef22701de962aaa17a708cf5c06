@@ -1,7 +1,0 @@
-
-_	php:S1808"JPut one space between the closing parenthesis and the opening curly brace.(ÉÊºø
-\	php:S1808"GPut one space between this "while" keyword and the opening parenthesis.(ÉÊºø
-f	php:S1779"YReplace all non line feed end of line characters in this file "deleteQuestion.php" by LF.
-]	php:S1192"HDefine a constant instead of duplicating this literal ":idQues" 3 times.(Ê›æ
-;	php:S2003"&Replace "require" with "require_once".(Äº³
-a	php:S4833"LReplace "require" with namespace import mechanism through the "use" keyword.(Äº³
