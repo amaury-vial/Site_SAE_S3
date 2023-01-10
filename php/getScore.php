@@ -1,5 +1,6 @@
 <?php
 // php STAN 9
+require("isAdmin.php");
 
 require '../phpmailer/includes/Exception.php';
 require '../phpmailer/includes/SMTP.php';

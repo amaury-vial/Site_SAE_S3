@@ -1,17 +1,19 @@
 <?php
 // php STAN 9
-    // Si vous voulez détruire complètement la session, effacez également
-    // le cookie de session.
-    // Note : cela détruira la session et pas seulement les données de session !
+
+// Check if session is using cookies
 if (ini_get("session.use_cookies")) {
+    // Get the cookie parameters
     $params = session_get_cookie_params();
+    // Delete the cookie by setting the time in the past
     setcookie(session_name(), '', time() - 42000,
         $params["path"], $params["domain"],
         $params["secure"], $params["httponly"]
     );
 }
-
-// Finalement, on détruit la session.
+// Destroy the session
 session_destroy();
+// Redirect to the index page
 header("location: ../index.php");
+// Stop the script
 exit;

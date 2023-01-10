@@ -42,6 +42,7 @@ session_start();
         ?>
 
     </header>
+
     <?php
      if(isset($_SESSION['admin']) && $_SESSION['admin'] == true){
         ?>
@@ -98,7 +99,7 @@ session_start();
             dans la traque des malfaiteurs. Vous pouvez ici aussi,
              vous aider de votre navigateur pour parvenir à trouver
               ces fameux hackers !</p>
-            <img class="applicationButton" src="pictures/play_button.png" alt="icon jouer">
+            <img class="applicationButton" src="pictures/play_button.png" alt="icon play">
         </div>
     </div>
     <?php include("footer-header/footer.php") ?>
