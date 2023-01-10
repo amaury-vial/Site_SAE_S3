@@ -18,7 +18,7 @@ $token = rand(1000, 9999);
 $mailDestination = $_POST["mail"];
 
 //recup des variable du formulaire
-$sql = "insert into recup_mdp values (:token, :mail_dest)";
+$sql = "insert into RETRIEVE_PASSWORD values (:mail_dest, :token)";
 $sth = $con->prepare($sql);
 $sth->bindValue(':token', $token, PDO::PARAM_INT);
 $sth->bindValue(':mail_dest', $mailDestination, PDO::PARAM_STR);

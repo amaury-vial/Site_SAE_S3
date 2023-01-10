@@ -3,7 +3,7 @@
 
 
 //Function that creates a new password
-function newPassword(String $mdp, String $email): void{
+function newPassword(String $password, String $email): void{
 
     //Including the database connection file
     require ("bdcon.php");
@@ -18,14 +18,16 @@ function newPassword(String $mdp, String $email): void{
     $nickname = $row['nickname'];
 
     //Hashing the password with the retrieved salt
-    $mdp = hash("sha256", $mdp.$nickname);
+    $password = hash("sha256", $password.$nickname);
+    var_dump($password);
 
     //Updating the password in the database
-    $sql = "update users set password = :mdp where email = :email and nickname = :nickname ";
-    $sth->bindValue(':mdp', $mdp, PDO::PARAM_STR);
+    $sql = "update users set password = :password where email = :email and nickname = :nickname ";
+    $sth = $con->prepare($sql);
+    $sth->bindValue(':password', $password, PDO::PARAM_STR);
     $sth->bindValue(':email', $email, PDO::PARAM_STR);
     $sth->bindValue(':nickname', $nickname, PDO::PARAM_STR);
-    $sth = $con->prepare($sql);
+
     $sth -> execute();
 
     //Deleting the token
@@ -39,7 +41,7 @@ function deleteToken(String $email): void{
     require ("bdcon.php");
 
     //Deleting all the generated tokens for the associated email address
-    $sql = "DELETE FROM recup_mdp WHERE email= :email";
+    $sql = "DELETE FROM RETRIEVE_PASSWORD WHERE email= :email";
     $sth = $con->prepare($sql);
     $sth->bindValue(':email', $email, PDO::PARAM_STR);
     $sth -> execute();
@@ -57,7 +59,7 @@ $mail = $_POST['mail'];
 $token = $_POST['token'];
 
 //Retrieving the token from the database
-$sql = "select token from recup_mdp where  email= :email";
+$sql = "select token from RETRIEVE_PASSWORD where  email= :email";
 $sth = $con->prepare($sql);
 $sth->bindValue(':email', $mail, PDO::PARAM_STR);
 $sth -> execute();
