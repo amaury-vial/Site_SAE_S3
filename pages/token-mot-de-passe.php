@@ -25,9 +25,9 @@ session_start();
                 </div><div class="row">
                 <input type="email" name="mail" class="input" placeholder="eMail" required="required">
                 </div><div class="row">
-                <input type="password" name="mdp" class="input" placeholder="Mot de passe"  required="required">
+                <input type="password" name="password" class="input" placeholder="Mot de passe"  required="required">
                 </div><div class="row">
-                <input type="password" name="mdpConfirmer" class="input" placeholder="Confirmer mot de passe" required="required">
+                <input type="password" name="passwordConfirm" class="input" placeholder="Confirmer mot de passe" required="required">
                 </div>
                 <input type="submit" value="Valider" class="btn">
             </form>

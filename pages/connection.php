@@ -30,7 +30,7 @@ session_start();
       <form method="post" action="../php/login.php">
         <div class="row">
           <i class="far fa-user fa-2x"></i>
-          <input type="text" class="input" placeholder="Pseudo" name="pseudo">
+          <input type="text" class="input" placeholder="Pseudo" name="nickname">
         </div>
         <div class="row">
           <i class="fas fa-lock fa-2x"></i>
@@ -61,11 +61,11 @@ session_start();
         <form method="post" action="../php/register.php">
         <div class="row">
           <i class="far fa-user"></i>
-          <input type="text" class="input" placeholder="Pseudo" name="pseudo" maxlength="10">
+          <input type="text" class="input" placeholder="Pseudo" name="nickname" maxlength="10">
         </div>
         <div class="row">
           <i class="far fa-envelope"></i>
-          <input type="email" class="input" placeholder= "Email" name="adr">
+          <input type="email" class="input" placeholder= "Email" name="mail">
         </div>
         <div class="row">
           <i class="fas fa-lock"></i>

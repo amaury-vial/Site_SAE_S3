@@ -1,39 +1,35 @@
 <?php
 // php STAN 9
 
-require ("bdcon.php");// on require la page pour ce connecter a la bd
+require ("bdcon.php");
 
-// fonction pour modifier le mot de passe
-function nouveauMdp(String $mdp, String $email): void{//$mdp = nouveau mot de passe     $email = email lier au compte pour modifier le mot de passe 
+function newPassword(String $mdp, String $email): void{
     
-    require ("bdcon.php");// on require la page pour ce connecter a la bd
+    require ("bdcon.php");
     
     //recuperation des pseudo pour le sel 
     $sqlNickname = "select nickname from users where email = :email";
     $sth = $con->prepare($sqlNickname);
     $sth->bindValue(':email', $email, PDO::PARAM_STR);
     $sth -> execute();
-    $nickname = $sth -> fetch();
+    $row = $sth -> fetch();
 
+    $nickname = $row['nickname'];
 
-    $nickname = $nickname['nickname'];
-
-    //hash du nouveau mot de passe
     $mdp = hash("sha256", $mdp.$nickname);
 
-    //on met a jour le mot de passe
     $sql = "update users set password = :mdp where email = :email and nickname = :nickname ";
     $sth->bindValue(':mdp', $mdp, PDO::PARAM_STR);
     $sth->bindValue(':email', $email, PDO::PARAM_STR);
     $sth->bindValue(':nickname', $nickname, PDO::PARAM_STR);
     $sth = $con->prepare($sql);
     $sth -> execute();
-    supprToken($email);    
+    deleteToken($email);    
 }
 
-function supprToken(String $email): void{//$email = email lier au compte pour modifier le mot de passe 
+function deleteToken(String $email): void{
     
-    require ("bdcon.php");// on require la page pour ce connecter a la bd
+    require ("bdcon.php");
 
     //on supprimer tout les token gener pour l'adresse mail associée
     $sql = "DELETE FROM recup_mdp WHERE email= :email";
@@ -45,7 +41,7 @@ function supprToken(String $email): void{//$email = email lier au compte pour mo
     exit;
 }
 
-//recuperation des variable dans le formulaire
+
 $mail = $_POST['mail'];
 $token = $_POST['token'];
 
@@ -55,10 +51,10 @@ $sth = $con->prepare($sql);
 $sth->bindValue(':email', $mail, PDO::PARAM_STR);
 $sth -> execute();
 
-while($row = $sth -> fetch()){// on boucle sur les token generer associé a l'email
-    if($row['token'] == $token){// si le token est le bon
-        if($_POST['mdp'] ==  $_POST['mdpConfirmer']){// si les 2 mot de passe sont les meme
-            nouveauMdp($_POST['mdp'], $mail);// on appele la fonction pour mettre a jour son mot de passe   
+while($row = $sth -> fetch()){
+    if($row['token'] == $token){
+        if($_POST['password'] ==  $_POST['passwordConfirm']){
+            newPassword($_POST['password'], $mail);
         }else{
             header("location:../pages/recuperation-mot-de-passe.php");
             exit;

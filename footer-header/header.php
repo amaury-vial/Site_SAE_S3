@@ -18,7 +18,7 @@
         ?>
         <a class="connexionHeader" href="pageConnection.php">
             <p>
-                Connection
+                Connexion
             </p>
         </a>
         <?php

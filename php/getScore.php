@@ -1,30 +1,30 @@
 <?php
 // php STAN 9
-// On inclus les fichiers du répertoire PHPMAILER pour les utiliser affin d'envoyer des mails
+
 require '../phpmailer/includes/Exception.php';
 require '../phpmailer/includes/SMTP.php';
 require '../phpmailer/includes/PHPMailer.php';
 require 'bdcon.php';
 
-// On définit nom des espaces
+
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
-// Le mail est envoyé a $_POST["mail"] qui récupère le mail inscrit dans le champ qui se trouve dans la page du mot de passe oublié
-$mail_dest = $_POST["mail"];
-$listsNom = $_POST["nom"];
-$listsNom = explode(", ", $listsNom);
 
-$corpMail = "LISTE DES SCORE :";
+$mailDestination = $_POST["mail"];
+$listNames = $_POST["nom"];
+$listNames = explode(", ", $listNames);
 
-foreach ($listsNom as $nom){
+$mailBody = "LISTE DES SCORE :";
+
+foreach ($listNames as $name){
     $sql = "SELECT nickname, score FROM users WHERE nickname = :nom";
     $sth = $con->prepare($sql);
-    $sth->bindValue(':nom', $nom, PDO::PARAM_STR);
+    $sth->bindValue(':nom', $name, PDO::PARAM_STR);
     $sth -> execute();
     $row = $sth -> fetch();
-    $corpMail = $corpMail . $row['nickname'] . " : " . strval($row['score']) . " --- ";
+    $mailBody = $mailBody . $row['nickname'] . " : " . strval($row['score']) . " --- ";
 }
 
 // On crée uns instance de PHPMailer
@@ -64,20 +64,18 @@ $mail->setFrom("findthebreach.noreply@gmail.com");
 $mail->isHTML(true);
 
 // Le corps du mail a savoir le token qui est généré aléatoirement
-$mail->Body = $corpMail;
+$mail->Body = $mailBody;
 
 // On ajoute l'adresse mail du destinataire
-$mail->addAddress($mail_dest);
-
+$mail->addAddress($mailDestination);
 
 if ( $mail->send() ) {
-    // Si aucun problème n'est rencontré on va a la page du Token
     header("location:../pages/admin.php");
     exit;
 }else {
     header("location:../pages/admin.php");
     exit;
 }
+
 // On ferme la connexion SMTP au compte GMAIL
 $mail->smtpClose();
-

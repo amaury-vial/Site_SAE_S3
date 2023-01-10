@@ -9,48 +9,49 @@
         exit;
     }
 
-    function maxid($flag){
+    function maxId($flag){
         require("../php/bdcon.php");
-        $sqlClassement = "Select MAX(q_id) FROM QUESTION";// requete pour recuperer le classement
-        $sth = $con->prepare($sqlClassement);
+
+        $sql = "Select MAX(q_id) FROM QUESTION";
+        $sth = $con->prepare($sql);
         $sth->execute();
         $row = $sth->fetch();
+
         if ($flag){
-            return "<input type='number' class='input' placeholder='Num Question' name='numque' min='15' max='". $row["max"] ."'required='required'>";
+            return "<input type='number' class='input' placeholder='Num Question' name='numQuestion' min='15' max='". $row["max"] ."'required='required'>";
         }else{
-            return "<input type='number' class='input' placeholder='Num Question' name='numque' min='1' max='". $row["max"] ."'required='required'>";
+            return "<input type='number' class='input' placeholder='Num Question' name='numQuestion' min='1' max='". $row["max"] ."'required='required'>";
         }
-        
+
     }
 
-    function afficherClassement():String{
-        require("../php/bdcon.php");// on require la page pour ce connecter a la bd
-        $classement = "<br /><br />";
+    function printLeaderBoard():String{
+        require("../php/bdcon.php");
+        $leaderBoard = "<br /><br />";
 
-        $sqlClassement = "Select nickname, score FROM USERS where score is not null order by score DESC limit 5";// requete pour recuperer le classement
-        $sth = $con->prepare($sqlClassement);
-        $sth->execute();
-
-        //on affichage le classement
-        while($row = $sth->fetch()){
-            $classement = $classement.$row["nickname"]." : ".$row["score"]."<br /><br />";
-        }
-        return $classement;
-    }
-
-    function afficherQuestion():String{
-        require("../php/bdcon.php");// on require la page pour ce connecter a la bd
-        $liste = "<br /><br />";
-
-        $sql = "Select q_id, title FROM question order by q_id";// requete pour recuperer le classement
+        $sql = "Select nickname, score FROM USERS where score is not null order by score DESC limit 5";
         $sth = $con->prepare($sql);
         $sth->execute();
 
-        //on affichage le classement
         while($row = $sth->fetch()){
-            $liste = $liste.$row["q_id"]." : ".$row["title"]."<br /><br />";
+            $leaderBoard = $leaderBoard.$row["nickname"]." : ".$row["score"]."<br /><br />";
         }
-        return $liste;
+
+        return $leaderBoard;
+    }
+
+    function printQuestions():String{
+        require("../php/bdcon.php");
+        $questions = "<br /><br />";
+
+        $sql = "Select q_id, title FROM question order by q_id";
+        $sth = $con->prepare($sql);
+        $sth->execute();
+
+        while($row = $sth->fetch()){
+            $questions = $questions.$row["q_id"]." : ".$row["title"]."<br /><br />";
+        }
+        return $questions;
     }
 
 
@@ -80,14 +81,14 @@
             <div class="adminQ">
                 <div>
                     <h1>Liste des Questions</h1>
-                    <?php echo(afficherQuestion());?>
+                    <?php echo(printQuestions());?>
                 </div>
                 <div>
                     <h1>Modifier une question</h1>
                     <form method="post" action="../php/question.php">
                         <div class="row">
                             <i class="fa-solid fa-3"></i>
-                            <?php echo(maxid(false)) ?>
+                            <?php echo(maxId(false)) ?>
                         </div>
                         <div class="row">
                             <input type="text" class="input" placeholder="Question" name="question" required="required">
@@ -131,7 +132,7 @@
                     <form method="post" action="../php/deleteQuestion.php">
                         <div class="row">
                             <i class="fa-solid fa-3"></i>
-                            <?php echo(maxid(true)) ?>
+                            <?php echo(maxId(true)) ?>
                         </div>
                         <input type="submit" value="Valider">
                     </form>
@@ -145,7 +146,7 @@
             <h1>LeaderBoard</h1>
             <div>
                 <?php
-                echo(afficherClassement());
+                echo(printLeaderBoard());
                 ?>
             </div>
             <h1>Recherche Joueurs</h1>
