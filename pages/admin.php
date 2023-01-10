@@ -81,6 +81,7 @@ function printQuestions():String{
 </head>
 <body>
 
+    <<!--inclusion of the file which has to provide access to all features in the file-->
     <?php include("../footer-header/header.php");?>
 
     <div class="container">
@@ -100,27 +101,31 @@ function printQuestions():String{
                 <div>
                     <h1>Modifier une question</h1>
 
+                    <!-- Formulaire pour  modifier question-->
                     <form method="post" action="../php/question.php">
 
                         <div class="row">
                             <i class="fa-solid fa-3"></i>
                             <?php echo(maxId(false)) ?>
                         </div>
-
+                        <!--Modifier question-->
                         <div class="row">
                             <input type="text" class="input" placeholder="Question" name="question" required="required">
                         </div>
 
+                        <!--Modifier consigne-->
                         <div class="row">
                             <i class="fa-solid fa-question"></i>
                             <textarea name="Consigne" rows="5" cols="80"  class="input" placeholder="Consigne" aria-required="true" style="min-height: 30%;height: 30%; width: 100%;" ></textarea>
                         </div>
 
+                        <!--Modifier réponse-->
                         <div class="row">
                             <i class="fa-solid fa-check"></i>
                             <input type="text"  class="input" placeholder="Réponse" name="réponse" required="required">
                         </div>
 
+                        <!--Modifier indice-->
                         <div class="row">
                             <i class="fa-solid fa-magnifying-glass"></i>
                             <textarea name="Indice" rows="5" cols="80"  class="input" placeholder="Indice" aria-required="true" style="min-height: 30%;height: 30%; width: 100%;" ></textarea>
@@ -133,22 +138,27 @@ function printQuestions():String{
 
                     <h1>Ajouter une question</h1>
 
+                    <!--Formulaire pour ajouter une question-->
                     <form method="post" action="../php/addQuestion.php">
 
+                        <!--Ajouter question-->
                         <div class="row">
                             <input type="text" class="input" placeholder="Question" name="question" required="required">
                         </div>
 
+                        <!--Ajouter consigne-->
                         <div class="row">
                             <i class="fa-solid fa-question"></i>
                             <textarea name="Consigne" rows="5" cols="80"  class="input" placeholder="Consigne" aria-required="true" style="min-height: 30%;height: 30%; width: 100%;" ></textarea>
                         </div>
 
+                        <!--Ajouter réponse-->
                         <div class="row">
                             <i class="fa-solid fa-check"></i>
                             <input type="text"  class="input" placeholder="Réponse" name="réponse" required="required">
                         </div>
 
+                        <!--Ajouter indice-->
                         <div class="row">
                             <i class="fa-solid fa-magnifying-glass"></i>
                             <textarea name="Indice" rows="5" cols="80"  class="input" placeholder="Indice" aria-required="true" style="min-height: 30%;height: 30%; width: 100%;" ></textarea>
@@ -159,7 +169,7 @@ function printQuestions():String{
                     </form>
 
                     <h1>Supprimer une question</h1>
-
+                    <!--Formulaire pour supprimer une question-->
                     <form method="post" action="../php/deleteQuestion.php">
 
                         <div class="row">

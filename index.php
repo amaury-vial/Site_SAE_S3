@@ -24,9 +24,11 @@ session_start();
             <h1>Find The Breach</h1>
         </a>
         <?php
+        // If the user is connected... //
         if(isset($_SESSION['user'])){
             ?>
             <a class="connexionHeader" href="php/disconnection.php">
+                <!--il obtient la possibilité de se déconnecter -->
                 <p>
                 Se deconnecter
                 </p>
@@ -34,6 +36,7 @@ session_start();
             <?php
         }else{
             ?>
+                <!--Else, he has the possibility to connect-->
             <a class="connexionHeader" href="pages/connection.php">
                 <p>Connexion</p>
             </a>
@@ -44,6 +47,7 @@ session_start();
     </header>
 
     <?php
+    //If the person connected is an Admin, he obtains a page reserved for admins//
      if(isset($_SESSION['admin']) && $_SESSION['admin'] == true){
         ?>
             <a href="pages/admin.php" id="adminPageBtn">
@@ -55,14 +59,17 @@ session_start();
 
 
     <?php
+    // If an user is connected //
     if(isset($_SESSION['user'])){
         ?>
+            <!--a download link is displayed -->
         <a id="downloadApplication-container" href="https://google.com">
             <img id="downloadApplication" src="pictures/logo.png" alt="IMG FindTheBreach">
         </a>
         <?php
     }else{
         ?>
+            <!-- else a page to connect is displayed -->
         <a id="downloadApplication-container" href="pages/connection.php">
             <img id="downloadApplication" src="pictures/logo.png" alt="IMG FindTheBreach">
         </a>
