@@ -17,6 +17,7 @@ session_start();
 
 <body>
 
+    <!-- HEADER -->
     <?php include("../footer-header/header.php") ?>
 
     <div class="container">
@@ -25,10 +26,12 @@ session_start();
 
             <p>Recuperation de mot de passe</p>
 
+            <!-- Form to redeem the password -->
             <form method="post" action="../php/forgot-password.php">
 
                 <div class="row">
                     <i class="far fa-envelope"></i>
+                    <!-- Write the email-->
                     <input type="email" class="input" placeholder="Email" name="mail" required="required">
                 </div>
 

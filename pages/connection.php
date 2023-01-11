@@ -18,6 +18,7 @@ session_start();
 
 <body>
 
+<!-- HEADER -->
 <?php include("../footer-header/header.php") ?>
 
 <div class="container">
@@ -30,16 +31,19 @@ session_start();
         <form method="post" action="../php/login.php">
 
             <div class="row">
+                <!-- Pseudo entry -->
                 <i class="far fa-user fa-2x"></i>
                 <input type="text" class="input" placeholder="Pseudo" name="nickname">
             </div>
 
+            <!-- Password entry -->
             <div class="row">
                 <i class="fas fa-lock fa-2x"></i>
                 <input type="password" class="input" placeholder= "Mot de Passe" name="password">
             </div>
 
             <?php
+            // If the password is invalid //
             if(isset($_SESSION['err'])){
               echo "<p style='color: red'> Utilisateur ou mot de passe incorrect</p>";
             }
@@ -53,25 +57,30 @@ session_start();
     </div>
 
 
+    <!-- Tag for registration -->
     <div class="tab-body" data-id="register">
 
         <form method="post" action="../php/register.php">
 
+            <!-- Pseudo entry -->
             <div class="row">
                 <i class="far fa-user"></i>
                 <input type="text" class="input" placeholder="Pseudo" name="nickname" maxlength="10">
             </div>
 
+            <!-- Email entry -->
             <div class="row">
                 <i class="far fa-envelope"></i>
                 <input type="email" class="input" placeholder= "Email" name="mail">
             </div>
 
+            <!--Password entry-->
             <div class="row">
                 <i class="fas fa-lock"></i>
                 <input type="password" class="input" placeholder= "Mot de Passe" name="password" minlength="12">
             </div>
 
+            <!-- Button to validate the registration -->
             <input type="submit" value="Inscription" class="btn">
 
         </form>

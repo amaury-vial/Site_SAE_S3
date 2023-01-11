@@ -101,31 +101,31 @@ function printQuestions():String{
                 <div>
                     <h1>Modifier une question</h1>
 
-                    <!-- Formulaire pour  modifier question-->
+                    <!--Form to edit question-->
                     <form method="post" action="../php/question.php">
 
                         <div class="row">
                             <i class="fa-solid fa-3"></i>
                             <?php echo(maxId(false)) ?>
                         </div>
-                        <!--Modifier question-->
+                        <!--Edit question-->
                         <div class="row">
                             <input type="text" class="input" placeholder="Question" name="question" required="required">
                         </div>
 
-                        <!--Modifier consigne-->
+                        <!--Edit set-->
                         <div class="row">
                             <i class="fa-solid fa-question"></i>
                             <textarea name="Consigne" rows="5" cols="80"  class="input" placeholder="Consigne" aria-required="true" style="min-height: 30%;height: 30%; width: 100%;" ></textarea>
                         </div>
 
-                        <!--Modifier réponse-->
+                        <!--Edit answer-->
                         <div class="row">
                             <i class="fa-solid fa-check"></i>
                             <input type="text"  class="input" placeholder="Réponse" name="réponse" required="required">
                         </div>
 
-                        <!--Modifier indice-->
+                        <!--Edit index-->
                         <div class="row">
                             <i class="fa-solid fa-magnifying-glass"></i>
                             <textarea name="Indice" rows="5" cols="80"  class="input" placeholder="Indice" aria-required="true" style="min-height: 30%;height: 30%; width: 100%;" ></textarea>
@@ -138,27 +138,27 @@ function printQuestions():String{
 
                     <h1>Ajouter une question</h1>
 
-                    <!--Formulaire pour ajouter une question-->
+                    <!--Formt to add a question-->
                     <form method="post" action="../php/addQuestion.php">
 
-                        <!--Ajouter question-->
+                        <!--Add question-->
                         <div class="row">
                             <input type="text" class="input" placeholder="Question" name="question" required="required">
                         </div>
 
-                        <!--Ajouter consigne-->
+                        <!--Add set-->
                         <div class="row">
                             <i class="fa-solid fa-question"></i>
                             <textarea name="Consigne" rows="5" cols="80"  class="input" placeholder="Consigne" aria-required="true" style="min-height: 30%;height: 30%; width: 100%;" ></textarea>
                         </div>
 
-                        <!--Ajouter réponse-->
+                        <!--Add answer-->
                         <div class="row">
                             <i class="fa-solid fa-check"></i>
                             <input type="text"  class="input" placeholder="Réponse" name="réponse" required="required">
                         </div>
 
-                        <!--Ajouter indice-->
+                        <!--Add index-->
                         <div class="row">
                             <i class="fa-solid fa-magnifying-glass"></i>
                             <textarea name="Indice" rows="5" cols="80"  class="input" placeholder="Indice" aria-required="true" style="min-height: 30%;height: 30%; width: 100%;" ></textarea>
@@ -169,7 +169,7 @@ function printQuestions():String{
                     </form>
 
                     <h1>Supprimer une question</h1>
-                    <!--Formulaire pour supprimer une question-->
+                    <!--Form to delete question-->
                     <form method="post" action="../php/deleteQuestion.php">
 
                         <div class="row">
@@ -201,6 +201,7 @@ function printQuestions():String{
 
             <div>
 
+                <!-- Form to add score and user's name -->
                 <form method="post" action="../php/getScore.php">
 
                     <div class="row">

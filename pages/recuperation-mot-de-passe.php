@@ -28,10 +28,12 @@
       <form method="post" action="../php/token.php">
         <div class="row">
             <i class="fas fa-lock"></i>
+            <!-- Random number to verify identity -->
           <input type="number" class="input" placeholder="Token" name="token" min="1000" max="9999">
         </div>
         <div class="row">
             <i class="far fa-envelope"></i>
+            <!-- Write Email -->
           <input type="email" class="input" placeholder= "eMali" name="password">
         </div>
         <input type="submit" value="Valider" class="btn">

@@ -18,6 +18,7 @@ session_start();
 
 <body>
 
+    <!-- HEADER -->
     <?php include("../footer-header/header.php") ?>
 
     <div class="container">
@@ -27,18 +28,22 @@ session_start();
             <form method="post" action="../php/token.php">
 
                 <div class="row">
+                    <!-- Token to verify identity-->
                     <input type="number" name="token" class="input" placeholder="Token" required="required">
                 </div>
 
                 <div class="row">
+                    <!-- Write email -->
                     <input type="email" name="mail" class="input" placeholder="eMail" required="required">
                 </div>
 
                 <div class="row">
+                    <!-- Write new password-->
                     <input type="password" name="password" class="input" placeholder="Mot de passe"  required="required">
                 </div>
 
                 <div class="row">
+                    <!-- Confirm new password -->
                     <input type="password" name="passwordConfirm" class="input" placeholder="Confirmer mot de passe" required="required">
                 </div>
 
