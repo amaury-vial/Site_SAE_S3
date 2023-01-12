@@ -1,12 +1,9 @@
 <?php
 // php STAN 9
-
+require("isAdmin.php");
 
 //Function that creates a new password
-function newPassword(String $password, String $email): void{
-
-    //Including the database connection file
-    require ("bdcon.php");
+function newPassword(String $password, String $email, $con): void{
 
     //Retrieving the username for the salt
     $sqlNickname = "select nickname from users where email = :email";
@@ -31,14 +28,11 @@ function newPassword(String $password, String $email): void{
     $sth -> execute();
 
     //Deleting the token
-    deleteToken($email);
+    deleteToken($email,$con);
 }
 
 //Function that deletes the token
-function deleteToken(String $email): void{
-
-    //Including the database connection file
-    require ("bdcon.php");
+function deleteToken(String $email, $con): void{
 
     //Deleting all the generated tokens for the associated email address
     $sql = "DELETE FROM RETRIEVE_PASSWORD WHERE email= :email";
@@ -73,16 +67,15 @@ while($row = $sth -> fetch()){
         //Checking if the two password fields match
         if($_POST['password'] ==  $_POST['passwordConfirm']){
             //Creating the new password
-            newPassword($_POST['password'], $mail);
+            newPassword($_POST['password'], $mail, $con);
         }else{
             //Redirecting to the change password page if the two passwords don't match
-            header("location:../pages/recuperation-mot-de-passe.php");
+            header("location:../pages/token-mot-de-passe.php");
             exit;
         }
-
     }
 }
 
 //Redirecting to the change password page if the token is wrong
-header("location:../php/recuperation-mot-de-passe.php");
+header("location:../pages/token-mot-de-passe.php");
 exit;

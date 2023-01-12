@@ -4,69 +4,21 @@
 // php STAN 9
 // Require the isAdmin.php file
 require("../php/isAdmin.php");
+require("../php/printElemPageAdmin.php");
+require("../php/bdcon.php");
 
 // Function returns a HTML input tag with the max value from the database
-function maxId($flag){
-    // Require the bdcon.php file
-    require("../php/bdcon.php");
-
+function maxId($con){
     // Select the maximum q_id from the QUESTION table
     $sql = "Select MAX(q_id) FROM QUESTION";
     $sth = $con->prepare($sql);
     $sth->execute();
     // Fetch the row from the database
     $row = $sth->fetch();
-
-    // Check if the flag is true
-    if ($flag){
-        // Return an input tag with the max value from the database and the min value of 15
-        return "<input type='number' class='input' placeholder='Num Question' name='numQuestion' min='15' max='". $row["max"] ."'required='required'>";
-    }else{
-        // Return an input tag with the max value from the database and the min value of 1
-        return "<input type='number' class='input' placeholder='Num Question' name='numQuestion' min='1' max='". $row["max"] ."'required='required'>";
-    }
-
-}
-
-// Function returns a string of the leaderboard
-function printLeaderBoard():String{
-    // Require the bdcon.php file
-    require("../php/bdcon.php");
-    $leaderBoard = "<br /><br />";
-
-    // Select the top 5 users from the USERS table
-    $sql = "Select nickname, score FROM USERS where score is not null order by score DESC limit 5";
-    $sth = $con->prepare($sql);
-    $sth->execute();
-
-    // Fetch each row from the database and add it to the leaderboard string
-    while($row = $sth->fetch()){
-        $leaderBoard = $leaderBoard.$row["nickname"]." : ".$row["score"]."<br /><br />";
-    }
-
-    // Return the leaderboard
-    return $leaderBoard;
-}
-
-// Function returns a string of the questions
-function printQuestions():String{
-    // Require the bdcon.php file
-    require("../php/bdcon.php");
-    $questions = "<br /><br />";
-
-    // Select all questions from the QUESTION table
-    $sql = "Select q_id, title FROM question order by q_id";
-    $sth = $con->prepare($sql);
-    $sth->execute();
-
-    // Fetch each row from the database and add it to the questions string
-    while($row = $sth->fetch()){
-        $questions = $questions.$row["q_id"]." : ".$row["title"]."<br /><br />";
-    }
-    // Return the questions
-    return $questions;
+    return $row["max"];
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -77,11 +29,11 @@ function printQuestions():String{
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/js/all.min.js"> </script>
     <script src="../js/index.js" defer></script>
+    <script src="../js/lisener.js"></script>
     <title>FindTheBreach</title>
 </head>
 <body>
-
-    <<!--inclusion of the file which has to provide access to all features in the file-->
+    <!--inclusion of the file which has to provide access to all features in the file-->
     <?php include("../footer-header/header.php");?>
 
     <div class="container">
@@ -91,13 +43,7 @@ function printQuestions():String{
         </div>
 
         <div class="tab-body" data-id="question">
-
-            <div class="adminQuestion">
-                <div>
-                    <h1>Liste des Questions</h1>
-                    <?php echo(printQuestions());?>
-                </div>
-
+                
                 <div>
                     <h1>Modifier une question</h1>
 
@@ -106,29 +52,29 @@ function printQuestions():String{
 
                         <div class="row">
                             <i class="fa-solid fa-3"></i>
-                            <?php echo(maxId(false)) ?>
+                            <input onchange='lisenerFormId()' id='idquestion' type='number' class='input' placeholder='Num Question' name='numQuestion' min='1' max='<?php echo(maxId($con))?>' required='required'>
                         </div>
                         <!--Edit question-->
                         <div class="row">
-                            <input type="text" class="input" placeholder="Question" name="question" required="required">
+                            <input type="text" id="question" class="input" placeholder="Question" name="question" required="required">
                         </div>
 
                         <!--Edit set-->
                         <div class="row">
                             <i class="fa-solid fa-question"></i>
-                            <textarea name="Consigne" rows="5" cols="80"  class="input" placeholder="Consigne" aria-required="true" style="min-height: 30%;height: 30%; width: 100%;" ></textarea>
+                            <textarea id="consigne" name="Consigne" rows="5" cols="80"  class="input" placeholder="Consigne" aria-required="true" style="min-height: 30%;height: 30%; width: 100%;" ></textarea>
                         </div>
 
                         <!--Edit answer-->
                         <div class="row">
                             <i class="fa-solid fa-check"></i>
-                            <input type="text"  class="input" placeholder="Réponse" name="réponse" required="required">
+                            <input type="text" id="reponse" class="input" placeholder="Réponse" name="réponse" required="required">
                         </div>
 
                         <!--Edit index-->
                         <div class="row">
                             <i class="fa-solid fa-magnifying-glass"></i>
-                            <textarea name="Indice" rows="5" cols="80"  class="input" placeholder="Indice" aria-required="true" style="min-height: 30%;height: 30%; width: 100%;" ></textarea>
+                            <textarea name="Indice" id="indice" rows="5" cols="80"  class="input" placeholder="Indice" aria-required="true" style="min-height: 30%;height: 30%; width: 100%;" ></textarea>
                         </div>
 
                         <input type="submit" value="Valider">
@@ -174,7 +120,7 @@ function printQuestions():String{
 
                         <div class="row">
                             <i class="fa-solid fa-3"></i>
-                            <?php echo(maxId(true)) ?>
+                            <input type='number' class='input' placeholder='Num Question' name='numQuestion' min='15' max='<?php echo(maxId($con)) ?>' required='required'>
                         </div>
 
                         <input type="submit" value="Valider">
@@ -182,8 +128,6 @@ function printQuestions():String{
                     </form>
                     
                 </div>
-
-            </div>
 
         </div>
 
@@ -193,7 +137,7 @@ function printQuestions():String{
 
             <div>
                 <?php
-                echo(printLeaderBoard());
+                echo(printLeaderBoard($con));
                 ?>
             </div>
 
@@ -229,8 +173,13 @@ function printQuestions():String{
 
         </div>
 
-    </div>
+        
 
+    </div>
+    <div class="listequestion">
+        <h1>Liste des Questions</h1><br>
+        <?php echo(printQuestions($con));?>
+    </div>
     <?php include("../footer-header/footer.php") ?>
 
 </body>

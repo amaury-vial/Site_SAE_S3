@@ -1,12 +1,11 @@
 /*W3C validator fait*/
-.adminQuestion{
-    display: flex;
-    flex-direction: row;
-}
-@media screen and (max-width: 650px) {
-    .adminQuestion{
-        display: flex;
-        flex-direction: column;
-        margin-bottom: 10%;
-    }
+.listequestion{
+    align-self: center;
+    text-align: center;
+    font-size: 140%;
+    width: 50%;
+    border-radius: 1em;
+    background-color: aliceblue;
+    margin-bottom: 5%;
+    color : #7f95e4;
 }
