@@ -1,9 +1,14 @@
+
 # SAE S3 - FindTheBreach
-[![forthebadge](https://forthebadge.com/images/badges/made-with-java.svg)](https://forthebadge.com)![IntelliJ IDEA](https://img.shields.io/badge/IntelliJIDEA-000000.svg?style=for-the-badge&logo=intellij-idea&logoColor=white)</br>
-Projet universitaire visant à la création d'un serious game sur les réseaux, évolutif.</br>
-Nous avons choisi un scénario afin de rendre l'application plus attrayante :</br></br>
-Vous êtes un étudiant en informatique et vous venez de trouver une signature laissée par un groupe de hacker.
-Votre mission est de les retrouver afin de les dénoncer à la police.
+
+[![forthebadge](https://forthebadge.com/images/badges/uses-html.svg)](https://forthebadge.com)[![forthebadge](https://forthebadge.com/images/badges/uses-css.svg)](https://forthebadge.com) 
+
+Projet universitaire visant à la création d'un **serious game** sur les réseaux, évolutif.  
+Nous avons choisi un scénario afin de rendre l'application plus attrayante :  
+
+Vous êtes un étudiant en informatique et vous venez de trouver une signature laissée par un groupe de hackers. Votre mission est de les retrouver afin de les dénoncer à la police.  
+
+Ce site sert à se connecter et à administrer l'application.
 
 ## Demandes ✍️
 
@@ -14,52 +19,48 @@ Votre mission est de les retrouver afin de les dénoncer à la police.
 ## Ce que nous avons réalisé ⚙️
 
 Site :
+
 - Une page d'accueil qui explique l'histoire et le fonctionnement du jeu
 - Une page de connexion/inscription
-- Une page réserver aux administrateurs ou ils peuvent :
-    - Modifier / ajouter / supprimer les questions
-    - Récupérer le score des joueurs
+- Une page réservée aux administrateurs où ils peuvent :
+  - Modifier / ajouter / supprimer les questions
+  - Récupérer le score des joueurs
 
 ## Démarrage 🚀
 
-Site accessible sur https://findthebreach.ddns.net
+Site accessible sur <https://findthebreach.ddns.net>
 
 ## Utilisation 🎮
 
-- Page d'accuiel :
-
-Sur cette page vous pouvez lire l'histoire de notre application, mais aussi voir comment l'application fonctionne. De plus si vous etes  vous pouvez télécharger l'application en cliquant sur l'image. Si vous n'etes pas connecter cela vous redirichera vers la page de connexion. Vous pouvez aussi acceder à cette page en cliquant sur ``Connexion`` en haut à droite de la page.
+- Page d'accueil :
+  Sur cette page vous pouvez lire l'histoire de notre application, mais aussi voir comment l'application fonctionne. De plus, si vous êtes connecté, vous pouvez télécharger l'application en cliquant sur l'image. Si vous n'êtes pas connecté cela vous redirigera vers la page de connexion. Vous pouvez aussi accéder à cette page en cliquant sur « Connexion » en haut à droite de la page.
 
 - Page de connexion / inscription :
-
-Sur cette page vous pouvez vous connecter ou vous inscrire. Vous changer de formulaire en cliquant sur ce que vous voulez faire juste en dessous du formulaire. Si vous avez oublié votre mot de passe, vous pouvez cliquez sur ``Mot de passe oublié ?`` pour déclencher la procédure pour récuper votre mot de passe.
-Lorsque que vous etes connecter vous pouvez vous déconnecter en cliquant sur ``Se deconnecter``.
+  Sur cette page vous pouvez vous connecter ou vous inscrire. Vous pouvez changer de formulaire en cliquant sur ce que vous voulez faire juste en dessous du formulaire. Si vous avez oublié votre mot de passe, vous pouvez cliquer sur « Mot de passe oublié ? » pour déclencher la procédure pour récupérer votre mot de passe. Lorsque que vous êtes connecté, vous pouvez vous déconnecter en cliquant sur « Se déconnecter ».
 
 - Page d'administration :
-Disponible uniquement si vous etes connecter avec un compte administarteur.
-Sur cette page vous trouvez 
+  Disponible uniquement si vous êtes connecté avec un compte administrateur.
+  Sur cette page vous trouvez 2 sections. Une pour les questions et une pour les joueurs. Vous pouvez changer de section en sélectionnant la section. De plus, vous trouverez en bas de page, toutes les questions.
 
-- Pour les questions :
-Disponible uniquement si vous etes connecter avec un compte administarteur.
-Sur cette page vous pourrez trouver 3 formulaire:
-  - Le 1er sert a modifier les questions. En entrant le numéro de la question le formulaire se remplit avec la question séléctionner et vous pouvez modifier les champs que vous voulez.
-   - Le 2 autres formulaire concernent uniquement les question de la parties jeu (à partir de la question 15). :
-      - Le 2eme permet d'ajouter une question. 
-      - Le dernier sert a supprimer une question
+  - Pour les questions :
+    Disponible uniquement si vous êtes connecté avec un compte administrateur.
+    Sur cette page vous pourrez trouver 3 formulaires :
+    - Le premier sert à modifier les questions. En entrant le numéro de la question le formulaire se remplit avec la question sélectionnée et vous pouvez modifier les champs que vous voulez.
+    - Les deux autres formulaires concernent uniquement les questions de la partie jeu (à partir de la question 15) :
+      - Le deuxième permet d'ajouter une question.
+      - Le dernier sert à supprimer une question.
 
-
-- Pour les joueurs :
-Vous pouvez voir le top 5 des joueurs. En dessous vous trouverez un formualaire pour recevoire par mail le score des joueurs que vous voulez. Il faudra juste séparer le nom des joueur par ", ".
+  - Pour les joueurs :
+    Vous pouvez voir le top 5 des joueurs. En dessous, vous trouverez un formulaire pour recevoir par mail le score des joueurs que vous voulez. Il faudra juste séparer le nom des joueurs par «, ».
 
 ### Mesures d'amélioration
 
-Pour améliorer notre projet, nous aurions pu chercher à perfectionner l'aspect sécurisation vis à vis du Terminal distant.
-La mise en place d'un mode multijoueur aurait été aussi une perspective d'évolution.
+Pour améliorer notre projet, nous aurions utilisé une architecture MCV. Et nous améliorerions le style du site qui est classique.
 
 ## Membres du projet 🧑‍💻
 
-Ceccarelli Luca</br>
-Egenscheviller Frédéric</br>
-Ramdani Djibril</br>
-Saadi Nils</br>
-Vial Amaury
+- Ceccarelli Luca
+- Egenscheviller Frédéric
+- Ramdani Djibril
+- Saadi Nils
+- Vial Amaury
