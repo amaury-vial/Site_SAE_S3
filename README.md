@@ -4,7 +4,7 @@
 [![forthebadge](https://forthebadge.com/images/badges/uses-html.svg)](https://forthebadge.com)[![forthebadge](https://forthebadge.com/images/badges/uses-css.svg)](https://forthebadge.com) 
 
 Projet universitaire visant à la création d'un **serious game** sur les réseaux, évolutif.  
-Nous avons choisi un scénario afin de rendre l'application plus attrayante :  
+Nous avons choisi un scénario afin de rendre l'application plus attrayante :   
 
 Vous êtes un étudiant en informatique et vous venez de trouver une signature laissée par un groupe de hackers. Votre mission est de les retrouver afin de les dénoncer à la police.  
 
