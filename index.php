@@ -62,10 +62,11 @@ session_start();
     // If an user is connected //
     if(isset($_SESSION['user'])){
         ?>
-            <!--a download link is displayed -->
-        <a id="downloadApplication-container" href="https://google.com">
+        <!--a download link is displayed -->
+        <a id="downloadApplication-container" href="Find The Breach.jar" download>
             <img id="downloadApplication" src="pictures/logo.png" alt="IMG FindTheBreach">
         </a>
+           
         <?php
     }else{
         ?>
