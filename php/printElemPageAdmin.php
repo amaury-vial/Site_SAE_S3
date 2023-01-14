@@ -1,5 +1,5 @@
 <?php
-require("isAdmin.php");
+
 // Function returns a string of the leaderboard
 function printLeaderBoard($con):String{
     // Require the bdcon.php file
