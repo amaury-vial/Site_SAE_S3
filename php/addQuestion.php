@@ -4,8 +4,6 @@
 require ("bdcon.php");
 require("isAdmin.php");
 
-
-
 $question = str_replace('\'','\'',$_POST["question"]);
 $answer = str_replace('\'','\'',$_POST["réponse"]);
 $suggestion = str_replace('\'','\'',$_POST["Indice"]);

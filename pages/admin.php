@@ -62,19 +62,19 @@ function maxId($con){
                         <!--Edit set-->
                         <div class="row">
                             <i class="fa-solid fa-question"></i>
-                            <textarea id="consigne" name="Consigne" rows="5" cols="80"  class="input" placeholder="Consigne" aria-required="true" style="min-height: 30%;height: 30%; width: 100%;" ></textarea>
+                            <textarea id="consigne" name="consigne" rows="5" cols="80"  class="input" placeholder="Consigne" aria-required="true" style="min-height: 30%;height: 30%; width: 100%;" ></textarea>
                         </div>
 
                         <!--Edit answer-->
                         <div class="row">
                             <i class="fa-solid fa-check"></i>
-                            <input type="text" id="reponse" class="input" placeholder="Réponse" name="réponse" required="required">
+                            <input type="text" id="reponse" class="input" placeholder="Réponse" name="reponse" required="required">
                         </div>
 
                         <!--Edit index-->
                         <div class="row">
                             <i class="fa-solid fa-magnifying-glass"></i>
-                            <textarea name="Indice" id="indice" rows="5" cols="80"  class="input" placeholder="Indice" aria-required="true" style="min-height: 30%;height: 30%; width: 100%;" ></textarea>
+                            <textarea name="indice" id="indice" rows="5" cols="80"  class="input" placeholder="Indice" aria-required="true" style="min-height: 30%;height: 30%; width: 100%;" ></textarea>
                         </div>
 
                         <input type="submit" value="Valider">
