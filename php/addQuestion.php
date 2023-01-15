@@ -4,11 +4,12 @@
 require ("bdcon.php");
 require("isAdmin.php");
 
-// Escape the strings to prevent SQL Injections
-$question = str_replace('\'','\'\'',$_POST["question"]);
-$answer = str_replace('\'','\'\'',$_POST["réponse"]);
-$suggestion = str_replace('\'','\'\'',$_POST["Indice"]);
-$instructions = str_replace('\'','\'\'',$_POST["Consigne"]);
+
+
+$question = str_replace('\'','\'',$_POST["question"]);
+$answer = str_replace('\'','\'',$_POST["réponse"]);
+$suggestion = str_replace('\'','\'',$_POST["Indice"]);
+$instructions = str_replace('\'','\'',$_POST["Consigne"]);
 
 // Get the maximum question id
 $sqlMaxId = "Select MAX(q_id) FROM QUESTION";
