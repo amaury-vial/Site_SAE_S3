@@ -7,13 +7,13 @@ require("isAdmin.php");
 // Create a SQL query to delete the question with the ID given by the POST
 $sql = "DELETE FROM QUESTION WHERE Q_ID = :idQues";
 $sth = $con->prepare($sql);
-$sth->bindValue(':idQues', $_POST["numque"], PDO::PARAM_INT);
+$sth->bindValue(':idQues', $_POST["numQuestion"], PDO::PARAM_INT);
 $sth -> execute();
 
 // Create a SQL query to get all questions with an ID greater than the one given by the POST
 $sql = "SELECT Q_ID FROM question WHERE Q_ID > :idQues order by q_id";
 $sth = $con->prepare($sql);
-$sth->bindValue(':idQues', $_POST["numque"], PDO::PARAM_INT);
+$sth->bindValue(':idQues', $_POST["numQuestion"], PDO::PARAM_INT);
 $sth -> execute();
 
 // Create a new ID from the POST given
