@@ -63,7 +63,7 @@ session_start();
     if(isset($_SESSION['user'])){
         ?>
         <!--a download link is displayed -->
-        <a id="downloadApplication-container" href="Find The Breach.jar" download>
+        <a id="downloadApplication-container" href="https://github.com/frederic-egenscheviller/SAE_S3" download>
             <img id="downloadApplication" src="pictures/logo.png" alt="IMG FindTheBreach">
         </a>
            
