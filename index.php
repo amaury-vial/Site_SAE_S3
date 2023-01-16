@@ -1,6 +1,5 @@
 <!--HTML W3C fait-->
 
-
 <?php // php STAN 9
 session_start();
 ?>
