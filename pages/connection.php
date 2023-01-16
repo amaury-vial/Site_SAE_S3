@@ -65,20 +65,26 @@ session_start();
             <!-- Pseudo entry -->
             <div class="row">
                 <i class="far fa-user"></i>
-                <input type="text" class="input" placeholder="Pseudo" name="nickname" maxlength="10">
+                <input type="text" class="input" placeholder="Pseudo" name="nickname" maxlength="10" required>
             </div>
 
             <!-- Email entry -->
             <div class="row">
                 <i class="far fa-envelope"></i>
-                <input type="email" class="input" placeholder= "Email" name="mail">
+                <input type="email" class="input" placeholder= "Email" name="mail" required>
             </div>
 
             <!--Password entry-->
             <div class="row">
                 <i class="fas fa-lock"></i>
-                <input type="password" class="input" placeholder= "Mot de Passe" name="password" minlength="12">
+                <input type="password" class="input" placeholder= "Mot de Passe" name="password" minlength="12" required>
             </div>
+
+            <div>
+                <input type="checkbox" id="mention legale" name="language" value="mention legale" required>
+                <label for="mention legale">J'accepte les <a href="../footer-header/mentions_legales.txt">mentions légale</a></label>
+            </div>
+            
 
             <!-- Button to validate the registration -->
             <input type="submit" value="Inscription" class="btn">
