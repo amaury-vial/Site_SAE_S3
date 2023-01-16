@@ -1,3 +1,9 @@
 .mention{
     width: 20%;
 }
+
+@media screen and (max-width: 650px) {
+    footer{
+        font-size: 90%;
+    }
+}

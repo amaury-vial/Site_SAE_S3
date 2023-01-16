@@ -35,6 +35,7 @@ function maxId($con){
 <body>
     <!--inclusion of the file which has to provide access to all features in the file-->
     <?php include("../footer-header/header.php");?>
+    
 
     <div class="container">
 
@@ -168,7 +169,7 @@ function maxId($con){
 
         <div class="tab-footer">
 
-            <a class="tab-link active" data-ref="question" href="javascript:void(0)">Question</a>
+            <a class="tab-link active" data-ref="question" href="javascript:void(0)">Questions</a>
             <a class="tab-link" data-ref="player" href="javascript:void(0)">Joueur</a>
 
         </div>
@@ -180,7 +181,7 @@ function maxId($con){
         <h1>Liste des Questions</h1><br>
         <?php echo(printQuestions($con));?>
     </div>
+    <a class="goTop" href="#top"><i class="fa-solid fa-up-long"></i></i></a>
     <?php include("../footer-header/footer.php") ?>
-
 </body>
 </html>

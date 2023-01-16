@@ -9,3 +9,26 @@
     margin-bottom: 5%;
     color : #7f95e4;
 }
+
+.goTop {
+    right: 60px;
+    bottom: 10px;
+    font-size: 2em;
+    padding: 5px;
+    border-radius: 5px;
+    position: fixed;
+    text-decoration: none;
+    background-color: aliceblue;
+}
+
+@media screen and (max-width: 650px) {
+    .goTop {
+        right: 5px;
+        bottom: 5px;
+    }
+
+    .listequestion{
+        width: 90%;
+        font-size: 80%;
+    }
+}

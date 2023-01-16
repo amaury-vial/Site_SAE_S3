@@ -24,7 +24,7 @@ function printLeaderBoard($con):String{
 function printQuestions($con):String{
     // Require the bdcon.php file
     require("../php/bdcon.php");
-    $questions = "<br /><br />";
+    $questions = "<br /><br /> <h1> Questions Partie Apprentissage </h1>";
 
     // Select all questions from the QUESTION table
     $sql = "Select q_id, title FROM question order by q_id";
@@ -33,6 +33,9 @@ function printQuestions($con):String{
 
     // Fetch each row from the database and add it to the questions string
     while($row = $sth->fetch()){
+        if ($row["q_id"] == '16'){
+            $questions = $questions."<h1> Questions Partie Jeu </h1> <br /><br />";
+        }
         $questions = $questions.$row["q_id"]." : ".$row["title"]."<br /><br />";
     }
     // Return the questions
